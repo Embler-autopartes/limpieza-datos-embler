@@ -9,7 +9,7 @@ import os
 import re
 from collections import defaultdict
 
-INPUT_FILE = "input/CRUCE_MICROSIP_MERCADOLIBRE (2).xlsx"
+INPUT_FILE = "input/INPUT.xlsx"
 OUTPUT_DIR = "output"
 
 # Mapeo de normalizacion de marcas
