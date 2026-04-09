@@ -1,6 +1,6 @@
 """
 Guarda los resultados de un batch procesado en el CSV enriched.
-Lee el CSV original y agrega/actualiza las 6 columnas nuevas.
+Lee el CSV original y agrega/actualiza las columnas de contenido + Shopify.
 
 Uso:
     python scripts/03_guardar_batch.py <categoria> <resultados_json>
@@ -8,25 +8,9 @@ Uso:
 Ejemplo:
     python scripts/03_guardar_batch.py refacciones_motor output/refacciones_motor_batch_result.json
 
-El JSON de resultados debe tener esta estructura:
-{
-  "resultados": [
-    {
-      "_fila_original": 0,
-      "caract_marca": "...",
-      "caract_origen": "...",
-      "caract_tipo_vehiculo": "...",
-      "caract_compatibilidad": "...",
-      "seccion_descripcion": "...",
-      "seccion_antes_de_comprar": "...",
-      "seccion_envio": "...",
-      "seccion_faq": "...",
-      "productos_relacionados": "...",
-      "revision_humana": "..."
-    },
-    ...
-  ]
-}
+El JSON de resultados debe contener columnas de contenido (caract_*, seccion_*,
+productos_relacionados, revision_humana) y columnas Shopify (shopify_*).
+Ver SKILL.md para la estructura completa.
 """
 
 import csv
@@ -44,6 +28,25 @@ COLUMNAS_NUEVAS = [
     "seccion_envio",
     "seccion_faq",
     "productos_relacionados",
+    "shopify_handle",
+    "shopify_title",
+    "shopify_body_html",
+    "shopify_product_category",
+    "shopify_type",
+    "shopify_tags",
+    "shopify_published",
+    "shopify_option1_name",
+    "shopify_option1_value",
+    "shopify_variant_sku",
+    "shopify_variant_price",
+    "shopify_variant_compare_price",
+    "shopify_variant_weight",
+    "shopify_variant_weight_unit",
+    "shopify_image_src",
+    "shopify_image_alt_text",
+    "shopify_seo_title",
+    "shopify_seo_description",
+    "shopify_status",
     "revision_humana",
 ]
 
@@ -135,9 +138,10 @@ def main():
 
     # Estadisticas
     filas_con_datos = 0
-    for fila in filas:
-        if len(fila) > indices_nuevas.get("descripcion_ecommerce", 999):
-            if fila[indices_nuevas["descripcion_ecommerce"]].strip():
+    idx_desc = indices_nuevas.get("seccion_descripcion")
+    if idx_desc is not None:
+        for fila in filas:
+            if len(fila) > idx_desc and fila[idx_desc].strip():
                 filas_con_datos += 1
 
     print(f"Progreso total: {filas_con_datos}/{len(filas)} filas enriquecidas")

@@ -1,16 +1,23 @@
 ---
 name: procesar-datos
 description: |
-  Enriquece CSVs de autopartes europeas con contenido para ecommerce: descripciones comerciales, info de envio, FAQs, productos relacionados y compatibilidad vehicular estructurada.
+  Enriquece CSVs de autopartes europeas con contenido para ecommerce y genera columnas listas para importar a Shopify.
+  Produce contenido comercial (descripciones, FAQs, compatibilidad) MAS campos Shopify (handle, title, body HTML, type, tags, SEO).
   Usa este skill siempre que el usuario quiera procesar, enriquecer, o limpiar datos del catalogo de Embler.
   Se activa con frases como: "procesa los datos", "genera descripciones", "enriquece el catalogo", "procesar refacciones_motor",
-  "genera el contenido para ecommerce", "limpia los CSVs", "procesa la categoria X", o cualquier referencia a trabajar con los archivos CSV en output/.
+  "genera el contenido para ecommerce", "limpia los CSVs", "procesa la categoria X", "genera para Shopify",
+  o cualquier referencia a trabajar con los archivos CSV en output/.
   Tambien cuando el usuario pregunte por el estado de procesamiento o quiera continuar un batch pendiente.
 ---
 
 # Procesar Datos Embler
 
-Este skill transforma datos crudos de un catalogo de autopartes europeas (BMW, Mercedes-Benz, Audi, VW) en contenido listo para una tienda en linea. Toma los CSVs ya segmentados por categoria en `output/` y genera 6 columnas nuevas por producto.
+Este skill transforma datos crudos de un catalogo de autopartes europeas (BMW, Mercedes-Benz, Audi, VW) en contenido listo para ecommerce. Toma los CSVs ya segmentados por categoria en `output/` y genera dos grupos de columnas:
+
+1. **Columnas de contenido** — caracteristicas del producto + secciones editoriales (descripcion, FAQs, envio, etc.)
+2. **Columnas Shopify** — campos listos para importar via CSV a Shopify (handle, title, body HTML, type, tags, SEO, etc.)
+
+El output final de cada categoria es un CSV que contiene las columnas originales + contenido + Shopify, listo para ser importado.
 
 ## Argumento
 
@@ -121,6 +128,115 @@ Hasta 5 SKUs del mismo CSV. El script `02_preparar_batch.py` incluye un indice d
 
 Criterios: misma subcategoria + misma marca de vehiculo (del titulo), o productos complementarios (ej: junta de motor -> retenes, sellos de valvula).
 
+---
+
+#### Columnas Shopify
+
+Estas columnas se generan para importar directamente a Shopify via CSV. Siguen la estructura estandar de importacion de productos Shopify. Para la referencia completa del mapeo, lee `references/columnas_y_reglas.md`.
+
+**`shopify_handle`** — URL slug del producto. Minusculas, sin acentos, guiones en lugar de espacios. Debe ser unico por producto. Se genera a partir del titulo limpio.
+
+Reglas de generacion:
+- Tomar el titulo, convertir a minusculas, quitar acentos
+- Reemplazar espacios y caracteres especiales por guiones
+- Eliminar guiones consecutivos y guiones al inicio/final
+- Incluir marca del producto y numero de parte si existe para unicidad
+- Ej: "Juego De Juntas De Motor Completo Bmw 750i 550i X5 X6 &" → `juego-juntas-motor-completo-bmw-750i-550i-x5-x6`
+
+**`shopify_title`** — Titulo limpio del producto. Se genera a partir de `Titulo_ML`:
+- Quitar el "&" o "& " al final (truncamiento de MercadoLibre)
+- Capitalizar correctamente (Title Case)
+- Mantener siglas y modelos en su formato original (BMW, X5, N63, E90)
+- Max 255 caracteres
+- Ej: "Juego De Juntas De Motor Completo Bmw 750i 550i X5 X6 &" → "Juego de Juntas de Motor Completo BMW 750i 550i X5 X6"
+
+**`shopify_body_html`** — Descripcion completa en HTML que combina todas las secciones de contenido. Estructura:
+
+```html
+<h2>Descripcion</h2>
+{seccion_descripcion convertida a parrafos <p>}
+
+<h2>Antes de Comprar</h2>
+<p>{seccion_antes_de_comprar}</p>
+
+<h2>Envio</h2>
+<p>{seccion_envio}</p>
+
+<h2>Preguntas Frecuentes</h2>
+{seccion_faq convertida a bloques <h3>pregunta</h3><p>respuesta</p>}
+```
+
+No usar estilos inline ni clases CSS — Shopify aplica los estilos del tema.
+
+**`shopify_product_category`** — Siempre `Vehicles & Parts > Vehicle Parts & Accessories`. Es la taxonomia estandar de Shopify para Google Shopping.
+
+**`shopify_type`** — Tipo de producto que alimenta las collections automaticas de la tienda. Se mapea desde la subcategoria del producto:
+
+| Subcategoria (datos) | shopify_type |
+|----------------------|--------------|
+| motor, juntas, culata, turbo, valvulas, admision, escape, enfriamiento, distribucion | Motor |
+| frenos, discos, pastillas, calipers | Frenos |
+| suspension, amortiguadores, brazos, rotulas, bujes, barras | Suspensión |
+| electrico, sensores, bobinas, alternador, modulos, computadora | Sistema Eléctrico |
+| carroceria, faros, espejos, defensas, cofre, salpicaderas | Carrocería |
+| filtros, aceite, aire, gasolina, cabina | Filtros |
+| transmision, embrague, clutch, convertidor | Transmisión |
+| direccion, cremallera, bomba direccion, terminales | Dirección |
+| accesorios | Accesorios |
+| tuning | Tuning |
+
+Si la subcategoria no encaja en ninguna, usar el valor mas cercano o dejar la subcategoria en Title Case. Este campo alimenta las collections automaticas por categoria (ej: "BMW - Motor", "Audi - Frenos").
+
+**`shopify_tags`** — Marcas de vehiculo compatibles, separadas por coma. Estas alimentan las collections automaticas por marca.
+
+Extraer de:
+1. Compatibilidades_ML (mas confiable — lista vehiculos con marca)
+2. Titulo_ML (menciona marcas de vehiculos)
+3. Nombre tecnico del ERP
+
+Marcas validas para tags: `BMW`, `Mercedes-Benz`, `Audi`, `Volkswagen`, `Porsche`, `Volvo`, `Mini`, `Land Rover`, `Jaguar`, `Bentley`, `Rolls-Royce`.
+
+Ej: Si un producto es compatible con BMW y Audi → `"BMW, Audi"`. Si solo BMW → `"BMW"`.
+
+IMPORTANTE: Los tags son marcas de VEHICULO, no de producto. "Original Frey" NO es un tag.
+
+**`shopify_published`** — Siempre `TRUE`. El campo `shopify_status` controla la visibilidad real.
+
+**`shopify_option1_name`** / **`shopify_option1_value`** — La mayoria de los productos no tienen variantes reales. Usar:
+- `Option1 Name`: `"Title"`, `Option1 Value`: `"Default Title"` — para productos sin variantes (mayoria)
+- Si el producto claramente tiene posicion (izquierdo/derecho): `"Posición"` / `"Izquierdo"` o `"Derecho"` — pero esto requiere confirmacion humana, asi que por defecto usar "Title"/"Default Title"
+
+**`shopify_variant_sku`** — Directo de `SKU_ML` (col 17). Si no hay SKU, dejar vacio y flaggear en revision_humana.
+
+**`shopify_variant_price`** — Directo de `Precio_ML` (col 16). Sin simbolo de moneda, solo numero con decimales. Ej: `"450.00"`.
+
+**`shopify_variant_compare_price`** — Precio tachado (antes). Dejar vacio — no hay datos fuente para derivar un precio de comparacion. Si el humano quiere agregar descuentos, lo hace manualmente.
+
+**`shopify_variant_weight`** — Dejar vacio. No hay datos de peso. Ya se flaggea en revision_humana.
+
+**`shopify_variant_weight_unit`** — Siempre `"kg"`.
+
+**`shopify_image_src`** — Dejar vacio. No hay URLs de imagenes en los datos fuente. Ya se flaggea en revision_humana.
+
+**`shopify_image_alt_text`** — Texto alternativo descriptivo para la imagen. Generar aunque no haya imagen (se usara cuando el humano suba la foto).
+
+Formato: `"{Nombre del producto} {Marca producto} para {Marca vehiculo}"`. Max 125 caracteres.
+Ej: `"Juego de juntas de motor completo Original Frey para BMW"`.
+
+**`shopify_seo_title`** — Titulo optimizado para Google. Max 60 caracteres. Incluir nombre del producto + marca vehiculo + " | Embler".
+
+Ej: `"Juntas Motor BMW 750i 550i Original Frey | Embler"` (49 chars)
+
+Si supera 60 chars, acortar el nombre del producto. "| Embler" siempre va al final.
+
+**`shopify_seo_description`** — Meta description para Google. Max 155 caracteres. Resumir que es, para que vehiculo(s), y marca. Incluir call-to-action.
+
+Ej: `"Juego de juntas de motor completo para BMW 750i, 550i, X5. Marca Original Frey. Envio inmediato a todo Mexico."` (112 chars)
+
+**`shopify_status`** — Estado del producto. Siempre `"draft"` por defecto. El humano cambia a `"active"` despues de revisar fotos, peso y revision_humana.
+
+---
+
 #### `revision_humana` (texto o vacio)
 
 Esta columna es el puente entre el procesamiento automatico y la persona que revisa los datos. Funciona como una lista de pendientes especifica por producto: le dice al humano exactamente que falta y que accion tomar.
@@ -166,6 +282,25 @@ El JSON de resultados para `03_guardar_batch.py` debe tener esta estructura:
       "seccion_envio": "Tenemos stock disponible para entrega inmediata...",
       "seccion_faq": [{"pregunta": "...", "respuesta": "..."}],
       "productos_relacionados": ["SKU1", "SKU2"],
+      "shopify_handle": "juego-juntas-motor-completo-bmw-750i-550i-x5-x6",
+      "shopify_title": "Juego de Juntas de Motor Completo BMW 750i 550i X5 X6",
+      "shopify_body_html": "<h2>Descripcion</h2><p>texto...</p><h2>Antes de Comprar</h2><p>...</p>...",
+      "shopify_product_category": "Vehicles & Parts > Vehicle Parts & Accessories",
+      "shopify_type": "Motor",
+      "shopify_tags": "BMW",
+      "shopify_published": "TRUE",
+      "shopify_option1_name": "Title",
+      "shopify_option1_value": "Default Title",
+      "shopify_variant_sku": "XB-N63B44-03",
+      "shopify_variant_price": "1850.00",
+      "shopify_variant_compare_price": "",
+      "shopify_variant_weight": "",
+      "shopify_variant_weight_unit": "kg",
+      "shopify_image_src": "",
+      "shopify_image_alt_text": "Juego de juntas de motor completo Original Frey para BMW",
+      "shopify_seo_title": "Juntas Motor BMW 750i 550i Original Frey | Embler",
+      "shopify_seo_description": "Juego de juntas de motor completo para BMW 750i, 550i, X5. Marca Original Frey. Envio inmediato a todo Mexico.",
+      "shopify_status": "draft",
       "revision_humana": "[INCLUIR] Peso y dimensiones...\n[INCLUIR] Fotografias del producto."
     }
   ]

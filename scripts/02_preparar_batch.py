@@ -26,6 +26,7 @@ COLUMNAS_PROCESAMIENTO = {
     13: "categoria",
     14: "titulo",
     15: "descripcion",
+    16: "precio",
     17: "sku",
     21: "garantia",
     24: "compatibilidades",

@@ -21,6 +21,7 @@ Los CSVs en `output/` tienen 39 columnas. Estas son las relevantes para generar 
 | 29 | Atributo_x000D_ Tipo de vehículo_ML | tipo_vehiculo | Carro/Camioneta, Moto, Linea Pesada |
 | 30 | Atributo_x000D_ Origen_ML | origen | Origen del producto. Solo 51.5% lo tiene. |
 | 31 | Atributo_x000D_ Código OEM_ML | codigo_oem | Codigo original del fabricante. Solo 64.6% lo tiene. |
+| 16 | Precio_ML | precio | Precio de venta en MXN |
 | 36 | marca_normalizada | marca_norm | Ya normalizada por el script de extraccion |
 | 37 | subcategoria_limpia | subcategoria | Extraida del path de categoria |
 
@@ -66,3 +67,62 @@ Las marcas mas comunes y sus normalizaciones (ya aplicadas en col 36):
 ```
 
 Marcas menores se dejan en Title Case.
+
+## Mapeo a columnas Shopify
+
+Esta tabla muestra como cada columna Shopify se genera o mapea desde los datos existentes:
+
+| Columna Shopify | Fuente | Generacion |
+|----------------|--------|------------|
+| Handle | Titulo_ML | Slugificar: minusculas, sin acentos, guiones |
+| Title | Titulo_ML | Limpiar: quitar "&" final, Title Case, respetar siglas |
+| Body (HTML) | seccion_descripcion + antes_de_comprar + envio + faq | Combinar en HTML con h2/p/h3 |
+| Vendor | caract_marca (col 36 normalizada) | Directo |
+| Product Category | Fijo | `Vehicles & Parts > Vehicle Parts & Accessories` |
+| Type | subcategoria_limpia (col 37) | Mapear a: Motor, Frenos, Suspensión, Sistema Eléctrico, Carrocería, Filtros, Transmisión, Dirección, Accesorios, Tuning |
+| Tags | Compatibilidades_ML + Titulo_ML | Extraer marcas de VEHICULO: BMW, Mercedes-Benz, Audi, Volkswagen, Porsche, Volvo, Mini, etc. |
+| Published | Fijo | `TRUE` |
+| Option1 Name | Fijo (mayoria) | `Title` (sin variantes reales) |
+| Option1 Value | Fijo (mayoria) | `Default Title` |
+| Variant SKU | SKU_ML (col 17) | Directo |
+| Variant Price | Precio_ML (col 16) | Directo, sin simbolo moneda |
+| Variant Compare At Price | — | Vacio (sin dato fuente) |
+| Variant Inventory Qty | — | Vacio (sin dato fuente) |
+| Variant Weight | — | Vacio (sin dato fuente) |
+| Variant Weight Unit | Fijo | `kg` |
+| Image Src | — | Vacio (sin URLs de imagenes) |
+| Image Alt Text | Titulo + Marca producto + Marca vehiculo | Generar texto descriptivo, max 125 chars |
+| SEO Title | Titulo + Marca vehiculo + "Embler" | Max 60 chars, formato: `{Producto} {Vehiculo} | Embler` |
+| SEO Description | Descripcion resumida | Max 155 chars, incluir producto + vehiculo + call-to-action |
+| Status | Fijo | `draft` (el humano activa despues de revisar) |
+
+## Mapeo de subcategoria a shopify_type
+
+| Palabras clave en subcategoria | shopify_type |
+|-------------------------------|--------------|
+| motor, juntas, culata, turbo, valvulas, admision, escape, enfriamiento, distribucion, carter, biela, ciguenal, arbol de levas | Motor |
+| frenos, discos, pastillas, calipers, balatas, tambores | Frenos |
+| suspension, amortiguadores, amortiguador, brazos, rotulas, bujes, barras, resortes, soportes | Suspensión |
+| electrico, sensores, sensor, bobinas, alternador, modulos, computadora, relay, fusible, motor de arranque | Sistema Eléctrico |
+| carroceria, faros, faro, espejos, espejo, defensas, cofre, salpicaderas, parrilla, calavera, moldura | Carrocería |
+| filtros, filtro | Filtros |
+| transmision, embrague, clutch, convertidor, volante motor | Transmisión |
+| direccion, cremallera, bomba direccion, terminales | Dirección |
+| accesorios | Accesorios |
+| tuning | Tuning |
+
+## Collections automaticas de Shopify
+
+Las collections se generan automaticamente con la combinacion de Tag (marca vehiculo) + Product Type (categoria). Ejemplo:
+
+| Collection | Regla Tag | Regla Type | Condicion |
+|-----------|-----------|------------|-----------|
+| BMW - Motor | Tag = BMW | Type = Motor | ALL conditions |
+| BMW - Frenos | Tag = BMW | Type = Frenos | ALL conditions |
+| Audi - Suspensión | Tag = Audi | Type = Suspensión | ALL conditions |
+| Mercedes-Benz - Filtros | Tag = Mercedes-Benz | Type = Filtros | ALL conditions |
+
+Marcas configuradas: BMW, Audi, Volvo, Mercedes-Benz, Porsche, Volkswagen.
+Categorias configuradas: Motor, Frenos, Suspensión, Sistema Eléctrico, Carrocería, Filtros.
+
+Es CRITICO que los valores de `shopify_type` y `shopify_tags` sean exactamente los de estas tablas para que las collections funcionen.

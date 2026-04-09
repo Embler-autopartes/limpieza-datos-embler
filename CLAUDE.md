@@ -69,6 +69,29 @@ Para cada producto, generar estas columnas nuevas organizadas en dos grupos:
 - `seccion_envio` — Texto fijo: stock disponible, envio mismo dia, DHL/FedEx
 - `seccion_faq` — 3-5 preguntas frecuentes en JSON array
 - `productos_relacionados` — Hasta 5 SKUs relacionados del mismo catalogo
+
+### Columnas Shopify (para importacion CSV)
+
+- `shopify_handle` — URL slug unico (minusculas, guiones, sin acentos)
+- `shopify_title` — Titulo limpio del producto
+- `shopify_body_html` — Descripcion completa en HTML (combina todas las secciones)
+- `shopify_product_category` — Siempre "Vehicles & Parts > Vehicle Parts & Accessories"
+- `shopify_type` — Tipo para collections (Motor, Frenos, Suspensión, Sistema Eléctrico, Carrocería, Filtros, etc.)
+- `shopify_tags` — Marcas de VEHICULO compatibles (BMW, Audi, Mercedes-Benz, etc.)
+- `shopify_published` — TRUE
+- `shopify_option1_name` / `shopify_option1_value` — "Title" / "Default Title" (sin variantes)
+- `shopify_variant_sku` — Directo de SKU_ML
+- `shopify_variant_price` — Directo de Precio_ML
+- `shopify_variant_compare_price` — Vacio (sin dato)
+- `shopify_variant_weight` / `shopify_variant_weight_unit` — Vacio / "kg"
+- `shopify_image_src` — Vacio (sin imagenes)
+- `shopify_image_alt_text` — Texto alt generado
+- `shopify_seo_title` — Titulo SEO (max 60 chars, con "| Embler")
+- `shopify_seo_description` — Meta description (max 155 chars)
+- `shopify_status` — "draft" (el humano activa despues de revisar)
+
+### Revision humana
+
 - `revision_humana` — Lista de acciones pendientes para el humano ([BUSCAR], [VERIFICAR], [INCLUIR], [REVISAR], [ANALIZAR]). Vacio si todo esta completo.
 
 ## Reglas de Inferencia
@@ -83,6 +106,13 @@ Para cada producto, generar estas columnas nuevas organizadas en dos grupos:
 | Subcategoria | Path de categoria ML | Alta |
 | Keywords SEO | Titulo + Nombre + Compatibilidad | Alta |
 | Tipo de empaque | Categoria del producto | Media |
+| Handle (URL slug) | Titulo del producto | Alta |
+| Titulo limpio | Titulo_ML (quitar "&", capitalizar) | Alta |
+| Body HTML | Secciones de contenido generadas | Alta |
+| Product Type (Shopify) | Subcategoria del path ML | Alta |
+| Tags vehiculo | Compatibilidades + Titulo | Alta |
+| SEO Title/Description | Titulo + marca + vehiculo | Alta |
+| Image Alt Text | Titulo + marca producto + vehiculo | Alta |
 
 ### NO se puede inferir (no inventar):
 | Campo | Razon |
