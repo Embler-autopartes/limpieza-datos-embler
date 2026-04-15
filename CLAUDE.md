@@ -67,6 +67,7 @@ Para cada producto, generar estas columnas nuevas organizadas en dos grupos:
 - `seccion_descripcion` — Descripcion comercial (100-250 palabras, tono tecnico-comercial)
 - `seccion_antes_de_comprar` — Texto fijo: pedir VIN, verificar numero de parte/OEM
 - `seccion_envio` — Texto fijo: stock disponible, envio mismo dia, DHL/FedEx
+- `seccion_devoluciones` — Texto fijo: politica de devoluciones (30 dias, sin uso, validacion VIN)
 - `seccion_faq` — 3-5 preguntas frecuentes en JSON array
 - `productos_relacionados` — Hasta 5 SKUs relacionados del mismo catalogo
 

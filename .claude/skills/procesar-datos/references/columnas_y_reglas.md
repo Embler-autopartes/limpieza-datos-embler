@@ -76,7 +76,7 @@ Esta tabla muestra como cada columna Shopify se genera o mapea desde los datos e
 |----------------|--------|------------|
 | Handle | Titulo_ML | Slugificar: minusculas, sin acentos, guiones |
 | Title | Titulo_ML | Limpiar: quitar "&" final, Title Case, respetar siglas |
-| Body (HTML) | seccion_descripcion + antes_de_comprar + envio + faq | Combinar en HTML con h2/p/h3 |
+| Body (HTML) | seccion_descripcion + antes_de_comprar + envio + devoluciones + faq | Combinar en HTML con h2/p/h3 |
 | Vendor | caract_marca (col 36 normalizada) | Directo |
 | Product Category | Fijo | `Vehicles & Parts > Vehicle Parts & Accessories` |
 | Type | subcategoria_limpia (col 37) | Mapear a: Motor, Frenos, Suspensión, Sistema Eléctrico, Carrocería, Filtros, Transmisión, Dirección, Accesorios, Tuning |

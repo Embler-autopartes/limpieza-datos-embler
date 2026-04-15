@@ -71,6 +71,18 @@ Para garantizar que recibas la pieza correcta para tu vehiculo, necesitamos el n
 Tenemos stock disponible para entrega inmediata. Enviamos el mismo dia de tu pago a Ciudad de Mexico y a todo el pais via DHL o FedEx.
 ```
 
+### seccion_devoluciones
+
+```
+Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.
+
+Asegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.
+
+Consulta nuestra politica completa aquí
+```
+
+Este texto es fijo para todos los productos — no se modifica.
+
 ### seccion_faq
 
 ```json
@@ -128,6 +140,11 @@ Juego de Juntas de Motor Completo BMW 750i 550i X5 X6
 
 <h2>Envio</h2>
 <p>Tenemos stock disponible para entrega inmediata. Enviamos el mismo dia de tu pago a Ciudad de Mexico y a todo el pais via DHL o FedEx.</p>
+
+<h2>Politica de Devolucion</h2>
+<p>Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.</p>
+<p>Asegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.</p>
+<p>Consulta nuestra politica completa aquí</p>
 
 <h2>Preguntas Frecuentes</h2>
 <h3>¿Es compatible con mi vehiculo?</h3>
@@ -275,6 +292,16 @@ Para garantizar que recibas la pieza correcta para tu vehiculo, necesitamos el n
 Tenemos stock disponible para entrega inmediata. Enviamos el mismo dia de tu pago a Ciudad de Mexico y a todo el pais via DHL o FedEx.
 ```
 
+### seccion_devoluciones
+
+```
+Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.
+
+Asegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.
+
+Consulta nuestra politica completa aquí
+```
+
 ### seccion_faq
 
 ```json
@@ -317,6 +344,11 @@ Sensor MAP BMW 325i 330i 530i X3 X5 Z4
 
 <h2>Envio</h2>
 <p>Tenemos stock disponible para entrega inmediata. Enviamos el mismo dia de tu pago a Ciudad de Mexico y a todo el pais via DHL o FedEx.</p>
+
+<h2>Politica de Devolucion</h2>
+<p>Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.</p>
+<p>Asegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.</p>
+<p>Consulta nuestra politica completa aquí</p>
 
 <h2>Preguntas Frecuentes</h2>
 <h3>¿Es compatible con mi vehiculo?</h3>

@@ -110,6 +110,16 @@ Seccion fija:
 
 Si UNIDAD_VENTA_MC indica "Juego" o "Kit", agregar: "Este producto se vende como [juego/kit] completo."
 
+**`seccion_devoluciones`** (texto)
+
+Seccion fija — siempre incluir este texto exacto sin modificaciones:
+
+"Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.
+
+Asegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.
+
+Consulta nuestra politica completa aquí"
+
 **`seccion_faq`** (JSON array)
 
 3-5 preguntas frecuentes especificas al producto:
@@ -161,6 +171,9 @@ Reglas de generacion:
 
 <h2>Envio</h2>
 <p>{seccion_envio}</p>
+
+<h2>Politica de Devolucion</h2>
+<p>{seccion_devoluciones — texto fijo}</p>
 
 <h2>Preguntas Frecuentes</h2>
 {seccion_faq convertida a bloques <h3>pregunta</h3><p>respuesta</p>}
@@ -280,6 +293,7 @@ El JSON de resultados para `03_guardar_batch.py` debe tener esta estructura:
       "seccion_descripcion": "texto...",
       "seccion_antes_de_comprar": "Para garantizar que recibas la pieza correcta...",
       "seccion_envio": "Tenemos stock disponible para entrega inmediata...",
+      "seccion_devoluciones": "Aceptamos devoluciones dentro de los 30 días posteriores a la entrega, sin importar el motivo. Para que tu devolución proceda, la pieza debe estar sin uso, sin instalar y en su empaque original.\n\nAsegura el ajuste perfecto: Una vez realizada tu compra, un asesor te contactará brevemente para validar la compatibilidad con tu número VIN y garantizar que recibas exactamente lo que tu auto necesita.\n\nConsulta nuestra politica completa aquí",
       "seccion_faq": [{"pregunta": "...", "respuesta": "..."}],
       "productos_relacionados": ["SKU1", "SKU2"],
       "shopify_handle": "juego-juntas-motor-completo-bmw-750i-550i-x5-x6",
