@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Archivos temporales de scripts
+temp_*.xlsx
+*_batch.json
+*_batch_result.json
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# CSVs intermedios por categoria (se regeneran con scripts/01_extraer_categorias.py
+# desde input/INPUT.xlsx). Los enriched/ y corrected/ si se versionan.
+/output/*.csv
