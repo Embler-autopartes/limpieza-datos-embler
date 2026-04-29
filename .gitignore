@@ -3,8 +3,15 @@
 
 # Archivos temporales de scripts
 temp_*.xlsx
+~$*
 *_batch.json
 *_batch_result.json
+
+# Settings locales (no compartir)
+.claude/settings.local.json
+
+# Mapeo R2 indexado (se regenera consultando el bucket, ~5MB)
+new-output_v2/r2_mapeo.json
 
 # Logs
 *.log

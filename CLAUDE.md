@@ -2,33 +2,57 @@
 
 ## Contexto del Proyecto
 
-Este proyecto procesa un catalogo de autopartes europeas (BMW, Mercedes-Benz, Audi, VW, etc.) para generar contenido de ecommerce. El archivo input contiene 13,363 productos cruzados entre Microsip (ERP) y MercadoLibre (marketplace).
+Este proyecto procesa un catalogo de autopartes europeas (BMW, Mercedes-Benz, Audi, VW, etc.) para generar contenido de ecommerce. El input vigente (`CRUCE_ML_MC.xlsx`, abril 2026) cruza productos de MercadoLibre con Microsip (ERP) y los reparte en 4 hojas segun el resultado del match.
 
 ## Estructura de Carpetas
 
 ```
-input/          -> Archivo fuente (CRUCE_MICROSIP_MERCADOLIBRE (2).xlsx)
-output/         -> Archivos procesados por categoria
-scripts/        -> Scripts de Python para extraccion y procesamiento
-ANALISIS.md     -> Documentacion del analisis de datos
+input/             -> Archivo fuente (CRUCE_ML_MC.xlsx)
+new-output/        -> Salida vigente. Subcarpeta por hoja (alcance acotado a 2 hojas).
+  ml_con_match/         -> 13,960 productos ML con match unico en Microsip (PRINCIPAL)
+  ml_sin_match/         -> 847 productos ML publicados sin match en Microsip
+output/            -> Salida del input anterior (INPUT.xlsx). Conservada como historico.
+scripts/           -> Scripts de Python para extraccion y procesamiento
+ANALISIS.md        -> Documentacion del analisis de datos
 ```
+
+Nota: las hojas `ML_ambiguos_revisar` (7,251 filas) y `MC_sin_match` (3,812 filas) del Excel
+existen pero no se procesan en este flujo. El script `01_extraer_categorias_v2.py` solo
+genera CSVs para `ml_con_match` y `ml_sin_match`.
 
 ## Archivo Input
 
-**`input/CRUCE_MICROSIP_MERCADOLIBRE (2).xlsx`** - Hoja "Sheet1", 13,363 filas, 36 columnas.
+**`input/CRUCE_ML_MC.xlsx`** - 4 hojas, schema nuevo de 34 columnas (las hojas ML_*).
 
-### Columnas clave para generar contenido:
-- `Titulo_ML` (col 14): Titulo de ML, punto de partida para nombre comercial
-- `Descripcion_ML` (col 15): Descripcion existente (99.5% completa)
-- `NOMBRE_ARTICULO_MC` (col 3): Nombre tecnico del ERP
-- `Categoria_ML` (col 13): Categoria jerarquica de ML
-- `Compatibilidades_ML` (col 24): Vehiculos compatibles (51.1% completa)
-- `Marca_ML` (col 26): Marca del producto (99.1%)
-- `Numero de parte_ML` (col 27): Part number (99%)
-- `Garantia_ML` (col 21): Info de garantia (100%)
-- `Tipo de vehiculo_ML` (col 29): Carro/Moto/Linea Pesada (95.6%)
-- `Codigo OEM_ML` (col 31): Codigo original (64.6%)
-- `Precio_ML` (col 16): Precio (100%)
+### Hojas (solo se procesan las 2 primeras)
+- **`ML_con_match`** (13,961 filas): productos ML con match unico Microsip - fuente principal de procesamiento.
+- **`ML_sin_match`** (848 filas): productos ML sin match Microsip - se enriquecen pero quedan sin SKU ERP.
+- ~~`ML_ambiguos_revisar`~~ (7,252 filas) - fuera de alcance.
+- ~~`MC_sin_match`~~ (3,813 filas) - fuera de alcance.
+
+### Columnas clave (hojas ML_*) — indices nuevos
+- `Categoria` (col 2): Categoria jerarquica de ML
+- `Titulo` (col 3): Titulo de ML, punto de partida para nombre comercial
+- `Descripcion` (col 4): Descripcion existente (incluye bloque "APLICA PARA LOS SIGUIENTES MODELOS:")
+- `Precio` (col 5)
+- `SKU` (col 6)
+- `Garantia` (col 10)
+- `Compatibilidades` (col 13): catalogo completo de vehiculos compatibles
+- `Compatibilidades Restricciones` (col 14)
+- `Atributo Marca` (col 15)
+- `Atributo Numero de parte` (col 16)
+- `Atributo Tipo de vehiculo` (col 18)
+- `Atributo Origen` (col 19)
+- `Atributo Codigo OEM` (col 20)
+- `Atributo Modelo` (col 21)
+- `Atributo Lado` (col 22)
+- `MC_SKU_match` / `MC_ARTICULO_ID_match` / `MC_NOMBRE_match` / `MC_ESTATUS_match` (cols 24-27): datos del match Microsip
+- `TIENE_MATCH` (col 32) / `AMBIGUO` (col 33): flags de matching
+
+### Columnas agregadas por el script de extraccion
+- `marca_normalizada` (col 34): Marca del producto normalizada (Original Frey, Embler, etc.)
+- `subcategoria_limpia` (col 35): Tercer nivel del path de categoria ML
+- `categoria_archivo` (col 36): Bucket usado para nombrar el CSV (refacciones_motor, etc.)
 
 ## Estrategia de Procesamiento
 
@@ -140,23 +164,31 @@ Aplicar estas reglas al procesar:
 
 ## Formato de Output
 
-Cada archivo de output en `output/` sera un CSV con las columnas originales MAS las nuevas columnas generadas. Nombre de archivos:
+Cada CSV en `new-output/<hoja>/` tiene las 34 columnas originales del input MAS las 3 columnas agregadas por el script (`marca_normalizada`, `subcategoria_limpia`, `categoria_archivo`). El procesamiento posterior con Claude agrega las columnas de contenido (`caract_*`, `seccion_*`, `shopify_*`, `revision_humana`).
+
+Categorias generadas por hoja:
 ```
-output/refacciones_motor.csv
-output/refacciones_suspension.csv
-output/refacciones_frenos.csv
-output/accesorios.csv
-output/tuning.csv
-output/motos.csv
-output/linea_pesada.csv
-output/otros.csv
+new-output/ml_con_match/
+  refacciones_motor.csv         (4,743)
+  refacciones_suspension.csv    (4,385)
+  refacciones_otros.csv         (1,868)
+  refacciones_frenos.csv        (1,000)
+  refacciones_carroceria.csv      (597)
+  accesorios.csv                  (465)
+  refacciones_electrico.csv       (378)
+  refacciones_transmision.csv     (192)
+  refacciones_clima.csv           (131)
+  tuning.csv                      (110)
+  otros.csv                        (73)
+  herramientas.csv                 (18)
+new-output/ml_sin_match/        (mismas categorias, 847 filas total)
 ```
 
 ## Flujo de Trabajo
 
-1. Ejecutar `scripts/01_extraer_categorias.py` -> genera CSVs por categoria en output/
-2. Para cada CSV, procesar con Claude en batches de ~50-100 filas
-3. Claude genera las 5 columnas nuevas para cada batch
+1. Ejecutar `scripts/01_extraer_categorias_v2.py` -> genera CSVs por categoria en `new-output/<hoja>/`
+2. Para cada CSV de `ml_con_match/`, procesar con Claude en batches de ~50-100 filas
+3. Claude genera las columnas de contenido para cada batch
 4. Consolidar batches en el CSV final de cada categoria
 5. Validacion: verificar que no hay campos inventados donde no deberia
 
