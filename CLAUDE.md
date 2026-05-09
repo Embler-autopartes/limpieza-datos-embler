@@ -8,13 +8,36 @@ Este proyecto procesa un catalogo de autopartes europeas (BMW, Mercedes-Benz, Au
 
 ```
 input/             -> Archivo fuente (CRUCE_ML_MC.xlsx)
-new-output/        -> Salida vigente. Subcarpeta por hoja (alcance acotado a 2 hojas).
+new-output/        -> Salida intermedia del pipeline. Subcarpeta por hoja.
   ml_con_match/         -> 13,960 productos ML con match unico en Microsip (PRINCIPAL)
   ml_sin_match/         -> 847 productos ML publicados sin match en Microsip
-output/            -> Salida del input anterior (INPUT.xlsx). Conservada como historico.
+output/            -> Salida intermedia (enriched, enriched_resolved, with_images).
+outputs/           -> Outputs FINALES (CSVs Shopify y deltas). Ver outputs/README.md.
+  historico/            -> Versiones superadas, conservadas como referencia.
 scripts/           -> Scripts de Python para extraccion y procesamiento
 ANALISIS.md        -> Documentacion del analisis de datos
 ```
+
+### Regla obligatoria para outputs finales
+
+Todo CSV final (listo para Shopify, deltas, exports definitivos) **debe** ir en
+`outputs/` siguiendo la nomenclatura:
+
+```
+outputs/YYYY-MM-DD-descripcion-corta/
+```
+
+- `YYYY-MM-DD` = fecha en que se generó el output.
+- `descripcion-corta` = qué hace única a esa versión (`imgs-actualizadas`,
+  `delta-productos-nuevos`, `con-metafields`, etc.).
+- Prefijo `USAR-` opcional para marcar la versión activa de importación
+  (ej. `2026-05-09-USAR-shopify-import/`).
+- Cuando una versión queda superada, **moverla a `outputs/historico/`** —
+  nunca borrarla, así se preserva el rastro.
+- Actualizar `outputs/README.md` cada vez que se agrega o jubila una versión.
+
+NO crear carpetas finales en la raíz del proyecto (`final-*`, `final-listo-*`,
+etc.). Eso es legado y se está consolidando bajo `outputs/historico/`.
 
 Nota: las hojas `ML_ambiguos_revisar` (7,251 filas) y `MC_sin_match` (3,812 filas) del Excel
 existen pero no se procesan en este flujo. El script `01_extraer_categorias_v2.py` solo
