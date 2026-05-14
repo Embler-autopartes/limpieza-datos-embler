@@ -1,0 +1,1003 @@
+{
+  "BMW": {
+    "Motor": {
+      "Poleas": 19,
+      "Ventilador de Radiador": 3,
+      "Marchas": 14,
+      "Radiadores de Agua": 66,
+      "Válvulas EGR": 1,
+      "Bujías": 10,
+      "Válvulas de Alivio": 3,
+      "Filtro de Aire": 2,
+      "Empaques": 6,
+      "Mangueras": 6,
+      "Juntas": 341,
+      "Bombas de Aceite": 6,
+      "Tensores Poly V": 2,
+      "Radiadores de Aceite": 77,
+      "Bombas de Agua": 130,
+      "Bujías de Encendido": 57,
+      "Válvulas Solenoides": 28,
+      "Alternadores": 17,
+      "Bobinas de Encendido": 36,
+      "Poleas de Alternador": 10,
+      "Módulos de Encendido": 7,
+      "Otros": 95,
+      "Manguera de Radiador": 339,
+      "Depósito Anticongelante": 125,
+      "Cojinetes de Motor": 9,
+      "Turbos": 13,
+      "Tomas de Agua": 48,
+      "Cadenas de Distribución": 60,
+      "Tapas de Punterías": 38,
+      "Retenes": 67,
+      "Bandas de Accesorios": 101,
+      "Tapa de Aceite": 44,
+      "Soportes de Motor": 124,
+      "Punterías Hidráulicas": 12,
+      "Bombas de Combustible": 63,
+      "Mangueras de Admisión": 34,
+      "Kit de Distribución": 14,
+      "Mangueras de Intercooler": 55,
+      "Sensores de Aceite": 23,
+      "Engranes de Árbol de Levas": 45,
+      "Poleas de Cigüeñal": 33,
+      "Anillos de Motor": 13,
+      "Poleas de Bombas de Agua": 17,
+      "Termostato": 54,
+      "Válvulas": 23,
+      "Sensor de Temperatura": 32,
+      "Poleas de Distribución": 29,
+      "Árboles de Levas": 8,
+      "Tapas de Radiadores": 37,
+      "Engranes de Cigüeñal": 1,
+      "Tensores de Cadena": 3,
+      "Cárters Completos": 12,
+      "Depósito de Refrigerante": 4,
+      "Engranes": 7,
+      "Kit de Afinación": 17,
+      "Tapa de Distribución": 5,
+      "Tolvas de Motor": 2,
+      "Multiples Admisión": 6,
+      "Bombas Inyectoras": 6,
+      "Bielas": 10,
+      "Radiadores de Intercooler": 5,
+      "Tornillos de Cabeza de Motor": 10,
+      "Mangueras de Enfriador": 1,
+      "Tapas Cubre Motor": 4,
+      "Sensor de Temperatura de Aire": 9,
+      "Sellos": 1,
+      "Resortes de Válvulas": 3,
+      "Cabezas de Motor": 1,
+      "Carburadores": 2,
+      "Monoblock": 2,
+      "Juntas de Escape": 1,
+      "Poleas de Bomba de Dirección": 1,
+      "Mangueras de Turbo": 1,
+      "Motores Completos": 1,
+      "Poleas de Tensor": 1,
+      "Pistones": 1,
+      "Aspas de Ventilador": 1,
+      "Filtros de Aceite": 72,
+      "Filtros de Aire": 64,
+      "Sensor de Posición": 19,
+      "Sensores de Cigüeñal": 18,
+      "Filtros de Gasolina": 21,
+      "Sensor MAF": 31,
+      "Sensores de Oxígeno": 86,
+      "Computadoras": 2,
+      "Kits de Filtros": 14,
+      "Válvula IAC": 7,
+      "Inyectores": 9,
+      "Cuerpo de Aceleración": 5,
+      "Porta Filtros": 4,
+      "Sensores de Presión": 2,
+      "Filtros de Cabina": 44,
+      "Sensor MAP": 12,
+      "Valvula EGR": 13,
+      "Riel de Inyectores": 1,
+      "Sensor de Detonación": 1,
+      "Válvulas Canister": 2,
+      "Reguladores de Presión": 2
+    },
+    "Herramientas": {
+      "Cables Pasa Corriente": 8,
+      "Otros": 1,
+      "Caja de Herramientas": 5
+    },
+    "Accesorios": {
+      "Cantoneras": 55,
+      "Rejillas de Faros de Niebla": 2,
+      "Refrigerante y Anticongelante": 7,
+      "Porta Placas": 3,
+      "Sensores de Reversa": 6,
+      "Portavasos": 2,
+      "Rejillas de Luz": 1,
+      "Llaveros": 1,
+      "Para Vidrios": 4,
+      "Chicotes de Apertura de Cofres": 10,
+      "Palancas de Freno de Mano": 5,
+      "Cerraduras de Puerta": 22,
+      "Bolsas de Aire": 3,
+      "Otros": 6,
+      "Chicotes de Apertura Cajuelas": 2,
+      "Difusores de Aire": 2,
+      "Cerraduras de Cajuela y Portón": 2,
+      "De Luces": 3,
+      "De Cierres Centralizados": 2,
+      "Tableros": 2
+    },
+    "Otros": {
+      "Otros": 35,
+      "Para Transmisión Manual": 2,
+      "Extractores de Polea": 4
+    },
+    "Suspensión": {
+      "Barras Estabilizadoras": 17,
+      "Amortiguadores": 276,
+      "Brazos de Suspensión": 23,
+      "Bujes de Suspensión": 91,
+      "Bombas": 30,
+      "Otras Barras": 4,
+      "Bieletas": 101,
+      "Brazo de Suspensión": 150,
+      "Cubre Polvo": 30,
+      "Bases de Amortiguador": 85,
+      "Topes de Amortiguador": 26,
+      "Baleros de Rueda": 39,
+      "Otros": 15,
+      "Horquillas de Suspensión": 28,
+      "Mazas de Ruedas": 30,
+      "Flechas Completas": 19,
+      "Kits de Suspensión": 2,
+      "Rótulas": 12,
+      "Resortes": 1,
+      "Aisladores": 1
+    },
+    "Eléctrico": {
+      "Cables y Conectores": 2,
+      "Sensores de Nivel": 1,
+      "Carcasas para Controles": 1,
+      "Sin Pantalla": 1,
+      "Otros": 1,
+      "Cableado": 9,
+      "Baterías": 2,
+      "Módulos de Fusibles": 2
+    },
+    "Chasis": {
+      "Balatas de Frenos": 4,
+      "Parrillas de Facias": 2,
+      "Discos de Frenos": 2,
+      "Mazas de Ruedas": 1,
+      "Mandos de Encendido": 1
+    },
+    "Transmisión": {
+      "Ejes de Transmisión": 2,
+      "Cardan": 45,
+      "Kits de Reparación": 8,
+      "Otras Partes de Transmisión": 21,
+      "Kit Clutch": 6,
+      "Soportes de Cajas": 10,
+      "Cajas de Transferencia": 2,
+      "Cárteres de Aceite": 1,
+      "Bombas de Clutch": 2,
+      "Eje Trasero": 5,
+      "Volante de Clutch": 2,
+      "Diferenciales": 2,
+      "Cajas de Velocidades": 1
+    },
+    "Suspensión de aire": {
+      "Suspensión de Aire": 2,
+      "Bolsas de Aire para Suspensión": 128
+    },
+    "Frenos": {
+      "Sensores ABS": 2,
+      "Balatas": 97,
+      "Sensor Pastillas de Freno": 122,
+      "Sensor ABS": 105,
+      "Otros": 11,
+      "Discos de Freno": 69,
+      "Bombas de Vacío": 12,
+      "Mangueras de Freno": 2,
+      "Kits Completos": 1,
+      "Sistema de Frenado": 2,
+      "Booster": 2,
+      "Cables de Freno de Mano": 2,
+      "Balatas de Tambor": 1
+    },
+    "Enfriamiento": {
+      "Tubos y Mangueras": 1,
+      "Mangueras": 42,
+      "Controles": 2,
+      "Mangueras de Calefacción": 6,
+      "Otros": 10,
+      "Motor Calefacción": 4,
+      "Motoventiladores": 7,
+      "Compresor": 9,
+      "Juntas para Compresor": 2,
+      "Válvula Calefacción": 8,
+      "Motoventilador Completo": 49,
+      "Tolvas": 16,
+      "Motor de Motoventilador": 5,
+      "Fan Clutches": 11,
+      "Otros Motoventiladores": 6
+    },
+    "Colisión": {
+      "Parrillas": 197,
+      "Molduras para Puertas": 23,
+      "Otros": 69,
+      "Manijas para Puertas": 5,
+      "Facias Delanteras": 8,
+      "Cubre Espejos": 2,
+      "Molduras para Faros": 1,
+      "Facias Traseras": 4,
+      "Tapa de Gasolina": 2,
+      "Salpicaderas": 1,
+      "Biseles": 7,
+      "Cofres": 1,
+      "Lunas de Espejos Laterales": 3,
+      "Espejos Retrovisores Laterales": 1,
+      "Amortiguadores de Cajuela": 132,
+      "Emblemas": 34,
+      "Plumillas Limpiaparabrisas": 6,
+      "Sensores TPMS": 2,
+      "Faros Delanteros": 30,
+      "Faros Auxiliares": 4,
+      "Ojos de Gato": 7,
+      "Depósitos Limpiaparabrisas": 6,
+      "Motores de Limpiaparabrisas": 12,
+      "Aislantes de Cofre": 2,
+      "Focos": 4,
+      "Eléctricos": 5,
+      "Brazos de Limpiaparabrisas": 2,
+      "Faros Direccionales": 4,
+      "Focos de Xenon": 40,
+      "Kits de Xenon": 2,
+      "Ojos de Ángel": 1
+    },
+    "Escape": {
+      "Otros": 2
+    },
+    "Dirección": {
+      "Depósito Líquido Hidráulico": 6,
+      "Terminales Interiores": 2,
+      "Mangueras Dirección Hidráulica": 13,
+      "Cajas de Dirección": 10,
+      "Flector de Dirección": 2,
+      "Terminales de Dirección": 1,
+      "Columnas de Dirección": 1
+    },
+    "Tuning": {
+      "Alerones": 12,
+      "Spoilers": 17
+    }
+  },
+  "Porsche": {
+    "Suspensión": {
+      "Amortiguadores": 5
+    },
+    "Motor": {
+      "Bujías": 1,
+      "Bobinas de Encendido": 1,
+      "Bombas de Agua": 2,
+      "Depósito Anticongelante": 3,
+      "Mangueras de Admisión": 2,
+      "Termostato": 1,
+      "Tapas de Punterías": 1,
+      "Bombas de Combustible": 2,
+      "Filtros de Aceite": 2,
+      "Filtros de Aire": 1,
+      "Sensores de Cigüeñal": 1
+    },
+    "Accesorios": {
+      "Llaveros": 2,
+      "Para Vidrios": 1
+    },
+    "Frenos": {
+      "Sensor Pastillas de Freno": 3,
+      "Balatas": 5,
+      "Discos de Freno": 2,
+      "Sensor ABS": 1
+    },
+    "Colisión": {
+      "Amortiguadores de Cajuela": 4,
+      "Focos de Xenon": 2
+    },
+    "Suspensión de aire": {
+      "Bolsas de Aire para Suspensión": 25
+    }
+  },
+  "Mercedes-Benz": {
+    "Suspensión": {
+      "Amortiguadores": 309,
+      "Brazos de Suspensión": 18,
+      "Bases de Amortiguador": 58,
+      "Bombas": 46,
+      "Horquillas de Suspensión": 77,
+      "Barras Estabilizadoras": 20,
+      "Bujes de Suspensión": 95,
+      "Brazo de Suspensión": 107,
+      "Rótulas": 27,
+      "Barras de Torsión": 4,
+      "Mazas de Ruedas": 12,
+      "Bieletas": 109,
+      "Cubre Polvo": 16,
+      "Baleros de Rueda": 23,
+      "Kits de Suspensión": 2,
+      "Otros": 15,
+      "Flechas Completas": 5,
+      "Topes de Amortiguador": 4,
+      "Otras Barras": 1
+    },
+    "Suspensión de aire": {
+      "Suspensión de Aire": 12,
+      "Bolsas de Aire para Suspensión": 308
+    },
+    "Motor": {
+      "Mangueras de Admisión": 28,
+      "Poleas": 2,
+      "Tensores Poly V": 5,
+      "Colectores de Admisión": 2,
+      "Bombas de Aceite": 6,
+      "Kits de Distribución": 2,
+      "Empaques": 1,
+      "Alternadores": 8,
+      "Bobinas de Encendido": 55,
+      "Bujías Precalentadoras": 8,
+      "Cables de Bujías": 21,
+      "Bujías de Encendido": 40,
+      "Marchas": 10,
+      "Otros": 39,
+      "Poleas de Alternador": 11,
+      "Módulos de Encendido": 2,
+      "Válvulas Solenoides": 5,
+      "Reguladores de Voltaje": 1,
+      "Juntas": 127,
+      "Depósito Anticongelante": 87,
+      "Soportes de Motor": 136,
+      "Radiadores de Agua": 31,
+      "Manguera de Radiador": 88,
+      "Multiples Admisión": 7,
+      "Bandas de Accesorios": 58,
+      "Termostato": 53,
+      "Bombas de Combustible": 49,
+      "Poleas de Cigüeñal": 22,
+      "Retenes": 23,
+      "Tomas de Agua": 31,
+      "Radiadores de Aceite": 51,
+      "Poleas de Distribución": 15,
+      "Bombas de Agua": 83,
+      "Engranes de Árbol de Levas": 48,
+      "Sensores de Aceite": 5,
+      "Cadenas de Distribución": 13,
+      "Turbos": 5,
+      "Anillos de Motor": 10,
+      "Mangueras de Intercooler": 30,
+      "Cigüeñales": 4,
+      "Tensores de Cadena": 5,
+      "Kit de Distribución": 20,
+      "Cárters Completos": 3,
+      "Tapa de Aceite": 15,
+      "Tapas de Radiadores": 7,
+      "Árboles de Levas": 3,
+      "Cojinetes de Motor": 2,
+      "Chicotes Aceleradores": 2,
+      "Tornillos de Cabeza de Motor": 1,
+      "Bombas Inyectoras": 3,
+      "Válvulas": 7,
+      "Bielas": 8,
+      "Radiadores de Intercooler": 2,
+      "Sensor de Temperatura": 9,
+      "Bayonetas Nivel de Aceite": 8,
+      "Banda de Distribución": 1,
+      "Depósito de Refrigerante": 3,
+      "Poleas de Accesorios": 3,
+      "Kit de Afinación": 2,
+      "Poleas de Tensor": 1,
+      "Juntas de Tapa de Cilindro": 1,
+      "Tapas de Punterías": 2,
+      "Bases de Bombas de Agua": 1,
+      "Poleas de Bombas de Agua": 2,
+      "Filtros de Aire": 50,
+      "Filtros de Cabina": 36,
+      "Sensores de Cigüeñal": 21,
+      "Sensor MAF": 22,
+      "Filtros de Aceite": 39,
+      "Otros Sensores": 23,
+      "Valvula EGR": 6,
+      "Sensores de Oxígeno": 16,
+      "Kits de Filtros": 2,
+      "Inyectores": 6,
+      "Sensor de Posición": 22,
+      "Filtros Hidráulicos": 2,
+      "Porta Filtros": 5,
+      "Filtros de Gasolina": 15,
+      "Mangueras Inyectoras": 5,
+      "Sensor de Velocidad": 1,
+      "Filtros de Gasoil": 4,
+      "Válvula IAC": 2,
+      "Sensor MAP": 2,
+      "Sensores de Presión": 2
+    },
+    "Accesorios": {
+      "Sensores de Reversa": 4,
+      "Refrigerante y Anticongelante": 2,
+      "Otros": 4,
+      "Manijas de Puertas": 2,
+      "Llaveros": 3,
+      "Cerraduras de Cofre": 2,
+      "Para Vidrios": 33,
+      "De Luces": 2,
+      "Cerraduras de Puerta": 14,
+      "Palancas y Perillas": 2,
+      "Palancas de Caja de Cambios": 3,
+      "Pedales": 4,
+      "Pastillas de Encendido": 2,
+      "Chicotes de Apertura de Cofres": 2,
+      "Cerraduras de Cajuela y Portón": 2,
+      "Botones de Cierre Centralizado": 2,
+      "Espejos Retrovisores Internos": 4,
+      "Palancas de Freno de Mano": 2,
+      "Fundas para Palancas": 1,
+      "Pomos de Palanca de Cambio": 4,
+      "Chicotes de Apertura de Tapa": 1
+    },
+    "Dirección": {
+      "Cajas de Dirección Hidráulica": 2,
+      "Terminales de Dirección": 52,
+      "Cajas de Dirección": 8,
+      "Mangueras Dirección Hidráulica": 5,
+      "Depósito Líquido Hidráulico": 31,
+      "Kits de Dirección Hidráulica": 2,
+      "Terminales Interiores": 2
+    },
+    "Herramientas": {
+      "Cables Pasa Corriente": 3,
+      "Caja de Herramientas": 1
+    },
+    "Chasis": {
+      "Discos de Frenos": 2,
+      "Zapatas de Freno": 4
+    },
+    "Otros": {
+      "Otros": 17
+    },
+    "Frenos": {
+      "Kits de Frenos": 1,
+      "Pastillas": 1,
+      "Calipers": 9,
+      "Discos de Freno": 67,
+      "Cables de Freno de Mano": 14,
+      "Balatas": 89,
+      "Sensor ABS": 111,
+      "Sensor Pastillas de Freno": 36,
+      "Interruptores de Luz de Freno": 3,
+      "Bombas de Vacío": 6,
+      "Sistema de Frenado": 2,
+      "Kits Completos": 3,
+      "Cilindros Maestros": 1,
+      "Sensores de Velocidad": 4,
+      "Otros": 2
+    },
+    "Transmisión": {
+      "Flechas Cardán": 3,
+      "Ejes de Transmisión": 1,
+      "Cardan": 17,
+      "Interrupores de Marcha Atrás": 1,
+      "Retén de Flecha": 3,
+      "Collarín de Clutch": 3,
+      "Mangueras para Enfriadores": 1,
+      "Soportes de Cajas": 5,
+      "Volante de Clutch": 2,
+      "Bombas de Clutch": 5,
+      "Selectoras": 2,
+      "Otras Partes de Transmisión": 2,
+      "Cables Selectoras de Cambios": 2,
+      "Kit Clutch": 3,
+      "Diferenciales": 1
+    },
+    "Colisión": {
+      "Calaveras Traseras": 2,
+      "Luces de Placas": 4,
+      "Ópticas Delanteras": 1,
+      "Molduras para Puertas": 2,
+      "Lunas de Espejos Laterales": 8,
+      "Bisagras de Puertas": 10,
+      "Cubre Espejos": 4,
+      "Manijas para Puertas": 27,
+      "Tapa de Gasolina": 3,
+      "Espejos Retrovisores Laterales": 11,
+      "Parrillas": 9,
+      "Otros Espejos": 2,
+      "Otros": 6,
+      "Salpicaderas": 4,
+      "Amortiguadores de Cajuela": 92,
+      "Plumillas Limpiaparabrisas": 12,
+      "Depósitos Limpiaparabrisas": 4,
+      "Motores de Limpiaparabrisas": 4,
+      "Emblemas": 2,
+      "Birlos de Ruedas": 8,
+      "Calaveras": 18,
+      "Focos": 2,
+      "Sensores TPMS": 2,
+      "Faros Delanteros": 4,
+      "Faros Direccionales": 3,
+      "Antenas": 2,
+      "Focos de Xenon": 2
+    },
+    "Eléctrico": {
+      "Motores de Arranque": 2
+    },
+    "Enfriamiento": {
+      "Otros": 2,
+      "Filtro Acumulador": 1,
+      "Condensador": 2,
+      "Mangueras": 10,
+      "Compresor": 2,
+      "Mangueras de Calefacción": 4,
+      "Motoventiladores": 2,
+      "Interruptores": 2,
+      "Motoventilador Completo": 24,
+      "Fan Clutches": 11,
+      "Tolvas": 3,
+      "Motor de Motoventilador": 2
+    },
+    "Tuning": {
+      "Alerones": 2
+    }
+  },
+  "Audi": {
+    "Motor": {
+      "Empaques": 4,
+      "Válvulas de Alivio": 3,
+      "Tensores de Cadena": 3,
+      "Bujías": 1,
+      "Bombas de Agua": 57,
+      "Bobinas de Encendido": 19,
+      "Bujías de Encendido": 4,
+      "Marchas": 2,
+      "Válvulas Solenoides": 3,
+      "Mangueras de Intercooler": 19,
+      "Termostato": 21,
+      "Turbos": 14,
+      "Juntas": 67,
+      "Depósito Anticongelante": 32,
+      "Retenes": 12,
+      "Tapa de Aceite": 19,
+      "Poleas de Distribución": 8,
+      "Bombas de Combustible": 9,
+      "Radiadores de Aceite": 38,
+      "Otros": 36,
+      "Soportes de Motor": 35,
+      "Poleas de Bombas de Agua": 2,
+      "Cadenas de Distribución": 14,
+      "Tapas de Punterías": 4,
+      "Manguera de Radiador": 12,
+      "Cárters Completos": 6,
+      "Bayonetas Nivel de Aceite": 9,
+      "Kit de Distribución": 9,
+      "Radiadores de Agua": 4,
+      "Sensores de Aceite": 3,
+      "Tomas de Agua": 27,
+      "Banda de Distribución": 4,
+      "Tapas de Radiadores": 8,
+      "Mangueras de Admisión": 2,
+      "Multiples Admisión": 2,
+      "Bielas": 2,
+      "Cojinetes de Motor": 2,
+      "Válvulas": 5,
+      "Sensor de Temperatura": 2,
+      "Tapa de Distribución": 4,
+      "Bandas de Accesorios": 6,
+      "Bulbo de Temperatura": 1,
+      "Sensor de Temperatura de Aire": 1,
+      "Árboles de Levas": 1,
+      "Filtros de Aire": 21,
+      "Sensores de Cigüeñal": 5,
+      "Cuerpo de Aceleración": 1,
+      "Filtros de Cabina": 6,
+      "Sensor de Posición": 3,
+      "Otros Sensores": 2,
+      "Filtros de Aceite": 35,
+      "Válvula IAC": 7,
+      "Valvula EGR": 15,
+      "Porta Filtros": 6,
+      "Inyectores": 1,
+      "Filtros de Gasolina": 2,
+      "Sensor MAP": 1,
+      "Válvulas Canister": 1,
+      "Vapor de Gasolina": 2,
+      "Filtros Hidráulicos": 1,
+      "Sensor MAF": 2
+    },
+    "Otros": {
+      "Otros": 17,
+      "(sin sub)": 5,
+      "Extractores de Polea": 5
+    },
+    "Transmisión": {
+      "Ejes de Transmisión": 2,
+      "Retén de Flecha": 2,
+      "Cardan": 2,
+      "Bombas de Clutch": 1
+    },
+    "Chasis": {
+      "Discos de Frenos": 2
+    },
+    "Accesorios": {
+      "Llaveros": 3
+    },
+    "Enfriamiento": {
+      "Válvula Calefacción": 4,
+      "Mangueras": 2
+    },
+    "Frenos": {
+      "Discos de Freno": 37,
+      "Balatas": 21,
+      "Sensor ABS": 4,
+      "Sensor Pastillas de Freno": 6
+    },
+    "Colisión": {
+      "Otros": 6,
+      "Tapones de Tuercas": 1,
+      "Emblemas": 2,
+      "Depósitos Limpiaparabrisas": 2,
+      "Sensores TPMS": 4,
+      "Focos de Xenon": 11
+    },
+    "Eléctrico": {
+      "Cableado": 2
+    },
+    "Suspensión": {
+      "Bombas": 3,
+      "Bases de Amortiguador": 15,
+      "Brazo de Suspensión": 10,
+      "Amortiguadores": 18,
+      "Bieletas": 6,
+      "Cubre Polvo": 1,
+      "Bujes de Suspensión": 18,
+      "Horquillas de Suspensión": 2,
+      "Otros": 6,
+      "Rótulas": 2,
+      "Topes de Amortiguador": 1
+    },
+    "Suspensión de aire": {
+      "Bolsas de Aire para Suspensión": 125,
+      "Compresores": 3
+    },
+    "Dirección": {
+      "Cajas de Dirección": 3,
+      "Sensores de Dirección": 3
+    }
+  },
+  "Land Rover": {
+    "Otros": {
+      "Otros": 6
+    },
+    "Accesorios": {
+      "Llaveros": 2
+    },
+    "Enfriamiento": {
+      "Compresor": 1
+    },
+    "Motor": {
+      "Bujías de Encendido": 2,
+      "Radiadores de Aceite": 9,
+      "Juntas": 7,
+      "Válvulas": 2,
+      "Depósito Anticongelante": 6,
+      "Tapas de Radiadores": 2,
+      "Termostato": 7,
+      "Bombas de Agua": 9,
+      "Manguera de Radiador": 3,
+      "Árboles de Levas": 1,
+      "Soportes de Motor": 2,
+      "Poleas de Distribución": 3,
+      "Otros": 2,
+      "Tomas de Agua": 1,
+      "Retenes": 1,
+      "Sensor de Posición": 2,
+      "Filtros de Aire": 2,
+      "Filtros de Aceite": 2,
+      "Sensor MAF": 2,
+      "Inyectores": 2,
+      "Sensores de Oxígeno": 2
+    },
+    "Frenos": {
+      "Balatas": 2,
+      "Sensor Pastillas de Freno": 4,
+      "Sensor ABS": 2
+    },
+    "Suspensión de aire": {
+      "Bolsas de Aire para Suspensión": 95,
+      "Compresores": 3
+    },
+    "Suspensión": {
+      "Amortiguadores": 13,
+      "Bieletas": 3,
+      "Bujes de Suspensión": 8,
+      "Barras Estabilizadoras": 2,
+      "Otros": 1
+    }
+  },
+  "Jaguar": {
+    "Otros": {
+      "Otros": 1
+    },
+    "Accesorios": {
+      "Llaveros": 1,
+      "Emblemas": 1
+    },
+    "Motor": {
+      "Juntas": 2,
+      "Termostato": 2,
+      "Tapas de Radiadores": 2
+    }
+  },
+  "Mini": {
+    "Suspensión": {
+      "Amortiguadores": 68,
+      "Rótulas": 10,
+      "Horquillas de Suspensión": 20,
+      "Bases de Amortiguador": 22,
+      "Bujes de Suspensión": 19,
+      "Bieletas": 10,
+      "Barras Estabilizadoras": 8,
+      "Baleros de Rueda": 3,
+      "Mazas de Ruedas": 2,
+      "Cubre Polvo": 2,
+      "Flechas Completas": 4,
+      "Bombas": 2,
+      "Topes de Amortiguador": 2
+    },
+    "Otros": {
+      "Otros": 4
+    },
+    "Accesorios": {
+      "Cantoneras": 10,
+      "Emblemas": 1,
+      "Llaveros": 1,
+      "Cerraduras de Puerta": 1,
+      "Piezas Cromadas": 8
+    },
+    "Transmisión": {
+      "Ejes de Transmisión": 2,
+      "Kit Clutch": 20,
+      "Bombas de Clutch": 2,
+      "Volante de Clutch": 2,
+      "Retén de Flecha": 1,
+      "Soportes de Cajas": 1,
+      "Eje Trasero": 1
+    },
+    "Motor": {
+      "Empaques": 1,
+      "Bobinas de Encendido": 3,
+      "Alternadores": 2,
+      "Bujías de Encendido": 1,
+      "Cables de Bujías": 1,
+      "Mangueras de Intercooler": 7,
+      "Depósito Anticongelante": 18,
+      "Bombas de Agua": 10,
+      "Soportes de Motor": 21,
+      "Tapas de Radiadores": 6,
+      "Poleas de Bombas de Agua": 8,
+      "Tapa de Aceite": 2,
+      "Manguera de Radiador": 18,
+      "Otros": 11,
+      "Poleas de Distribución": 3,
+      "Tolvas de Motor": 2,
+      "Termostato": 32,
+      "Radiadores de Aceite": 10,
+      "Juntas": 27,
+      "Kit de Afinación": 1,
+      "Tomas de Agua": 5,
+      "Kit de Distribución": 7,
+      "Poleas de Cigüeñal": 6,
+      "Tapas de Punterías": 15,
+      "Retenes": 4,
+      "Cárters Completos": 3,
+      "Bombas de Combustible": 16,
+      "Sensores de Aceite": 4,
+      "Bayonetas Nivel de Aceite": 2,
+      "Bombas de Aceite": 2,
+      "Bandas de Accesorios": 11,
+      "Cadenas de Distribución": 5,
+      "Válvulas": 6,
+      "Mangueras de Admisión": 1,
+      "Monoblock": 1,
+      "Radiadores de Agua": 3,
+      "Sensor de Temperatura": 2,
+      "Radiadores de Intercooler": 1,
+      "Turbos": 2,
+      "Balancines": 2,
+      "Sensores de Oxígeno": 7,
+      "Otros Sensores": 2,
+      "Filtros de Aire": 13,
+      "Sensores de Cigüeñal": 2,
+      "Filtros de Aceite": 14,
+      "Sensor MAP": 2,
+      "Filtros de Gasolina": 3,
+      "Sensor MAF": 2,
+      "Sensor de Posición": 2,
+      "Filtros de Cabina": 2
+    },
+    "Colisión": {
+      "Parrillas": 10,
+      "Bases de Faros": 5,
+      "Molduras para Puertas": 2,
+      "Molduras para Faros": 10,
+      "Guías de Facias": 2,
+      "Lunas de Espejos Laterales": 2,
+      "Facias Delanteras": 2,
+      "Salpicaderas": 4,
+      "Amortiguadores de Cajuela": 13,
+      "Calaveras": 8,
+      "Faros Delanteros": 5
+    },
+    "Frenos": {
+      "Sensor ABS": 12,
+      "Sensor Pastillas de Freno": 43,
+      "Balatas": 16,
+      "Discos de Freno": 19
+    },
+    "Enfriamiento": {
+      "Motoventilador Completo": 5
+    },
+    "Tuning": {
+      "Spoilers": 2,
+      "Alerones": 1
+    }
+  },
+  "Volvo": {
+    "Otros": {
+      "Otros": 7
+    },
+    "Accesorios": {
+      "Llaveros": 1
+    },
+    "Motor": {
+      "Bobinas de Encendido": 7,
+      "Cables de Bujías": 2,
+      "Retenes": 11,
+      "Radiadores de Aceite": 30,
+      "Banda de Distribución": 4,
+      "Sensor de Temperatura": 3,
+      "Depósito Anticongelante": 14,
+      "Poleas de Distribución": 1,
+      "Tapas de Radiadores": 8,
+      "Juntas": 14,
+      "Termostato": 10,
+      "Soportes de Motor": 12,
+      "Otros": 4,
+      "Bombas de Agua": 9,
+      "Manguera de Radiador": 11,
+      "Anillos de Motor": 2,
+      "Kit de Distribución": 2,
+      "Bayonetas Nivel de Aceite": 1,
+      "Bombas de Combustible": 1,
+      "Sensores de Aceite": 2,
+      "Mangueras de Intercooler": 1,
+      "Sensor de Posición": 3,
+      "Filtros de Aceite": 7,
+      "Filtros de Aire": 6
+    },
+    "Frenos": {
+      "Balatas": 1
+    },
+    "Enfriamiento": {
+      "Motoventilador Completo": 2
+    },
+    "Suspensión": {
+      "Bujes de Suspensión": 4,
+      "Bases de Amortiguador": 4
+    },
+    "Dirección": {
+      "Terminales de Dirección": 2
+    },
+    "Transmisión": {
+      "Retén de Flecha": 4
+    }
+  },
+  "Volkswagen": {
+    "Motor": {
+      "Bombas de Agua": 5,
+      "Tensores de Cadena": 2,
+      "Bobinas de Encendido": 4,
+      "Bujías de Encendido": 3,
+      "Radiadores de Aceite": 13,
+      "Punterías Hidráulicas": 5,
+      "Turbos": 2,
+      "Bayonetas Nivel de Aceite": 8,
+      "Tomas de Agua": 6,
+      "Otros": 1,
+      "Banda de Distribución": 2,
+      "Juntas": 7,
+      "Soportes de Motor": 2,
+      "Bombas de Aceite": 1,
+      "Tapas de Punterías": 1,
+      "Bombas de Combustible": 2,
+      "Árboles de Levas": 1,
+      "Retenes": 1,
+      "Termostato": 1,
+      "Valvula EGR": 3,
+      "Filtros de Gasoil": 1,
+      "Filtros de Aire": 4,
+      "Válvula IAC": 1,
+      "Sensor MAF": 2,
+      "Filtros de Aceite": 2,
+      "Porta Filtros": 1,
+      "Sensor MAP": 1
+    },
+    "Otros": {
+      "Otros": 4,
+      "(sin sub)": 1
+    },
+    "Accesorios": {
+      "Llaveros": 1
+    },
+    "Colisión": {
+      "Manijas Alza Cristales": 2,
+      "Amortiguadores de Cajuela": 11
+    },
+    "Frenos": {
+      "Kits Completos": 1,
+      "Balatas": 6,
+      "Sensor ABS": 1,
+      "Bombas de Vacío": 1
+    },
+    "Suspensión de aire": {
+      "Bolsas de Aire para Suspensión": 45
+    },
+    "Suspensión": {
+      "Resortes": 1,
+      "Bases de Amortiguador": 2,
+      "Bombas": 2
+    },
+    "Transmisión": {
+      "Cardan": 3,
+      "Retén de Flecha": 1
+    }
+  },
+  "Seat": {
+    "Accesorios": {
+      "Llaveros": 1
+    },
+    "Motor": {
+      "Depósito Anticongelante": 1,
+      "Radiadores de Aceite": 2
+    },
+    "Suspensión": {
+      "Bombas": 1
+    }
+  },
+  "Smart": {
+    "Frenos": {
+      "Sensor ABS": 4
+    },
+    "Motor": {
+      "Termostato": 8,
+      "Soportes de Motor": 6,
+      "Depósito Anticongelante": 4,
+      "Juntas": 2,
+      "Sensores de Cigüeñal": 2
+    },
+    "Enfriamiento": {
+      "Motoventilador Completo": 4
+    },
+    "Suspensión": {
+      "Horquillas de Suspensión": 8,
+      "Amortiguadores": 2,
+      "Mazas de Ruedas": 2
+    }
+  },
+  "Fiat": {
+    "Motor": {
+      "Radiadores de Aceite": 2
+    }
+  },
+  "Bentley": {
+    "Suspensión de aire": {
+      "Bolsas de Aire para Suspensión": 3
+    }
+  }
+}
