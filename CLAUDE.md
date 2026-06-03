@@ -1,224 +1,165 @@
 # Limpieza de Datos Embler - Instrucciones para Claude
 
-## Contexto del Proyecto
+## Estado actual del proyecto (junio 2026)
 
-Este proyecto procesa un catalogo de autopartes europeas (BMW, Mercedes-Benz, Audi, VW, etc.) para generar contenido de ecommerce. El input vigente (`CRUCE_ML_MC.xlsx`, abril 2026) cruza productos de MercadoLibre con Microsip (ERP) y los reparte en 4 hojas segun el resultado del match.
+El catálogo de **12,744 productos** ya fue importado a Shopify (mayo 2026). El trabajo
+actual es mantenimiento, correcciones de datos y nuevas importaciones de actualizaciones.
 
 ## Estructura de Carpetas
 
 ```
-input/             -> Archivo fuente (CRUCE_ML_MC.xlsx)
-new-output/        -> Salida intermedia del pipeline. Subcarpeta por hoja.
-  ml_con_match/         -> 13,960 productos ML con match unico en Microsip (PRINCIPAL)
-  ml_sin_match/         -> 847 productos ML publicados sin match en Microsip
-output/            -> Salida intermedia (enriched, enriched_resolved, with_images).
-outputs/           -> Outputs FINALES (CSVs Shopify y deltas). Ver outputs/README.md.
-  historico/            -> Versiones superadas, conservadas como referencia.
-scripts/           -> Scripts de Python para extraccion y procesamiento
-ANALISIS.md        -> Documentacion del analisis de datos
+Procesamiento de Catálogo/
+  input/             -> CRUCE_ML_MC.xlsx (fuente original, abril 2026)
+  scripts/           -> Todos los scripts Python del pipeline
+  outputs/           -> ÚNICA carpeta de outputs activos
+    2026-05-09-USAR-shopify-import/   -> 12 CSVs YA_*.csv — el import real a Shopify
+    2026-06-02-shopify-remapeado/     -> catalogo_completo.csv + partes — VERSIÓN ACTIVA
+      generar_catalogo.py             -> script que genera los CSVs desde los YA_*
+      catalogo_completo.csv           -> 12,744 productos, 51,593 filas, 37 cols, 22 MB
+      catalogo_parte1.csv             -> 6,374 productos (para importar en 2 tandas)
+      catalogo_parte2.csv             -> 6,375 productos
+    collections-matrixify/            -> Colecciones del mega menú (tipo distinto)
+    README.md
+    _arbol_marca_grupo_subgrupo.json
 ```
 
-### Regla obligatoria para outputs finales
+### Regla obligatoria para outputs
 
-Todo CSV final (listo para Shopify, deltas, exports definitivos) **debe** ir en
-`outputs/` siguiendo la nomenclatura:
+Todo CSV final va en `outputs/YYYY-MM-DD-descripcion-corta/`.
+Prefijo `USAR-` marca la versión activa de importación.
+
+**NO hay `output/`, `new-output/` ni `new-output_v2/`** — fueron limpiados en junio 2026
+por ser pasos intermedios ya superados.
+
+## Schema del CSV de Shopify (37 columnas)
+
+El archivo activo (`catalogo_completo.csv`) usa exactamente este orden de columnas,
+alineado al export real de Shopify:
 
 ```
-outputs/YYYY-MM-DD-descripcion-corta/
+Handle, Title, Body (HTML), Vendor, Published,
+Option1 Name, Option1 Value,
+Variant SKU, Variant Grams, Variant Inventory Tracker, Variant Inventory Qty,
+Variant Inventory Policy, Variant Fulfillment Service, Variant Price,
+Variant Requires Shipping, Variant Taxable,
+Image Src, Image Position, Image Alt Text, Gift Card,
+SEO Title, SEO Description,
+Filtros - Refacción (product.metafields.filters.detail_1),
+Filtros - Año (product.metafields.filters.detail_2),
+Filtros - Marca de la refacción (product.metafields.filters.detail_3),
+Marca del auto (product.metafields.global.brand),
+Grupo (product.metafields.global.group),
+Información de envio (product.metafields.global.shipping),
+Sub grupo (product.metafields.global.sub_group),
+Marca (product.metafields.global._brand),
+Listado - Número de parte (product.metafields.list.detail_1),
+Descripción larga (product.metafields.page.descripcion_larga),
+Características - Marca (product.metafields.page_info.detail_1),
+Características - Tipo de vehículo (product.metafields.page_info.detail_2),
+Características - Origen (product.metafields.page_info.detail_3),
+Variant Weight Unit, Status
 ```
 
-- `YYYY-MM-DD` = fecha en que se generó el output.
-- `descripcion-corta` = qué hace única a esa versión (`imgs-actualizadas`,
-  `delta-productos-nuevos`, `con-metafields`, etc.).
-- Prefijo `USAR-` opcional para marcar la versión activa de importación
-  (ej. `2026-05-09-USAR-shopify-import/`).
-- Cuando una versión queda superada, **moverla a `outputs/historico/`** —
-  nunca borrarla, así se preserva el rastro.
-- Actualizar `outputs/README.md` cada vez que se agrega o jubila una versión.
+### Valores fijos en todos los productos
 
-NO crear carpetas finales en la raíz del proyecto (`final-*`, `final-listo-*`,
-etc.). Eso es legado y se está consolidando bajo `outputs/historico/`.
-
-Nota: las hojas `ML_ambiguos_revisar` (7,251 filas) y `MC_sin_match` (3,812 filas) del Excel
-existen pero no se procesan en este flujo. El script `01_extraer_categorias_v2.py` solo
-genera CSVs para `ml_con_match` y `ml_sin_match`.
-
-## Archivo Input
-
-**`input/CRUCE_ML_MC.xlsx`** - 4 hojas, schema nuevo de 34 columnas (las hojas ML_*).
-
-### Hojas (solo se procesan las 2 primeras)
-- **`ML_con_match`** (13,961 filas): productos ML con match unico Microsip - fuente principal de procesamiento.
-- **`ML_sin_match`** (848 filas): productos ML sin match Microsip - se enriquecen pero quedan sin SKU ERP.
-- ~~`ML_ambiguos_revisar`~~ (7,252 filas) - fuera de alcance.
-- ~~`MC_sin_match`~~ (3,813 filas) - fuera de alcance.
-
-### Columnas clave (hojas ML_*) — indices nuevos
-- `Categoria` (col 2): Categoria jerarquica de ML
-- `Titulo` (col 3): Titulo de ML, punto de partida para nombre comercial
-- `Descripcion` (col 4): Descripcion existente (incluye bloque "APLICA PARA LOS SIGUIENTES MODELOS:")
-- `Precio` (col 5)
-- `SKU` (col 6)
-- `Garantia` (col 10)
-- `Compatibilidades` (col 13): catalogo completo de vehiculos compatibles
-- `Compatibilidades Restricciones` (col 14)
-- `Atributo Marca` (col 15)
-- `Atributo Numero de parte` (col 16)
-- `Atributo Tipo de vehiculo` (col 18)
-- `Atributo Origen` (col 19)
-- `Atributo Codigo OEM` (col 20)
-- `Atributo Modelo` (col 21)
-- `Atributo Lado` (col 22)
-- `MC_SKU_match` / `MC_ARTICULO_ID_match` / `MC_NOMBRE_match` / `MC_ESTATUS_match` (cols 24-27): datos del match Microsip
-- `TIENE_MATCH` (col 32) / `AMBIGUO` (col 33): flags de matching
-
-### Columnas agregadas por el script de extraccion
-- `marca_normalizada` (col 34): Marca del producto normalizada (Original Frey, Embler, etc.)
-- `subcategoria_limpia` (col 35): Tercer nivel del path de categoria ML
-- `categoria_archivo` (col 36): Bucket usado para nombrar el CSV (refacciones_motor, etc.)
-
-## Estrategia de Procesamiento
-
-### Procesamiento por Chunks
-
-Los datos se procesan en chunks para evitar exceder limites de contexto y mantener calidad:
-
-1. **Extraer por categoria** usando Python -> CSVs por categoria en `output/`
-2. **Procesar cada CSV** con Claude para generar columnas nuevas
-3. **Consolidar** outputs en archivos finales
-
-### Categorias para chunking:
-- `refacciones_autos` (~12,914 filas) - subdividir por subcategoria
-- `accesorios` (~80 filas)
-- `tuning` (~83 filas)
-- `motos` (~58 filas)
-- `linea_pesada` (~56 filas)
-- `otros` (~172 filas)
-
-Para refacciones_autos (muy grande), subdividir por subcategoria extraida del path de Categoria_ML:
-- Motor, Suspension, Frenos, Transmision, Electrico, Carroceria, etc.
-
-## Columnas de Output a Generar
-
-Para cada producto, generar estas columnas nuevas organizadas en dos grupos:
-
-### Caracteristicas (columnas individuales)
-
-- `caract_marca` — Marca normalizada del producto (Original Frey, Embler, Mahle, etc.)
-- `caract_origen` — Origen del producto (Importado, Nacional). Vacio si no hay dato.
-- `caract_tipo_vehiculo` — Tipo de vehiculo (Carro/Camioneta, Moto, Linea Pesada)
-- `caract_compatibilidad` — Texto en parrafo con vehiculos compatibles, legible para el cliente
-
-### Secciones de contenido
-
-- `seccion_descripcion` — Descripcion comercial (100-250 palabras, tono tecnico-comercial)
-- `seccion_antes_de_comprar` — Texto fijo: pedir VIN, verificar numero de parte/OEM
-- `seccion_envio` — Texto fijo: stock disponible, envio mismo dia, DHL/FedEx
-- `seccion_devoluciones` — Texto fijo: politica de devoluciones (30 dias, sin uso, validacion VIN)
-- `seccion_faq` — 3-5 preguntas frecuentes en JSON array
-- `productos_relacionados` — Hasta 5 SKUs relacionados del mismo catalogo
-
-### Columnas Shopify (para importacion CSV)
-
-- `shopify_handle` — URL slug unico (minusculas, guiones, sin acentos)
-- `shopify_title` — Titulo limpio del producto
-- `shopify_body_html` — Descripcion completa en HTML (combina todas las secciones)
-- `shopify_product_category` — Siempre "Vehicles & Parts > Vehicle Parts & Accessories"
-- `shopify_type` — Tipo para collections (Motor, Frenos, Suspensión, Sistema Eléctrico, Carrocería, Filtros, etc.)
-- `shopify_tags` — Marcas de VEHICULO compatibles (BMW, Audi, Mercedes-Benz, etc.)
-- `shopify_published` — TRUE
-- `shopify_option1_name` / `shopify_option1_value` — "Title" / "Default Title" (sin variantes)
-- `shopify_variant_sku` — Directo de SKU_ML
-- `shopify_variant_price` — Directo de Precio_ML
-- `shopify_variant_compare_price` — Vacio (sin dato)
-- `shopify_variant_weight` / `shopify_variant_weight_unit` — Vacio / "kg"
-- `shopify_image_src` — Vacio (sin imagenes)
-- `shopify_image_alt_text` — Texto alt generado
-- `shopify_seo_title` — Titulo SEO (max 60 chars, con "| Embler")
-- `shopify_seo_description` — Meta description (max 155 chars)
-- `shopify_status` — "draft" (el humano activa despues de revisar)
-
-### Revision humana
-
-- `revision_humana` — Lista de acciones pendientes para el humano ([BUSCAR], [VERIFICAR], [INCLUIR], [REVISAR], [ANALIZAR]). Vacio si todo esta completo.
-
-## Reglas de Inferencia
-
-### SE PUEDE inferir:
-| Campo | Desde | Confianza |
-|-------|-------|-----------|
-| Descripcion comercial | Titulo + Descripcion + Nombre tecnico | Alta |
-| FAQs genericas | Categoria + Garantia + Marca | Alta |
-| Productos relacionados | Misma categoria/marca vehiculo | Media |
-| Marca normalizada | Variaciones de nombres de marca | Alta |
-| Subcategoria | Path de categoria ML | Alta |
-| Keywords SEO | Titulo + Nombre + Compatibilidad | Alta |
-| Tipo de empaque | Categoria del producto | Media |
-| Handle (URL slug) | Titulo del producto | Alta |
-| Titulo limpio | Titulo_ML (quitar "&", capitalizar) | Alta |
-| Body HTML | Secciones de contenido generadas | Alta |
-| Product Type (Shopify) | Subcategoria del path ML | Alta |
-| Tags vehiculo | Compatibilidades + Titulo | Alta |
-| SEO Title/Description | Titulo + marca + vehiculo | Alta |
-| Image Alt Text | Titulo + marca producto + vehiculo | Alta |
-
-### NO se puede inferir (no inventar):
-| Campo | Razon |
+| Campo | Valor |
 |-------|-------|
-| Peso y dimensiones | No hay datos fuente |
-| Imagenes | No hay URLs |
-| Especificaciones tecnicas | Material, tolerancias no disponibles |
-| Precio de envio | Depende de logistica |
-| Compatibilidad vehicular (si no hay datos) | Riesgo alto de error |
-| Lado de instalacion (si no esta) | Critico, no se puede adivinar |
-| Codigo OEM (si no esta) | Dato tecnico preciso |
+| Vendor | `Embler Autopartes` |
+| Published | `true` |
+| Option1 Name | `Title` |
+| Option1 Value | `Default Title` |
+| Variant Grams | `0` |
+| Variant Inventory Tracker | `shopify` |
+| Variant Inventory Qty | `1` |
+| Variant Inventory Policy | `deny` |
+| Variant Fulfillment Service | `manual` |
+| Variant Requires Shipping | `true` |
+| Variant Taxable | `true` |
+| Gift Card | `false` |
+| Información de envio | `entregamos-hoy` |
+| Variant Weight Unit | `kg` |
+| Status | `draft` (el humano activa después de revisar) |
 
-## Normalizacion de Marcas
+### Mapeo de `Filtros - Refacción` por categoría
 
-Aplicar estas reglas al procesar:
+Este campo es el filtro de nivel superior en la tienda, NO el Grupo:
+
+| Archivo fuente | Valor correcto |
+|----------------|----------------|
+| `refacciones_*` | `Refacciones` |
+| `accesorios` | `Accesorios` |
+| `tuning` | `Tuning` |
+| `herramientas` | `Herramientas` |
+| `otros` | `Otros` |
+
+### Formato de filas (multi-row por producto)
+
+Shopify usa múltiples filas por producto para las imágenes extra:
+- **Fila principal**: todos los campos poblados + primera imagen
+- **Filas de continuación**: solo `Handle` + `Image Src` + `Image Position`, todo lo demás vacío
+
+## Script de generación: `generar_catalogo.py`
+
+Consolida los 12 archivos `YA_*.csv` de `2026-05-09-USAR-shopify-import/` en un solo
+`catalogo_completo.csv`. Para regenerar después de cambios en los YA_*:
+
+```bash
+cd "Procesamiento de Catálogo/outputs/2026-06-02-shopify-remapeado"
+python3 generar_catalogo.py
 ```
-"ORIGINAL FREY GERMAN TECHNOLOGY QUALITY" -> "Original Frey"
-"ORIGINAL FREY GERMAN TECHNOLOGY GERMAN Q" -> "Original Frey"
-"ORIGINAL FREY GERMAN TECNHLOGY QUALITY" -> "Original Frey"
-"ORIGINAL FREY GERMAN TECHNOLOGY" -> "Original Frey"
-"EMBLER AUTOPARTES EUROPEAS" -> "Embler"
-"EMBLER" -> "Embler"
+
+Luego dividir en 2 partes si se necesita (Shopify tiene límite de tamaño):
+
+```python
+# El script de split está inline en el historial — lógica: agrupar por producto completo
+# para que filas de imagen no queden partidas entre partes
 ```
 
-## Formato de Output
+## Datos con gaps conocidos (junio 2026)
 
-Cada CSV en `new-output/<hoja>/` tiene las 34 columnas originales del input MAS las 3 columnas agregadas por el script (`marca_normalizada`, `subcategoria_limpia`, `categoria_archivo`). El procesamiento posterior con Claude agrega las columnas de contenido (`caract_*`, `seccion_*`, `shopify_*`, `revision_humana`).
+Campos que tienen valores faltantes en algunos productos — **no inventar, dejar vacíos**:
 
-Categorias generadas por hoja:
+| Campo | Productos vacíos | Razón |
+|-------|-----------------|-------|
+| `Filtros - Año` | ~985 | No había datos de año en compatibilidades fuente |
+| `Marca del auto` + `Marca` | ~763 | Marca del vehículo no determinada (mayormente suspensión de aire) |
+| `Características - Tipo de vehículo` | ~614 | No estaba en datos fuente |
+| `Listado - Número de parte` | ~230 | Sin código OEM disponible |
+| `Características - Marca` | ~115 | Marca del producto no determinada |
+
+## Estado de la importación a Shopify (junio 2026)
+
+- **11,929 productos existentes** se actualizan con el import actual
+- **815 productos nuevos** se crearán al importar `catalogo_completo.csv`
+- **1 producto en Shopify sin match**: kit de afinación creado manualmente, no tocarlo
+  - Handle: `kit-afinacion-bmw-serie-3-e90-n52-325i-2007-al-2012-5w40-7-l-rjo8ml-...`
+
+## Archivo fuente original
+
+**`input/CRUCE_ML_MC.xlsx`** — 4 hojas, solo se procesaron las 2 primeras:
+- `ML_con_match` (13,961 filas): productos con match único en Microsip — **fuente principal**
+- `ML_sin_match` (848 filas): productos sin match ERP
+
+Las hojas `ML_ambiguos_revisar` y `MC_sin_match` están fuera de alcance.
+
+## Normalizacion de Marcas de producto
+
 ```
-new-output/ml_con_match/
-  refacciones_motor.csv         (4,743)
-  refacciones_suspension.csv    (4,385)
-  refacciones_otros.csv         (1,868)
-  refacciones_frenos.csv        (1,000)
-  refacciones_carroceria.csv      (597)
-  accesorios.csv                  (465)
-  refacciones_electrico.csv       (378)
-  refacciones_transmision.csv     (192)
-  refacciones_clima.csv           (131)
-  tuning.csv                      (110)
-  otros.csv                        (73)
-  herramientas.csv                 (18)
-new-output/ml_sin_match/        (mismas categorias, 847 filas total)
+"ORIGINAL FREY GERMAN TECHNOLOGY QUALITY"  -> "Original Frey"
+"ORIGINAL FREY GERMAN TECHNOLOGY GERMAN Q"  -> "Original Frey"
+"ORIGINAL FREY GERMAN TECNHLOGY QUALITY"    -> "Original Frey"
+"ORIGINAL FREY GERMAN TECHNOLOGY"           -> "Original Frey"
+"EMBLER AUTOPARTES EUROPEAS"                -> "Embler"
+"EMBLER"                                    -> "Embler"
 ```
 
-## Flujo de Trabajo
+## Notas importantes
 
-1. Ejecutar `scripts/01_extraer_categorias_v2.py` -> genera CSVs por categoria en `new-output/<hoja>/`
-2. Para cada CSV de `ml_con_match/`, procesar con Claude en batches de ~50-100 filas
-3. Claude genera las columnas de contenido para cada batch
-4. Consolidar batches en el CSV final de cada categoria
-5. Validacion: verificar que no hay campos inventados donde no deberia
-
-## Notas Importantes
-
-- **Idioma**: Todo el contenido generado debe ser en espanol
-- **Autopartes europeas**: El nicho es BMW, Mercedes-Benz, Audi, VW, Porsche, Mini, etc.
-- **Tono**: Tecnico-comercial. El cliente es mecanico o conocedor de autos europeos.
-- **No inventar datos tecnicos**: Mejor dejar vacio que poner datos incorrectos de compatibilidad o especificaciones.
-- **Marcas de vehiculo vs marca de producto**: No confundir. BMW es la marca del vehiculo, Original Frey/Embler es la marca del producto (refaccion).
+- **Idioma**: Todo el contenido en español
+- **Nicho**: Autopartes europeas — BMW, Mercedes-Benz, Audi, VW, Porsche, Mini, etc.
+- **Tono**: Técnico-comercial. El cliente es mecánico o conocedor de autos europeos.
+- **No inventar datos técnicos**: Mejor vacío que incorrecto en compatibilidad/OEM.
+- **Marca del vehículo ≠ marca del producto**: BMW es la marca del vehículo;
+  Original Frey / Embler es la marca de la refacción.
+- **Handle = identificador único**: Shopify actualiza si el handle coincide, crea si no.
+  Nunca cambiar handles de productos ya publicados.

@@ -15,6 +15,7 @@ Correcciones aplicadas:
      tuning        -> "Tuning"
      herramientas  -> "Herramientas"
      otros         -> "Otros"
+  7. Informacion de envio = "entregamos-hoy" si estaba vacio
 """
 
 import csv
@@ -124,7 +125,11 @@ def fix_row(row, filtro_top_level):
         # 3. Filtros - Refaccion: valor de nivel superior segun categoria del archivo
         out['Filtros - Refacción (product.metafields.filters.detail_1)'] = filtro_top_level
 
-    # 4. Descripcion larga: siempre vacia (campo en schema pero no poblado)
+        # 4. Informacion de envio: valor fijo para todos los productos
+        if not out['Información de envio (product.metafields.global.shipping)'].strip():
+            out['Información de envio (product.metafields.global.shipping)'] = 'entregamos-hoy'
+
+    # 5. Descripcion larga: siempre vacia (campo en schema pero no poblado)
     out['Descripción larga (product.metafields.page.descripcion_larga)'] = ''
 
     return out
