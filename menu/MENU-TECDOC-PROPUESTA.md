@@ -1,0 +1,978 @@
+# Mega menú propuesto — Marca → Sistema (TecDoc) → Subgrupo
+
+Reagrupación de los subgrupos MX actuales bajo su sistema TecDoc. Los subgrupos (hojas)
+conservan su nombre y su collection actual; el nivel intermedio pasa de Grupo MX a **Sistema TecDoc**.
+
+
+## BMW  (27 sistemas, 239 subgrupos)
+- **Accesorios** (3)
+    - Llaveros
+    - Otros
+    - Porta Placas
+- **Aire acondicionado** (2)
+    - Compresor
+    - Juntas para Compresor
+- **Alimentación de combustible** (7)
+    - Bombas de Combustible
+    - Mangueras
+    - Resortes de Válvulas
+    - Válvulas
+    - Válvulas Canister
+    - Válvulas Solenoides
+    - Válvulas de Alivio
+- **Calefacción/Ventilación** (6)
+    - Filtros de Cabina
+    - Mangueras
+    - Mangueras de Calefacción
+    - Motor Calefacción
+    - Tubos y Mangueras
+    - Válvula Calefacción
+- **Carrocería** (29)
+    - Aislantes de Cofre
+    - Alerones
+    - Amortiguadores de Cajuela
+    - Biseles
+    - Cantoneras
+    - Cofres
+    - Cubre Espejos
+    - De Luces
+    - Emblemas
+    - Espejos Retrovisores Laterales
+    - Facias Delanteras
+    - Facias Traseras
+    - Faros Auxiliares
+    - Faros Delanteros
+    - Faros Direccionales
+    - Focos de Xenon
+    - Lunas de Espejos Laterales
+    - Molduras para Faros
+    - Molduras para Puertas
+    - Otros
+    - Para Vidrios
+    - Parrillas
+    - Parrillas de Facias
+    - Plumillas Limpiaparabrisas
+    - Rejillas de Faros de Niebla
+    - Rejillas de Luz
+    - Salpicaderas
+    - Spoilers
+    - Tapa de Gasolina
+- **Clutch/piezas de montaje** (3)
+    - Bombas de Clutch
+    - Kit Clutch
+    - Volante de Clutch
+- **Dirección** (8)
+    - Cajas de Dirección
+    - Columnas de Dirección
+    - Depósito Líquido Hidráulico
+    - Flector de Dirección
+    - Mangueras Dirección Hidráulica
+    - Poleas de Bomba de Dirección
+    - Terminales Interiores
+    - Terminales de Dirección
+- **Equipamiento interior** (5)
+    - Difusores de Aire
+    - Manijas para Puertas
+    - Palancas de Freno de Mano
+    - Portavasos
+    - Tableros
+- **Filtro** (6)
+    - Filtro de Aire
+    - Filtros de Aceite
+    - Filtros de Aire
+    - Filtros de Gasolina
+    - Kits de Filtros
+    - Porta Filtros
+- **Kit de freno** (15)
+    - Balatas
+    - Balatas de Frenos
+    - Balatas de Tambor
+    - Bombas de Vacío
+    - Booster
+    - Cables de Freno de Mano
+    - Discos de Freno
+    - Discos de Frenos
+    - Kits Completos
+    - Mangueras de Freno
+    - Otros
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+    - Sensores ABS
+    - Sistema de Frenado
+- **Limpieza de vidrios** (3)
+    - Brazos de Limpiaparabrisas
+    - Depósitos Limpiaparabrisas
+    - Motores de Limpiaparabrisas
+- **Motor** (49)
+    - Anillos de Motor
+    - Bandas de Accesorios
+    - Bielas
+    - Bombas de Aceite
+    - Cabezas de Motor
+    - Cadenas de Distribución
+    - Cojinetes de Motor
+    - Computadoras
+    - Cárters Completos
+    - Empaques
+    - Engranes
+    - Engranes de Cigüeñal
+    - Engranes de Árbol de Levas
+    - Juntas
+    - Juntas de Escape
+    - Kit de Distribución
+    - Mangueras de Admisión
+    - Mangueras de Intercooler
+    - Mangueras de Turbo
+    - Monoblock
+    - Motores Completos
+    - Multiples Admisión
+    - Otros
+    - Pistones
+    - Poleas
+    - Poleas de Alternador
+    - Poleas de Cigüeñal
+    - Poleas de Distribución
+    - Punterías Hidráulicas
+    - Radiadores de Aceite
+    - Radiadores de Agua
+    - Reguladores de Presión
+    - Retenes
+    - Sellos
+    - Sensores de Aceite
+    - Sensores de Presión
+    - Soportes de Motor
+    - Tapa de Aceite
+    - Tapa de Distribución
+    - Tapas Cubre Motor
+    - Tapas de Punterías
+    - Tapas de Radiadores
+    - Tensores Poly V
+    - Tensores de Cadena
+    - Tolvas de Motor
+    - Tornillos de Cabeza de Motor
+    - Valvula EGR
+    - Válvulas EGR
+    - Árboles de Levas
+- **Piezas de servicio, inspección y mantenimiento** (5)
+    - Cables Pasa Corriente
+    - Caja de Herramientas
+    - Extractores de Polea
+    - Kit de Afinación
+    - Otros
+- **Preparación de combustible** (6)
+    - Bombas Inyectoras
+    - Carburadores
+    - Cuerpo de Aceleración
+    - Inyectores
+    - Riel de Inyectores
+    - Válvula IAC
+- **Refrigeración** (21)
+    - Aspas de Ventilador
+    - Bombas de Agua
+    - Controles
+    - Depósito Anticongelante
+    - Depósito de Refrigerante
+    - Fan Clutches
+    - Manguera de Radiador
+    - Mangueras de Enfriador
+    - Motor de Motoventilador
+    - Motoventilador Completo
+    - Motoventiladores
+    - Otros
+    - Otros Motoventiladores
+    - Poleas de Bombas de Agua
+    - Radiadores de Intercooler
+    - Refrigerante y Anticongelante
+    - Sensor de Temperatura
+    - Termostato
+    - Tolvas
+    - Tomas de Agua
+    - Ventilador de Radiador
+- **Sistema de cierre** (3)
+    - Cerraduras de Cajuela y Portón
+    - Cerraduras de Puerta
+    - De Cierres Centralizados
+- **Sistema de encendido/incandescencia** (7)
+    - Bobinas de Encendido
+    - Bujías
+    - Bujías de Encendido
+    - Mandos de Encendido
+    - Módulos de Encendido
+    - Sensor de Posición
+    - Sensores de Cigüeñal
+- **Sistema de escape** (7)
+    - Otros
+    - Sensor MAF
+    - Sensor MAP
+    - Sensor de Detonación
+    - Sensor de Temperatura de Aire
+    - Sensores de Oxígeno
+    - Turbos
+- **Sistema eléctrico** (16)
+    - Alternadores
+    - Baterías
+    - Cableado
+    - Cables y Conectores
+    - Carcasas para Controles
+    - Eléctricos
+    - Focos
+    - Kits de Xenon
+    - Marchas
+    - Módulos de Fusibles
+    - Ojos de Gato
+    - Ojos de Ángel
+    - Otros
+    - Sensores TPMS
+    - Sensores de Nivel
+    - Sin Pantalla
+- **Sistemas de confort** (2)
+    - Chicotes de Apertura Cajuelas
+    - Chicotes de Apertura de Cofres
+- **Sistemas de seguridad** (2)
+    - Bolsas de Aire
+    - Sensores de Reversa
+- **Suspensión / Amortiguación** (10)
+    - Aisladores
+    - Amortiguadores
+    - Bases de Amortiguador
+    - Bolsas de Aire para Suspensión
+    - Bombas
+    - Kits de Suspensión
+    - Otros
+    - Resortes
+    - Suspensión de Aire
+    - Topes de Amortiguador
+- **Suspensión de eje/Guía de rueda/Ruedas** (10)
+    - Baleros de Rueda
+    - Barras Estabilizadoras
+    - Bieletas
+    - Brazo de Suspensión
+    - Brazos de Suspensión
+    - Bujes de Suspensión
+    - Horquillas de Suspensión
+    - Mazas de Ruedas
+    - Otras Barras
+    - Rótulas
+- **Tracción a las ruedas** (2)
+    - Cubre Polvo
+    - Flechas Completas
+- **Transmisión** (10)
+    - Cajas de Transferencia
+    - Cajas de Velocidades
+    - Cardan
+    - Cárteres de Aceite
+    - Eje Trasero
+    - Ejes de Transmisión
+    - Kits de Reparación
+    - Otras Partes de Transmisión
+    - Para Transmisión Manual
+    - Soportes de Cajas
+- **Transmisión por correas** (1)
+    - Poleas de Tensor
+- **Transmisión por ejes** (1)
+    - Diferenciales
+
+## Mercedes Benz  (28 sistemas, 209 subgrupos)
+- **Accesorios** (2)
+    - Llaveros
+    - Otros
+- **Aire acondicionado** (3)
+    - Compresor
+    - Condensador
+    - Filtro Acumulador
+- **Alimentación de combustible** (4)
+    - Bombas de Combustible
+    - Mangueras Inyectoras
+    - Válvulas
+    - Válvulas Solenoides
+- **Calefacción/Ventilación** (3)
+    - Filtros de Cabina
+    - Mangueras
+    - Mangueras de Calefacción
+- **Carrocería** (23)
+    - Alerones
+    - Amortiguadores de Cajuela
+    - Bisagras de Puertas
+    - Calaveras
+    - Calaveras Traseras
+    - Cubre Espejos
+    - De Luces
+    - Emblemas
+    - Espejos Retrovisores Laterales
+    - Faros Delanteros
+    - Faros Direccionales
+    - Focos de Xenon
+    - Luces de Placas
+    - Lunas de Espejos Laterales
+    - Molduras para Puertas
+    - Otros
+    - Otros Espejos
+    - Para Vidrios
+    - Parrillas
+    - Plumillas Limpiaparabrisas
+    - Salpicaderas
+    - Tapa de Gasolina
+    - Ópticas Delanteras
+- **Clutch/piezas de montaje** (4)
+    - Bombas de Clutch
+    - Collarín de Clutch
+    - Kit Clutch
+    - Volante de Clutch
+- **Dirección** (7)
+    - Cajas de Dirección
+    - Cajas de Dirección Hidráulica
+    - Depósito Líquido Hidráulico
+    - Kits de Dirección Hidráulica
+    - Mangueras Dirección Hidráulica
+    - Terminales Interiores
+    - Terminales de Dirección
+- **Equipamiento interior** (7)
+    - Fundas para Palancas
+    - Manijas para Puertas
+    - Palancas de Caja de Cambios
+    - Palancas de Freno de Mano
+    - Palancas y Perillas
+    - Pedales
+    - Pomos de Palanca de Cambio
+- **Filtro** (7)
+    - Filtros Hidráulicos
+    - Filtros de Aceite
+    - Filtros de Aire
+    - Filtros de Gasoil
+    - Filtros de Gasolina
+    - Kits de Filtros
+    - Porta Filtros
+- **Kit de freno** (17)
+    - Balatas
+    - Bombas de Vacío
+    - Cables de Freno de Mano
+    - Calipers
+    - Cilindros Maestros
+    - Discos de Freno
+    - Discos de Frenos
+    - Interruptores de Luz de Freno
+    - Kits Completos
+    - Kits de Frenos
+    - Otros
+    - Pastillas
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+    - Sensores de Velocidad
+    - Sistema de Frenado
+    - Zapatas de Freno
+- **Limpieza de vidrios** (2)
+    - Depósitos Limpiaparabrisas
+    - Motores de Limpiaparabrisas
+- **Motor** (40)
+    - Anillos de Motor
+    - Banda de Distribución
+    - Bandas de Accesorios
+    - Bayonetas Nivel de Aceite
+    - Bielas
+    - Bombas de Aceite
+    - Cadenas de Distribución
+    - Cigüeñales
+    - Cojinetes de Motor
+    - Colectores de Admisión
+    - Cárters Completos
+    - Empaques
+    - Engranes de Árbol de Levas
+    - Juntas
+    - Juntas de Tapa de Cilindro
+    - Kit de Distribución
+    - Kits de Distribución
+    - Mangueras de Admisión
+    - Mangueras de Intercooler
+    - Multiples Admisión
+    - Otros
+    - Otros Sensores
+    - Poleas
+    - Poleas de Alternador
+    - Poleas de Cigüeñal
+    - Poleas de Distribución
+    - Radiadores de Aceite
+    - Radiadores de Agua
+    - Retenes
+    - Sensores de Aceite
+    - Sensores de Presión
+    - Soportes de Motor
+    - Tapa de Aceite
+    - Tapas de Punterías
+    - Tapas de Radiadores
+    - Tensores Poly V
+    - Tensores de Cadena
+    - Tornillos de Cabeza de Motor
+    - Valvula EGR
+    - Árboles de Levas
+- **Piezas de servicio, inspección y mantenimiento** (4)
+    - Cables Pasa Corriente
+    - Caja de Herramientas
+    - Kit de Afinación
+    - Otros
+- **Preparación de combustible** (4)
+    - Bombas Inyectoras
+    - Chicotes Aceleradores
+    - Inyectores
+    - Válvula IAC
+- **Refrigeración** (18)
+    - Bases de Bombas de Agua
+    - Bombas de Agua
+    - Depósito Anticongelante
+    - Depósito de Refrigerante
+    - Fan Clutches
+    - Interruptores
+    - Manguera de Radiador
+    - Motor de Motoventilador
+    - Motoventilador Completo
+    - Motoventiladores
+    - Otros
+    - Poleas de Bombas de Agua
+    - Radiadores de Intercooler
+    - Refrigerante y Anticongelante
+    - Sensor de Temperatura
+    - Termostato
+    - Tolvas
+    - Tomas de Agua
+- **Sistema de cierre** (5)
+    - Botones de Cierre Centralizado
+    - Cerraduras de Cajuela y Portón
+    - Cerraduras de Cofre
+    - Cerraduras de Puerta
+    - Manijas de Puertas
+- **Sistema de encendido/incandescencia** (8)
+    - Bobinas de Encendido
+    - Bujías Precalentadoras
+    - Bujías de Encendido
+    - Cables de Bujías
+    - Módulos de Encendido
+    - Pastillas de Encendido
+    - Sensor de Posición
+    - Sensores de Cigüeñal
+- **Sistema de escape** (5)
+    - Sensor MAF
+    - Sensor MAP
+    - Sensor de Velocidad
+    - Sensores de Oxígeno
+    - Turbos
+- **Sistema eléctrico** (6)
+    - Alternadores
+    - Focos
+    - Marchas
+    - Motores de Arranque
+    - Reguladores de Voltaje
+    - Sensores TPMS
+- **Sistemas de comunicación e información** (1)
+    - Antenas
+- **Sistemas de confort** (3)
+    - Chicotes de Apertura de Cofres
+    - Chicotes de Apertura de Tapa
+    - Espejos Retrovisores Internos
+- **Sistemas de seguridad** (1)
+    - Sensores de Reversa
+- **Suspensión / Amortiguación** (9)
+    - Amortiguadores
+    - Barras de Torsión
+    - Bases de Amortiguador
+    - Bolsas de Aire para Suspensión
+    - Bombas
+    - Kits de Suspensión
+    - Otros
+    - Suspensión de Aire
+    - Topes de Amortiguador
+- **Suspensión de eje/Guía de rueda/Ruedas** (11)
+    - Baleros de Rueda
+    - Barras Estabilizadoras
+    - Bieletas
+    - Birlos de Ruedas
+    - Brazo de Suspensión
+    - Brazos de Suspensión
+    - Bujes de Suspensión
+    - Horquillas de Suspensión
+    - Mazas de Ruedas
+    - Otras Barras
+    - Rótulas
+- **Tracción a las ruedas** (2)
+    - Cubre Polvo
+    - Flechas Completas
+- **Transmisión** (10)
+    - Cables Selectoras de Cambios
+    - Cardan
+    - Ejes de Transmisión
+    - Flechas Cardán
+    - Interrupores de Marcha Atrás
+    - Mangueras para Enfriadores
+    - Otras Partes de Transmisión
+    - Retén de Flecha
+    - Selectoras
+    - Soportes de Cajas
+- **Transmisión por correas** (2)
+    - Poleas de Accesorios
+    - Poleas de Tensor
+- **Transmisión por ejes** (1)
+    - Diferenciales
+
+## Audi  (20 sistemas, 97 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Alimentación de combustible** (6)
+    - Bombas de Combustible
+    - Vapor de Gasolina
+    - Válvulas
+    - Válvulas Canister
+    - Válvulas Solenoides
+    - Válvulas de Alivio
+- **Calefacción/Ventilación** (3)
+    - Filtros de Cabina
+    - Mangueras
+    - Válvula Calefacción
+- **Carrocería** (3)
+    - Emblemas
+    - Focos de Xenon
+    - Otros
+- **Clutch/piezas de montaje** (1)
+    - Bombas de Clutch
+- **Dirección** (2)
+    - Cajas de Dirección
+    - Sensores de Dirección
+- **Filtro** (5)
+    - Filtros Hidráulicos
+    - Filtros de Aceite
+    - Filtros de Aire
+    - Filtros de Gasolina
+    - Porta Filtros
+- **Kit de freno** (5)
+    - Balatas
+    - Discos de Freno
+    - Discos de Frenos
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+- **Limpieza de vidrios** (1)
+    - Depósitos Limpiaparabrisas
+- **Motor** (28)
+    - Banda de Distribución
+    - Bandas de Accesorios
+    - Bayonetas Nivel de Aceite
+    - Bielas
+    - Cadenas de Distribución
+    - Cojinetes de Motor
+    - Cárters Completos
+    - Empaques
+    - Juntas
+    - Kit de Distribución
+    - Mangueras de Admisión
+    - Mangueras de Intercooler
+    - Multiples Admisión
+    - Otros
+    - Otros Sensores
+    - Poleas de Distribución
+    - Radiadores de Aceite
+    - Radiadores de Agua
+    - Retenes
+    - Sensores de Aceite
+    - Soportes de Motor
+    - Tapa de Aceite
+    - Tapa de Distribución
+    - Tapas de Punterías
+    - Tapas de Radiadores
+    - Tensores de Cadena
+    - Valvula EGR
+    - Árboles de Levas
+- **Piezas de servicio, inspección y mantenimiento** (2)
+    - Extractores de Polea
+    - Otros
+- **Preparación de combustible** (3)
+    - Cuerpo de Aceleración
+    - Inyectores
+    - Válvula IAC
+- **Refrigeración** (8)
+    - Bombas de Agua
+    - Bulbo de Temperatura
+    - Depósito Anticongelante
+    - Manguera de Radiador
+    - Poleas de Bombas de Agua
+    - Sensor de Temperatura
+    - Termostato
+    - Tomas de Agua
+- **Sistema de encendido/incandescencia** (5)
+    - Bobinas de Encendido
+    - Bujías
+    - Bujías de Encendido
+    - Sensor de Posición
+    - Sensores de Cigüeñal
+- **Sistema de escape** (4)
+    - Sensor MAF
+    - Sensor MAP
+    - Sensor de Temperatura de Aire
+    - Turbos
+- **Sistema eléctrico** (3)
+    - Cableado
+    - Marchas
+    - Sensores TPMS
+- **Suspensión / Amortiguación** (7)
+    - Amortiguadores
+    - Bases de Amortiguador
+    - Bolsas de Aire para Suspensión
+    - Bombas
+    - Compresores
+    - Otros
+    - Topes de Amortiguador
+- **Suspensión de eje/Guía de rueda/Ruedas** (6)
+    - Bieletas
+    - Brazo de Suspensión
+    - Bujes de Suspensión
+    - Horquillas de Suspensión
+    - Rótulas
+    - Tapones de Tuercas
+- **Tracción a las ruedas** (1)
+    - Cubre Polvo
+- **Transmisión** (3)
+    - Cardan
+    - Ejes de Transmisión
+    - Retén de Flecha
+
+## Mini Cooper  (18 sistemas, 94 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Alimentación de combustible** (2)
+    - Bombas de Combustible
+    - Válvulas
+- **Calefacción/Ventilación** (1)
+    - Filtros de Cabina
+- **Carrocería** (15)
+    - Alerones
+    - Amortiguadores de Cajuela
+    - Bases de Faros
+    - Calaveras
+    - Cantoneras
+    - Emblemas
+    - Facias Delanteras
+    - Faros Delanteros
+    - Guías de Facias
+    - Lunas de Espejos Laterales
+    - Molduras para Faros
+    - Molduras para Puertas
+    - Parrillas
+    - Salpicaderas
+    - Spoilers
+- **Clutch/piezas de montaje** (3)
+    - Bombas de Clutch
+    - Kit Clutch
+    - Volante de Clutch
+- **Filtro** (3)
+    - Filtros de Aceite
+    - Filtros de Aire
+    - Filtros de Gasolina
+- **Kit de freno** (4)
+    - Balatas
+    - Discos de Freno
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+- **Motor** (25)
+    - Balancines
+    - Bandas de Accesorios
+    - Bayonetas Nivel de Aceite
+    - Bombas de Aceite
+    - Cadenas de Distribución
+    - Cárters Completos
+    - Empaques
+    - Juntas
+    - Kit de Distribución
+    - Mangueras de Admisión
+    - Mangueras de Intercooler
+    - Monoblock
+    - Otros
+    - Otros Sensores
+    - Poleas de Cigüeñal
+    - Poleas de Distribución
+    - Radiadores de Aceite
+    - Radiadores de Agua
+    - Retenes
+    - Sensores de Aceite
+    - Soportes de Motor
+    - Tapa de Aceite
+    - Tapas de Punterías
+    - Tapas de Radiadores
+    - Tolvas de Motor
+- **Piezas de servicio, inspección y mantenimiento** (2)
+    - Kit de Afinación
+    - Otros
+- **Refrigeración** (9)
+    - Bombas de Agua
+    - Depósito Anticongelante
+    - Manguera de Radiador
+    - Motoventilador Completo
+    - Poleas de Bombas de Agua
+    - Radiadores de Intercooler
+    - Sensor de Temperatura
+    - Termostato
+    - Tomas de Agua
+- **Sistema de cierre** (2)
+    - Cerraduras de Puerta
+    - Piezas Cromadas
+- **Sistema de encendido/incandescencia** (5)
+    - Bobinas de Encendido
+    - Bujías de Encendido
+    - Cables de Bujías
+    - Sensor de Posición
+    - Sensores de Cigüeñal
+- **Sistema de escape** (4)
+    - Sensor MAF
+    - Sensor MAP
+    - Sensores de Oxígeno
+    - Turbos
+- **Sistema eléctrico** (1)
+    - Alternadores
+- **Suspensión / Amortiguación** (4)
+    - Amortiguadores
+    - Bases de Amortiguador
+    - Bombas
+    - Topes de Amortiguador
+- **Suspensión de eje/Guía de rueda/Ruedas** (7)
+    - Baleros de Rueda
+    - Barras Estabilizadoras
+    - Bieletas
+    - Bujes de Suspensión
+    - Horquillas de Suspensión
+    - Mazas de Ruedas
+    - Rótulas
+- **Tracción a las ruedas** (2)
+    - Cubre Polvo
+    - Flechas Completas
+- **Transmisión** (4)
+    - Eje Trasero
+    - Ejes de Transmisión
+    - Retén de Flecha
+    - Soportes de Cajas
+
+## Porsche  (9 sistemas, 21 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Alimentación de combustible** (1)
+    - Bombas de Combustible
+- **Carrocería** (3)
+    - Amortiguadores de Cajuela
+    - Focos de Xenon
+    - Para Vidrios
+- **Filtro** (2)
+    - Filtros de Aceite
+    - Filtros de Aire
+- **Kit de freno** (4)
+    - Balatas
+    - Discos de Freno
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+- **Motor** (2)
+    - Mangueras de Admisión
+    - Tapas de Punterías
+- **Refrigeración** (3)
+    - Bombas de Agua
+    - Depósito Anticongelante
+    - Termostato
+- **Sistema de encendido/incandescencia** (3)
+    - Bobinas de Encendido
+    - Bujías
+    - Sensores de Cigüeñal
+- **Suspensión / Amortiguación** (2)
+    - Amortiguadores
+    - Bolsas de Aire para Suspensión
+
+## Smart  (6 sistemas, 10 subgrupos)
+- **Kit de freno** (1)
+    - Sensor ABS
+- **Motor** (2)
+    - Juntas
+    - Soportes de Motor
+- **Refrigeración** (3)
+    - Depósito Anticongelante
+    - Motoventilador Completo
+    - Termostato
+- **Sistema de encendido/incandescencia** (1)
+    - Sensores de Cigüeñal
+- **Suspensión / Amortiguación** (1)
+    - Amortiguadores
+- **Suspensión de eje/Guía de rueda/Ruedas** (2)
+    - Horquillas de Suspensión
+    - Mazas de Ruedas
+
+## Volkswagen  (14 sistemas, 41 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Alimentación de combustible** (1)
+    - Bombas de Combustible
+- **Carrocería** (1)
+    - Amortiguadores de Cajuela
+- **Equipamiento interior** (1)
+    - Manijas Alza Cristales
+- **Filtro** (4)
+    - Filtros de Aceite
+    - Filtros de Aire
+    - Filtros de Gasoil
+    - Porta Filtros
+- **Kit de freno** (4)
+    - Balatas
+    - Bombas de Vacío
+    - Kits Completos
+    - Sensor ABS
+- **Motor** (13)
+    - Banda de Distribución
+    - Bayonetas Nivel de Aceite
+    - Bombas de Aceite
+    - Juntas
+    - Otros
+    - Punterías Hidráulicas
+    - Radiadores de Aceite
+    - Retenes
+    - Soportes de Motor
+    - Tapas de Punterías
+    - Tensores de Cadena
+    - Valvula EGR
+    - Árboles de Levas
+- **Piezas de servicio, inspección y mantenimiento** (1)
+    - Otros
+- **Preparación de combustible** (1)
+    - Válvula IAC
+- **Refrigeración** (3)
+    - Bombas de Agua
+    - Termostato
+    - Tomas de Agua
+- **Sistema de encendido/incandescencia** (2)
+    - Bobinas de Encendido
+    - Bujías de Encendido
+- **Sistema de escape** (3)
+    - Sensor MAF
+    - Sensor MAP
+    - Turbos
+- **Suspensión / Amortiguación** (4)
+    - Bases de Amortiguador
+    - Bolsas de Aire para Suspensión
+    - Bombas
+    - Resortes
+- **Transmisión** (2)
+    - Cardan
+    - Retén de Flecha
+
+## Bentley  (1 sistemas, 1 subgrupos)
+- **Suspensión / Amortiguación** (1)
+    - Bolsas de Aire para Suspensión
+
+## Fiat  (1 sistemas, 1 subgrupos)
+- **Motor** (1)
+    - Radiadores de Aceite
+
+## Jaguar  (5 sistemas, 6 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Carrocería** (1)
+    - Emblemas
+- **Motor** (2)
+    - Juntas
+    - Tapas de Radiadores
+- **Piezas de servicio, inspección y mantenimiento** (1)
+    - Otros
+- **Refrigeración** (1)
+    - Termostato
+
+## Land Rover  (13 sistemas, 34 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Aire acondicionado** (1)
+    - Compresor
+- **Alimentación de combustible** (1)
+    - Válvulas
+- **Filtro** (2)
+    - Filtros de Aceite
+    - Filtros de Aire
+- **Kit de freno** (3)
+    - Balatas
+    - Sensor ABS
+    - Sensor Pastillas de Freno
+- **Motor** (8)
+    - Juntas
+    - Otros
+    - Poleas de Distribución
+    - Radiadores de Aceite
+    - Retenes
+    - Soportes de Motor
+    - Tapas de Radiadores
+    - Árboles de Levas
+- **Piezas de servicio, inspección y mantenimiento** (1)
+    - Otros
+- **Preparación de combustible** (1)
+    - Inyectores
+- **Refrigeración** (5)
+    - Bombas de Agua
+    - Depósito Anticongelante
+    - Manguera de Radiador
+    - Termostato
+    - Tomas de Agua
+- **Sistema de encendido/incandescencia** (2)
+    - Bujías de Encendido
+    - Sensor de Posición
+- **Sistema de escape** (2)
+    - Sensor MAF
+    - Sensores de Oxígeno
+- **Suspensión / Amortiguación** (4)
+    - Amortiguadores
+    - Bolsas de Aire para Suspensión
+    - Compresores
+    - Otros
+- **Suspensión de eje/Guía de rueda/Ruedas** (3)
+    - Barras Estabilizadoras
+    - Bieletas
+    - Bujes de Suspensión
+
+## Seat  (4 sistemas, 4 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Motor** (1)
+    - Radiadores de Aceite
+- **Refrigeración** (1)
+    - Depósito Anticongelante
+- **Suspensión / Amortiguación** (1)
+    - Bombas
+
+## Volvo  (12 sistemas, 32 subgrupos)
+- **Accesorios** (1)
+    - Llaveros
+- **Alimentación de combustible** (1)
+    - Bombas de Combustible
+- **Dirección** (1)
+    - Terminales de Dirección
+- **Filtro** (2)
+    - Filtros de Aceite
+    - Filtros de Aire
+- **Kit de freno** (1)
+    - Balatas
+- **Motor** (13)
+    - Anillos de Motor
+    - Banda de Distribución
+    - Bayonetas Nivel de Aceite
+    - Juntas
+    - Kit de Distribución
+    - Mangueras de Intercooler
+    - Otros
+    - Poleas de Distribución
+    - Radiadores de Aceite
+    - Retenes
+    - Sensores de Aceite
+    - Soportes de Motor
+    - Tapas de Radiadores
+- **Piezas de servicio, inspección y mantenimiento** (1)
+    - Otros
+- **Refrigeración** (6)
+    - Bombas de Agua
+    - Depósito Anticongelante
+    - Manguera de Radiador
+    - Motoventilador Completo
+    - Sensor de Temperatura
+    - Termostato
+- **Sistema de encendido/incandescencia** (3)
+    - Bobinas de Encendido
+    - Cables de Bujías
+    - Sensor de Posición
+- **Suspensión / Amortiguación** (1)
+    - Bases de Amortiguador
+- **Suspensión de eje/Guía de rueda/Ruedas** (1)
+    - Bujes de Suspensión
+- **Transmisión** (1)
+    - Retén de Flecha
