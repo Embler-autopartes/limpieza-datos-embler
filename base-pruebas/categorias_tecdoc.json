@@ -1,0 +1,5911 @@
+{
+  "shortcuts": [
+    {
+      "shortCutId": 2,
+      "shortCutName": "Carrocería"
+    },
+    {
+      "shortCutId": 3,
+      "shortCutName": "Motor"
+    },
+    {
+      "shortCutId": 4,
+      "shortCutName": "Transmisión de potencia"
+    },
+    {
+      "shortCutId": 5,
+      "shortCutName": "Filtro"
+    },
+    {
+      "shortCutId": 6,
+      "shortCutName": "Vidrios/limpieza de vidrios"
+    },
+    {
+      "shortCutId": 7,
+      "shortCutName": "Preparación de la mezcla carburante"
+    },
+    {
+      "shortCutId": 8,
+      "shortCutName": "Chasis"
+    },
+    {
+      "shortCutId": 9,
+      "shortCutName": "Frenos"
+    },
+    {
+      "shortCutId": 10,
+      "shortCutName": "Sistema de escape"
+    },
+    {
+      "shortCutId": 11,
+      "shortCutName": "Aire acondicionado"
+    },
+    {
+      "shortCutId": 12,
+      "shortCutName": "Dirección"
+    },
+    {
+      "shortCutId": 13,
+      "shortCutName": "Equipamiento interior"
+    },
+    {
+      "shortCutId": 14,
+      "shortCutName": "Iluminación"
+    },
+    {
+      "shortCutId": 15,
+      "shortCutName": "Sistema eléctrico"
+    },
+    {
+      "shortCutId": 16,
+      "shortCutName": "Sistema de encendido/calentamiento"
+    },
+    {
+      "shortCutId": 17,
+      "shortCutName": "Accesorios"
+    },
+    {
+      "shortCutId": 18,
+      "shortCutName": "Servicio"
+    }
+  ],
+  "total_nodos": 811,
+  "raices": 34,
+  "arbol": [
+    {
+      "id": 100733,
+      "name": "Accesorios",
+      "parent": null,
+      "count": 809,
+      "children": [
+        {
+          "id": 100862,
+          "name": "Cajuela/compartimento de carga/superficie de carga",
+          "parent": 100733,
+          "count": 809,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100243,
+      "name": "Aire acondicionado",
+      "parent": null,
+      "count": 513,
+      "children": [
+        {
+          "id": 100728,
+          "name": "Aparato de control",
+          "parent": 100243,
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": 100354,
+          "name": "Compresor/piezas",
+          "parent": 100243,
+          "count": 135,
+          "children": []
+        },
+        {
+          "id": 100355,
+          "name": "Condensador",
+          "parent": 100243,
+          "count": 124,
+          "children": []
+        },
+        {
+          "id": 100366,
+          "name": "Interruptor",
+          "parent": 100243,
+          "count": 37,
+          "children": []
+        },
+        {
+          "id": 100779,
+          "name": "Manejo/control",
+          "parent": 100243,
+          "count": 7,
+          "children": []
+        },
+        {
+          "id": 100809,
+          "name": "Montaje",
+          "parent": 100243,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100357,
+          "name": "Secador",
+          "parent": 100243,
+          "count": 53,
+          "children": []
+        },
+        {
+          "id": 100794,
+          "name": "Sensores",
+          "parent": 100243,
+          "count": 7,
+          "children": []
+        },
+        {
+          "id": 100360,
+          "name": "Tubería flexible/tubos",
+          "parent": 100243,
+          "count": 96,
+          "children": []
+        },
+        {
+          "id": 100358,
+          "name": "Válvulas",
+          "parent": 100243,
+          "count": 48,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100214,
+      "name": "Alimentación de combustible",
+      "parent": null,
+      "count": 963,
+      "children": [
+        {
+          "id": 100251,
+          "name": "Bomba/accesorios",
+          "parent": 100214,
+          "count": 184,
+          "children": [
+            {
+              "id": 100718,
+              "name": "Accesorios/piezas",
+              "parent": 100251,
+              "count": 23,
+              "children": []
+            },
+            {
+              "id": 706438,
+              "name": "Bomba de alimentación manual",
+              "parent": 100251,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 100717,
+              "name": "Bomba de combustible",
+              "parent": 100251,
+              "count": 150,
+              "children": []
+            },
+            {
+              "id": 100719,
+              "name": "Reparación",
+              "parent": 100251,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100253,
+          "name": "Filtro de combustible/compartimiento",
+          "parent": 100214,
+          "count": 606,
+          "children": []
+        },
+        {
+          "id": 103148,
+          "name": "Herramientas",
+          "parent": 100214,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100258,
+          "name": "Mangueras/tuberías",
+          "parent": 100214,
+          "count": 19,
+          "children": []
+        },
+        {
+          "id": 103086,
+          "name": "Precalentador de combustible",
+          "parent": 100214,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100270,
+          "name": "Regulador/Interruptor de presión",
+          "parent": 100214,
+          "count": 5,
+          "children": []
+        },
+        {
+          "id": 103077,
+          "name": "Sensor de agua",
+          "parent": 100214,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 100268,
+          "name": "Sensor de nivel de depósito",
+          "parent": 100214,
+          "count": 57,
+          "children": []
+        },
+        {
+          "id": 706089,
+          "name": "Sistema AKF",
+          "parent": 100214,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100250,
+          "name": "Tanque de combustible/accesorios",
+          "parent": 100214,
+          "count": 70,
+          "children": []
+        },
+        {
+          "id": 100267,
+          "name": "Unidad transportadora, completa",
+          "parent": 100214,
+          "count": 35,
+          "children": []
+        },
+        {
+          "id": 100252,
+          "name": "Válvulas",
+          "parent": 100214,
+          "count": 35,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100015,
+      "name": "Bola de remolque/Piezas de montaje",
+      "parent": null,
+      "count": 5,
+      "children": [
+        {
+          "id": 100607,
+          "name": "Bola de remolque",
+          "parent": 100015,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100608,
+          "name": "Piezas eléctricas",
+          "parent": 100015,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100609,
+          "name": "Piezas/Piezas de montaje",
+          "parent": 100015,
+          "count": 4,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100241,
+      "name": "Calefacción/Ventilación",
+      "parent": null,
+      "count": 1177,
+      "children": [
+        {
+          "id": 100725,
+          "name": "Aparatos de control",
+          "parent": 100241,
+          "count": 69,
+          "children": []
+        },
+        {
+          "id": 100726,
+          "name": "Elementos de manejo",
+          "parent": 100241,
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": 100346,
+          "name": "Filtro del aire del interior",
+          "parent": 100241,
+          "count": 736,
+          "children": []
+        },
+        {
+          "id": 100347,
+          "name": "Intercambiador de calor del interior",
+          "parent": 100241,
+          "count": 51,
+          "children": []
+        },
+        {
+          "id": 100777,
+          "name": "Tubos/Mangueras",
+          "parent": 100241,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100349,
+          "name": "Ventilador, piezas",
+          "parent": 100241,
+          "count": 333,
+          "children": []
+        },
+        {
+          "id": 102219,
+          "name": "Válvulas/control",
+          "parent": 100241,
+          "count": 45,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100001,
+      "name": "Carrocería",
+      "parent": null,
+      "count": 2700,
+      "children": [
+        {
+          "id": 103213,
+          "name": "Cabina",
+          "parent": 100001,
+          "count": 481,
+          "children": [
+            {
+              "id": 103214,
+              "name": "Apoyo/soporte de la cabina",
+              "parent": 103213,
+              "count": 155,
+              "children": []
+            },
+            {
+              "id": 103215,
+              "name": "Suspensión / Amortiguación de la cabina",
+              "parent": 103213,
+              "count": 326,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100219,
+          "name": "Embellecedores/Molduras/Emblemas/Protectores",
+          "parent": 100001,
+          "count": 9,
+          "children": [
+            {
+              "id": 100740,
+              "name": "Embellecedores / Listón de protección",
+              "parent": 100219,
+              "count": 9,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 101340,
+          "name": "Faros adicionales/Piezas",
+          "parent": 100001,
+          "count": 9,
+          "children": [
+            {
+              "id": 101341,
+              "name": "Faro antiniebla/piezas",
+              "parent": 101340,
+              "count": 7,
+              "children": [
+                {
+                  "id": 101343,
+                  "name": "Lámpara para faros antiniebla",
+                  "parent": 101341,
+                  "count": 7,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101349,
+              "name": "Faros de trabajo/componentes",
+              "parent": 101340,
+              "count": 2,
+              "children": [
+                {
+                  "id": 101352,
+                  "name": "Componentes de faros de trabajo",
+                  "parent": 101349,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 101465,
+          "name": "Faros principales/Pieza insertable",
+          "parent": 100001,
+          "count": 9,
+          "children": [
+            {
+              "id": 101467,
+              "name": "Foco de faro principal",
+              "parent": 101465,
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": 101468,
+              "name": "Piezas de faro principal",
+              "parent": 101465,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 101690,
+          "name": "Interior del vehículo",
+          "parent": 100001,
+          "count": 1092,
+          "children": [
+            {
+              "id": 101697,
+              "name": "Cristal de puerta/cristal lateral",
+              "parent": 101690,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 101698,
+              "name": "Espejos",
+              "parent": 101690,
+              "count": 163,
+              "children": []
+            },
+            {
+              "id": 101700,
+              "name": "Piezas individuales/piezas de montaje",
+              "parent": 101690,
+              "count": 818,
+              "children": [
+                {
+                  "id": 101703,
+                  "name": "Muelles neumáticos",
+                  "parent": 101700,
+                  "count": 818,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101694,
+              "name": "Puertas/piezas",
+              "parent": 101690,
+              "count": 163,
+              "children": []
+            },
+            {
+              "id": 101692,
+              "name": "Soporte de puerta/acceso",
+              "parent": 101690,
+              "count": 27,
+              "children": []
+            },
+            {
+              "id": 101760,
+              "name": "Tanque de combustible/piezas",
+              "parent": 101690,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 101407,
+          "name": "Luces",
+          "parent": 100001,
+          "count": 200,
+          "children": [
+            {
+              "id": 101415,
+              "name": "Luces de freno/Piezas",
+              "parent": 101407,
+              "count": 5,
+              "children": [
+                {
+                  "id": 101419,
+                  "name": "Foco para luz de freno",
+                  "parent": 101415,
+                  "count": 5,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101424,
+              "name": "Luces de matrícula/piezas",
+              "parent": 101407,
+              "count": 4,
+              "children": [
+                {
+                  "id": 101427,
+                  "name": "Foco para luces de matrícula",
+                  "parent": 101424,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 101425,
+                  "name": "Luces de matrícula",
+                  "parent": 101424,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101441,
+              "name": "Luces de posición/estacionamiento/Gálibo/Piezas",
+              "parent": 101407,
+              "count": 53,
+              "children": [
+                {
+                  "id": 101445,
+                  "name": "Foco",
+                  "parent": 101441,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 101442,
+                  "name": "Luces de posición/estacionamiento",
+                  "parent": 101441,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 101444,
+                  "name": "Luces laterales",
+                  "parent": 101441,
+                  "count": 19,
+                  "children": []
+                },
+                {
+                  "id": 101443,
+                  "name": "Luces limitadoras",
+                  "parent": 101441,
+                  "count": 31,
+                  "children": []
+                },
+                {
+                  "id": 101446,
+                  "name": "Piezas",
+                  "parent": 101441,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101432,
+              "name": "Luces de reversa/piezas",
+              "parent": 101407,
+              "count": 3,
+              "children": [
+                {
+                  "id": 101435,
+                  "name": "Foco para luces de reversa",
+                  "parent": 101432,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 101434,
+                  "name": "Piezas de luces de reversa",
+                  "parent": 101432,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101420,
+              "name": "Luces intermitentes / Piezas",
+              "parent": 101407,
+              "count": 89,
+              "children": [
+                {
+                  "id": 101423,
+                  "name": "Foco para luces intermitentes",
+                  "parent": 101420,
+                  "count": 5,
+                  "children": []
+                },
+                {
+                  "id": 101421,
+                  "name": "Luces intermitentes",
+                  "parent": 101420,
+                  "count": 87,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101408,
+              "name": "Luces traseras /Piezas",
+              "parent": 101407,
+              "count": 54,
+              "children": [
+                {
+                  "id": 101409,
+                  "name": "Luces traseras",
+                  "parent": 101408,
+                  "count": 45,
+                  "children": []
+                },
+                {
+                  "id": 101410,
+                  "name": "Piezas de luces traseras",
+                  "parent": 101408,
+                  "count": 9,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101428,
+              "name": "Luz traser antinieblas/-piezas individuales",
+              "parent": 101407,
+              "count": 2,
+              "children": [
+                {
+                  "id": 101431,
+                  "name": "Foco para luz trasera antiniebla",
+                  "parent": 101428,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101411,
+              "name": "Luz trasera/-piezas individuales",
+              "parent": 101407,
+              "count": 5,
+              "children": [
+                {
+                  "id": 101414,
+                  "name": "Foco de luz trasera",
+                  "parent": 101411,
+                  "count": 5,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 105577,
+          "name": "Motor eléctrico",
+          "parent": 100001,
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": 100826,
+          "name": "Muelles neumáticos",
+          "parent": 100001,
+          "count": 1066,
+          "children": []
+        },
+        {
+          "id": 101648,
+          "name": "Parte delantera del vehículo",
+          "parent": 100001,
+          "count": 422,
+          "children": [
+            {
+              "id": 101654,
+              "name": "Cofre del motor/piezas/amortiguación",
+              "parent": 101648,
+              "count": 35,
+              "children": []
+            },
+            {
+              "id": 103035,
+              "name": "Cubierta del motor",
+              "parent": 101648,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 101652,
+              "name": "Cárter de la rueda",
+              "parent": 101648,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 101661,
+              "name": "Faro antiniebla/piezas",
+              "parent": 101648,
+              "count": 7,
+              "children": [
+                {
+                  "id": 101663,
+                  "name": "Lámpara para faros antiniebla",
+                  "parent": 101661,
+                  "count": 7,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101656,
+              "name": "Faros principales/Pieza insertable",
+              "parent": 101648,
+              "count": 9,
+              "children": [
+                {
+                  "id": 101658,
+                  "name": "Foco de faro principal",
+                  "parent": 101656,
+                  "count": 8,
+                  "children": []
+                },
+                {
+                  "id": 101659,
+                  "name": "Piezas de faro principal",
+                  "parent": 101656,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101766,
+              "name": "Luces de posición/estacionamiento/Gálibo/Piezas",
+              "parent": 101648,
+              "count": 53,
+              "children": [
+                {
+                  "id": 101770,
+                  "name": "Foco",
+                  "parent": 101766,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 101767,
+                  "name": "Luces de posición/estacionamiento",
+                  "parent": 101766,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 101769,
+                  "name": "Luces laterales",
+                  "parent": 101766,
+                  "count": 19,
+                  "children": []
+                },
+                {
+                  "id": 101768,
+                  "name": "Luces limitadoras",
+                  "parent": 101766,
+                  "count": 31,
+                  "children": []
+                },
+                {
+                  "id": 101771,
+                  "name": "Piezas",
+                  "parent": 101766,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101669,
+              "name": "Luces intermitentes / Piezas",
+              "parent": 101648,
+              "count": 51,
+              "children": [
+                {
+                  "id": 101670,
+                  "name": "Luces intermitentes",
+                  "parent": 101669,
+                  "count": 51,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101673,
+              "name": "Piezas individuales/piezas de montaje",
+              "parent": 101648,
+              "count": 222,
+              "children": [
+                {
+                  "id": 101777,
+                  "name": "Muelles neumáticos",
+                  "parent": 101673,
+                  "count": 222,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101650,
+              "name": "Salpicaderas/piezas de montaje",
+              "parent": 101648,
+              "count": 24,
+              "children": []
+            },
+            {
+              "id": 101651,
+              "name": "Tanque de combustible/piezas",
+              "parent": 101648,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 101655,
+              "name": "Vidrio delantero",
+              "parent": 101648,
+              "count": 16,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 101705,
+          "name": "Parte trasera del vehículo",
+          "parent": 100001,
+          "count": 1073,
+          "children": [
+            {
+              "id": 101783,
+              "name": "Cofre del motor/piezas/amortiguación",
+              "parent": 101705,
+              "count": 28,
+              "children": []
+            },
+            {
+              "id": 103036,
+              "name": "Cubierta del motor",
+              "parent": 101705,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 101710,
+              "name": "Cárter de la rueda",
+              "parent": 101705,
+              "count": 19,
+              "children": []
+            },
+            {
+              "id": 101722,
+              "name": "Luces de freno/Piezas",
+              "parent": 101705,
+              "count": 5,
+              "children": [
+                {
+                  "id": 101726,
+                  "name": "Foco para luz de freno",
+                  "parent": 101722,
+                  "count": 5,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101731,
+              "name": "Luces de matrícula/piezas",
+              "parent": 101705,
+              "count": 4,
+              "children": [
+                {
+                  "id": 101734,
+                  "name": "Foco para luces de matrícula",
+                  "parent": 101731,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 101732,
+                  "name": "Luces de matrícula",
+                  "parent": 101731,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101785,
+              "name": "Luces de posición/estacionamiento/Gálibo/Piezas",
+              "parent": 101705,
+              "count": 53,
+              "children": [
+                {
+                  "id": 101789,
+                  "name": "Foco",
+                  "parent": 101785,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 101786,
+                  "name": "Luces de posición/estacionamiento",
+                  "parent": 101785,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 101788,
+                  "name": "Luces laterales",
+                  "parent": 101785,
+                  "count": 19,
+                  "children": []
+                },
+                {
+                  "id": 101787,
+                  "name": "Luces limitadoras",
+                  "parent": 101785,
+                  "count": 31,
+                  "children": []
+                },
+                {
+                  "id": 101790,
+                  "name": "Piezas",
+                  "parent": 101785,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101739,
+              "name": "Luces de reversa/piezas",
+              "parent": 101705,
+              "count": 3,
+              "children": [
+                {
+                  "id": 101742,
+                  "name": "Foco para luces de reversa",
+                  "parent": 101739,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 101741,
+                  "name": "Piezas de luces de reversa",
+                  "parent": 101739,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101727,
+              "name": "Luces intermitentes / Piezas",
+              "parent": 101705,
+              "count": 3,
+              "children": [
+                {
+                  "id": 101728,
+                  "name": "Luces intermitentes",
+                  "parent": 101727,
+                  "count": 3,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101715,
+              "name": "Luces traseras /Piezas",
+              "parent": 101705,
+              "count": 54,
+              "children": [
+                {
+                  "id": 101716,
+                  "name": "Luces traseras",
+                  "parent": 101715,
+                  "count": 45,
+                  "children": []
+                },
+                {
+                  "id": 101717,
+                  "name": "Piezas de luces traseras",
+                  "parent": 101715,
+                  "count": 9,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101735,
+              "name": "Luz traser antinieblas/-piezas individuales",
+              "parent": 101705,
+              "count": 2,
+              "children": [
+                {
+                  "id": 101738,
+                  "name": "Foco para luz trasera antiniebla",
+                  "parent": 101735,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101718,
+              "name": "Luz trasera/-piezas individuales",
+              "parent": 101705,
+              "count": 5,
+              "children": [
+                {
+                  "id": 101721,
+                  "name": "Foco de luz trasera",
+                  "parent": 101718,
+                  "count": 5,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101784,
+              "name": "Medallón",
+              "parent": 101705,
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": 101745,
+              "name": "Piezas individuales/piezas de montaje",
+              "parent": 101705,
+              "count": 831,
+              "children": [
+                {
+                  "id": 101752,
+                  "name": "Muelles neumáticos",
+                  "parent": 101745,
+                  "count": 831,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 101781,
+              "name": "Puerta trasera /piezas",
+              "parent": 101705,
+              "count": 13,
+              "children": []
+            },
+            {
+              "id": 101779,
+              "name": "Salpicaderas/piezas de montaje",
+              "parent": 101705,
+              "count": 50,
+              "children": []
+            },
+            {
+              "id": 101763,
+              "name": "Tanque de combustible/piezas",
+              "parent": 101705,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100743,
+          "name": "Partes de la carrocería/Salpicadera/Defensa",
+          "parent": 100001,
+          "count": 228,
+          "children": [
+            {
+              "id": 101504,
+              "name": "Bastidor auxiliar/soporte de equipos",
+              "parent": 100743,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 104959,
+              "name": "Clips de sujeción",
+              "parent": 100743,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 100699,
+              "name": "Cubiertas/tapas",
+              "parent": 100743,
+              "count": 60,
+              "children": []
+            },
+            {
+              "id": 100165,
+              "name": "Cárter de la rueda",
+              "parent": 100743,
+              "count": 59,
+              "children": []
+            },
+            {
+              "id": 100155,
+              "name": "Largueros/travesaños",
+              "parent": 100743,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100168,
+              "name": "Piso de la carrocería/carrocería inferior",
+              "parent": 100743,
+              "count": 45,
+              "children": []
+            },
+            {
+              "id": 100185,
+              "name": "Salpicaderas/piezas de montaje",
+              "parent": 100743,
+              "count": 56,
+              "children": []
+            },
+            {
+              "id": 100169,
+              "name": "Soporte de puerta/acceso",
+              "parent": 100743,
+              "count": 27,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100216,
+          "name": "Tanque de combustible/piezas",
+          "parent": 100001,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100746,
+          "name": "Tapas/cofres/puertas/techo corredizo/panorámico/plegable",
+          "parent": 100001,
+          "count": 307,
+          "children": [
+            {
+              "id": 102414,
+              "name": "Capota/piezas",
+              "parent": 100746,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100184,
+              "name": "Cofre del motor/piezas/amortiguación",
+              "parent": 100746,
+              "count": 33,
+              "children": []
+            },
+            {
+              "id": 100189,
+              "name": "Puertas/piezas",
+              "parent": 100746,
+              "count": 201,
+              "children": []
+            },
+            {
+              "id": 102731,
+              "name": "Tapa depósito /piezas",
+              "parent": 100746,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 100192,
+              "name": "Tapa y cubierta de maletín/espacio de carga",
+              "parent": 100746,
+              "count": 66,
+              "children": []
+            },
+            {
+              "id": 102760,
+              "name": "Techo plegadizo",
+              "parent": 100746,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100744,
+          "name": "Vidrios",
+          "parent": 100001,
+          "count": 565,
+          "children": [
+            {
+              "id": 100566,
+              "name": "Espejos",
+              "parent": 100744,
+              "count": 544,
+              "children": []
+            },
+            {
+              "id": 100745,
+              "name": "Vidrios",
+              "parent": 100744,
+              "count": 21,
+              "children": [
+                {
+                  "id": 100568,
+                  "name": "Juntas",
+                  "parent": 100745,
+                  "count": 19,
+                  "children": []
+                },
+                {
+                  "id": 100569,
+                  "name": "Piezas de montaje",
+                  "parent": 100745,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 100050,
+      "name": "Clutch/piezas de montaje",
+      "parent": null,
+      "count": 4841,
+      "children": [
+        {
+          "id": 100079,
+          "name": "Accionamiento del clutch",
+          "parent": 100050,
+          "count": 920,
+          "children": [
+            {
+              "id": 100077,
+              "name": "Cable del clutch",
+              "parent": 100079,
+              "count": 273,
+              "children": []
+            },
+            {
+              "id": 100061,
+              "name": "Cilindro principal",
+              "parent": 100079,
+              "count": 329,
+              "children": []
+            },
+            {
+              "id": 100060,
+              "name": "Cilindro receptor",
+              "parent": 100079,
+              "count": 205,
+              "children": []
+            },
+            {
+              "id": 100831,
+              "name": "Kit de cilindro maestro/receptor",
+              "parent": 100079,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 100298,
+              "name": "Mangueras/tuberías",
+              "parent": 100079,
+              "count": 14,
+              "children": []
+            },
+            {
+              "id": 100780,
+              "name": "Palanca/Piezas de transmisión",
+              "parent": 100079,
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": 100712,
+              "name": "Pedal",
+              "parent": 100079,
+              "count": 37,
+              "children": []
+            },
+            {
+              "id": 706697,
+              "name": "Servoembrague",
+              "parent": 100079,
+              "count": 77,
+              "children": []
+            },
+            {
+              "id": 102754,
+              "name": "Sistema de accionamiento del clutch",
+              "parent": 100079,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 101926,
+              "name": "Válvula de vías múltiples",
+              "parent": 100079,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 102370,
+          "name": "Amortiguador de torsión",
+          "parent": 100050,
+          "count": 16,
+          "children": []
+        },
+        {
+          "id": 102877,
+          "name": "Carcasa del clutch",
+          "parent": 100050,
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": 100059,
+          "name": "Cojinete guía/Arandela de empuje",
+          "parent": 100050,
+          "count": 25,
+          "children": []
+        },
+        {
+          "id": 100054,
+          "name": "Collarín, liberación central",
+          "parent": 100050,
+          "count": 564,
+          "children": [
+            {
+              "id": 100056,
+              "name": "Casquillo corredizo",
+              "parent": 100054,
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": 100237,
+              "name": "Cilindro esclavo concéntrico",
+              "parent": 100054,
+              "count": 143,
+              "children": []
+            },
+            {
+              "id": 100055,
+              "name": "Collarin de empuje",
+              "parent": 100054,
+              "count": 342,
+              "children": []
+            },
+            {
+              "id": 102080,
+              "name": "Horquilla desembrague",
+              "parent": 100054,
+              "count": 64,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100053,
+          "name": "Disco del clutch",
+          "parent": 100050,
+          "count": 1374,
+          "children": []
+        },
+        {
+          "id": 100051,
+          "name": "Juego del clutch",
+          "parent": 100050,
+          "count": 982,
+          "children": []
+        },
+        {
+          "id": 102784,
+          "name": "Juntas/juegos de juntas",
+          "parent": 100050,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 104813,
+          "name": "Líquido hidráulico",
+          "parent": 100050,
+          "count": 20,
+          "children": []
+        },
+        {
+          "id": 100052,
+          "name": "Plato de presión de clutch",
+          "parent": 100050,
+          "count": 772,
+          "children": []
+        },
+        {
+          "id": 100057,
+          "name": "Volante motor",
+          "parent": 100050,
+          "count": 164,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100012,
+      "name": "Dirección",
+      "parent": null,
+      "count": 8654,
+      "children": [
+        {
+          "id": 102203,
+          "name": "Aceites",
+          "parent": 100012,
+          "count": 18,
+          "children": []
+        },
+        {
+          "id": 100200,
+          "name": "Amortiguadores de dirección",
+          "parent": 100012,
+          "count": 41,
+          "children": []
+        },
+        {
+          "id": 100601,
+          "name": "Barras de acoplamiento/piezas",
+          "parent": 100012,
+          "count": 3445,
+          "children": [
+            {
+              "id": 100197,
+              "name": "Barras de acoplamiento",
+              "parent": 100601,
+              "count": 881,
+              "children": []
+            },
+            {
+              "id": 100603,
+              "name": "Piezas de barras de acoplamiento",
+              "parent": 100601,
+              "count": 2564,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100203,
+          "name": "Brazo de dirección",
+          "parent": 100012,
+          "count": 27,
+          "children": []
+        },
+        {
+          "id": 101835,
+          "name": "Buscar artículo por gráfica",
+          "parent": 100012,
+          "count": 3452,
+          "children": []
+        },
+        {
+          "id": 100202,
+          "name": "Columna de dirección",
+          "parent": 100012,
+          "count": 23,
+          "children": []
+        },
+        {
+          "id": 100201,
+          "name": "Cubrepolvo/Junta",
+          "parent": 100012,
+          "count": 519,
+          "children": []
+        },
+        {
+          "id": 101857,
+          "name": "Depósito de compensación /aceite hidráulico",
+          "parent": 100012,
+          "count": 31,
+          "children": []
+        },
+        {
+          "id": 100594,
+          "name": "Elementos de transmisión, dirección",
+          "parent": 100012,
+          "count": 2308,
+          "children": []
+        },
+        {
+          "id": 100591,
+          "name": "Filtro de dirección",
+          "parent": 100012,
+          "count": 8,
+          "children": []
+        },
+        {
+          "id": 102766,
+          "name": "Interruptor de presión del aceite",
+          "parent": 100012,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100592,
+          "name": "Mangueras/Tubos del volante",
+          "parent": 100012,
+          "count": 79,
+          "children": []
+        },
+        {
+          "id": 100199,
+          "name": "Mecanismo/bomba de dirección",
+          "parent": 100012,
+          "count": 232,
+          "children": []
+        },
+        {
+          "id": 100198,
+          "name": "Rótulas",
+          "parent": 100012,
+          "count": 2595,
+          "children": []
+        },
+        {
+          "id": 102073,
+          "name": "Sensor de ángulo de dirección",
+          "parent": 100012,
+          "count": 9,
+          "children": []
+        },
+        {
+          "id": 100593,
+          "name": "Suspensión de la dirección",
+          "parent": 100012,
+          "count": 14,
+          "children": []
+        },
+        {
+          "id": 102928,
+          "name": "Varilla del nivel de aceite",
+          "parent": 100012,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 104391,
+          "name": "Volante / piezas",
+          "parent": 100012,
+          "count": 88,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100341,
+      "name": "Equipamiento interior",
+      "parent": null,
+      "count": 1607,
+      "children": [
+        {
+          "id": 100730,
+          "name": "Accesorios",
+          "parent": 100341,
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": 100673,
+          "name": "Asientos",
+          "parent": 100341,
+          "count": 30,
+          "children": []
+        },
+        {
+          "id": 102697,
+          "name": "Cajuela/compartimiento de carga",
+          "parent": 100341,
+          "count": 809,
+          "children": []
+        },
+        {
+          "id": 104958,
+          "name": "Clips de sujeción",
+          "parent": 100341,
+          "count": 15,
+          "children": []
+        },
+        {
+          "id": 103004,
+          "name": "Consola central",
+          "parent": 100341,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 102691,
+          "name": "Elevador para ventanas",
+          "parent": 100341,
+          "count": 348,
+          "children": []
+        },
+        {
+          "id": 102694,
+          "name": "Manija de puerta",
+          "parent": 100341,
+          "count": 48,
+          "children": []
+        },
+        {
+          "id": 102693,
+          "name": "Muelles neumáticos",
+          "parent": 100341,
+          "count": 12,
+          "children": []
+        },
+        {
+          "id": 103399,
+          "name": "Portabebidas",
+          "parent": 100341,
+          "count": 7,
+          "children": []
+        },
+        {
+          "id": 102706,
+          "name": "Revestimiento",
+          "parent": 100341,
+          "count": 15,
+          "children": []
+        },
+        {
+          "id": 102695,
+          "name": "Sistema de palancas manuales y pedales",
+          "parent": 100341,
+          "count": 347,
+          "children": []
+        },
+        {
+          "id": 102998,
+          "name": "Tablero de instrumentos",
+          "parent": 100341,
+          "count": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100005,
+      "name": "Filtro",
+      "parent": null,
+      "count": 3296,
+      "children": [
+        {
+          "id": 100259,
+          "name": "Filtro de aceite",
+          "parent": 100005,
+          "count": 462,
+          "children": []
+        },
+        {
+          "id": 100260,
+          "name": "Filtro de aire",
+          "parent": 100005,
+          "count": 1155,
+          "children": []
+        },
+        {
+          "id": 100261,
+          "name": "Filtro de combustible",
+          "parent": 100005,
+          "count": 552,
+          "children": []
+        },
+        {
+          "id": 100713,
+          "name": "Filtro de refrigerante",
+          "parent": 100005,
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": 706873,
+          "name": "Filtro de urea",
+          "parent": 100005,
+          "count": 27,
+          "children": []
+        },
+        {
+          "id": 100263,
+          "name": "Filtro del aire del interior",
+          "parent": 100005,
+          "count": 736,
+          "children": []
+        },
+        {
+          "id": 706725,
+          "name": "Filtro hidráulico",
+          "parent": 100005,
+          "count": 353,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100006,
+      "name": "Kit de freno",
+      "parent": null,
+      "count": 22185,
+      "children": [
+        {
+          "id": 100382,
+          "name": "Acumulador de presión / Interruptor",
+          "parent": 100006,
+          "count": 11,
+          "children": []
+        },
+        {
+          "id": 100039,
+          "name": "Bomba de vacío",
+          "parent": 100006,
+          "count": 43,
+          "children": []
+        },
+        {
+          "id": 100027,
+          "name": "Caliper",
+          "parent": 100006,
+          "count": 3680,
+          "children": [
+            {
+              "id": 100806,
+              "name": "Piezas",
+              "parent": 100027,
+              "count": 306,
+              "children": []
+            },
+            {
+              "id": 100807,
+              "name": "Pinza de freno/soporte",
+              "parent": 100027,
+              "count": 3374,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100028,
+          "name": "Cilindro de rueda",
+          "parent": 100006,
+          "count": 617,
+          "children": []
+        },
+        {
+          "id": 100026,
+          "name": "Cilindro principal del freno",
+          "parent": 100006,
+          "count": 933,
+          "children": []
+        },
+        {
+          "id": 100029,
+          "name": "Depósito de líquido de frenos/piezas",
+          "parent": 100006,
+          "count": 31,
+          "children": []
+        },
+        {
+          "id": 100808,
+          "name": "Filtro",
+          "parent": 100006,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100626,
+          "name": "Freno de disco",
+          "parent": 100006,
+          "count": 10469,
+          "children": [
+            {
+              "id": 100630,
+              "name": "Accesorios/piezas",
+              "parent": 100626,
+              "count": 3069,
+              "children": []
+            },
+            {
+              "id": 100030,
+              "name": "Balata de freno",
+              "parent": 100626,
+              "count": 4137,
+              "children": []
+            },
+            {
+              "id": 100032,
+              "name": "Disco de freno",
+              "parent": 100626,
+              "count": 3940,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100034,
+          "name": "Freno de mano",
+          "parent": 100006,
+          "count": 468,
+          "children": []
+        },
+        {
+          "id": 100627,
+          "name": "Freno de tambor",
+          "parent": 100006,
+          "count": 2632,
+          "children": [
+            {
+              "id": 100634,
+              "name": "Accesorios/piezas",
+              "parent": 100627,
+              "count": 468,
+              "children": []
+            },
+            {
+              "id": 103210,
+              "name": "Ajustador de juego de varillas / accesorios",
+              "parent": 100627,
+              "count": 160,
+              "children": []
+            },
+            {
+              "id": 100031,
+              "name": "Balata/pastilla de freno",
+              "parent": 100627,
+              "count": 724,
+              "children": []
+            },
+            {
+              "id": 102965,
+              "name": "Cilindro de rueda",
+              "parent": 100627,
+              "count": 617,
+              "children": []
+            },
+            {
+              "id": 102964,
+              "name": "Freno de mano",
+              "parent": 100627,
+              "count": 415,
+              "children": []
+            },
+            {
+              "id": 100633,
+              "name": "Juego de reparación",
+              "parent": 100627,
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": 100033,
+              "name": "Tambor de freno",
+              "parent": 100627,
+              "count": 457,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 102224,
+          "name": "Frenos de alto rendimiento",
+          "parent": 100006,
+          "count": 33,
+          "children": [
+            {
+              "id": 102227,
+              "name": "Balata de frenos de alto rendimiento",
+              "parent": 102224,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 102228,
+              "name": "Caliper de alto rendimiento",
+              "parent": 102224,
+              "count": 13,
+              "children": [
+                {
+                  "id": 102229,
+                  "name": "Pinza de freno/soporte",
+                  "parent": 102228,
+                  "count": 13,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 102226,
+              "name": "Freno de disco, alto rendimiento",
+              "parent": 102224,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 102231,
+              "name": "Tubos flexibles de frenos",
+              "parent": 102224,
+              "count": 5,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100631,
+          "name": "Indicador de desgaste",
+          "parent": 100006,
+          "count": 679,
+          "children": []
+        },
+        {
+          "id": 102248,
+          "name": "Interruptor de luces freno",
+          "parent": 100006,
+          "count": 123,
+          "children": []
+        },
+        {
+          "id": 102208,
+          "name": "Líquido de frenos",
+          "parent": 100006,
+          "count": 20,
+          "children": []
+        },
+        {
+          "id": 100635,
+          "name": "Palancas/cuerdas/cables de tiro",
+          "parent": 100006,
+          "count": 1542,
+          "children": []
+        },
+        {
+          "id": 100038,
+          "name": "Regulación dinámica de conducción",
+          "parent": 100006,
+          "count": 1823,
+          "children": []
+        },
+        {
+          "id": 100037,
+          "name": "Regulador de la fuerza de frenado",
+          "parent": 100006,
+          "count": 80,
+          "children": []
+        },
+        {
+          "id": 706945,
+          "name": "Retardador",
+          "parent": 100006,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100025,
+          "name": "Servofrenos",
+          "parent": 100006,
+          "count": 223,
+          "children": []
+        },
+        {
+          "id": 100036,
+          "name": "Tuberías de freno/latiguillos",
+          "parent": 100006,
+          "count": 18,
+          "children": []
+        },
+        {
+          "id": 100035,
+          "name": "Tubos flexibles de frenos",
+          "parent": 100006,
+          "count": 2220,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100342,
+      "name": "Limpieza de faros",
+      "parent": null,
+      "count": 59,
+      "children": []
+    },
+    {
+      "id": 100018,
+      "name": "Limpieza de vidrios",
+      "parent": null,
+      "count": 337,
+      "children": [
+        {
+          "id": 100135,
+          "name": "Bomba de agua de lavado",
+          "parent": 100018,
+          "count": 129,
+          "children": []
+        },
+        {
+          "id": 100611,
+          "name": "Boquilla de agua de lavado",
+          "parent": 100018,
+          "count": 23,
+          "children": []
+        },
+        {
+          "id": 100136,
+          "name": "Brazo del limpiaparabrisas/Soporte",
+          "parent": 100018,
+          "count": 20,
+          "children": []
+        },
+        {
+          "id": 100610,
+          "name": "Depósito/Tubos para el agua de lavado",
+          "parent": 100018,
+          "count": 48,
+          "children": []
+        },
+        {
+          "id": 100613,
+          "name": "Interruptor/relevador",
+          "parent": 100018,
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": 100134,
+          "name": "Motor del limpiaparabrisas",
+          "parent": 100018,
+          "count": 91,
+          "children": []
+        },
+        {
+          "id": 100137,
+          "name": "Varillas del limpiaparabrisas / accionamiento",
+          "parent": 100018,
+          "count": 37,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100002,
+      "name": "Motor",
+      "parent": null,
+      "count": 24822,
+      "children": [
+        {
+          "id": 100515,
+          "name": "Accionamiento del cigüeñal",
+          "parent": 100002,
+          "count": 537,
+          "children": [
+            {
+              "id": 100519,
+              "name": "Biela",
+              "parent": 100515,
+              "count": 40,
+              "children": [
+                {
+                  "id": 100524,
+                  "name": "Biela",
+                  "parent": 100519,
+                  "count": 18,
+                  "children": []
+                },
+                {
+                  "id": 100528,
+                  "name": "Tornillos/tuerca para biela",
+                  "parent": 100519,
+                  "count": 22,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100517,
+              "name": "Cigüeñal",
+              "parent": 100515,
+              "count": 59,
+              "children": [
+                {
+                  "id": 100786,
+                  "name": "Buje",
+                  "parent": 100517,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 100522,
+                  "name": "Cojinete del cigüeñal",
+                  "parent": 100517,
+                  "count": 6,
+                  "children": []
+                },
+                {
+                  "id": 100759,
+                  "name": "Discos del cigüeñal",
+                  "parent": 100517,
+                  "count": 52,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 706358,
+              "name": "Herramientas",
+              "parent": 100515,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100521,
+              "name": "Retén radial/juego",
+              "parent": 100515,
+              "count": 206,
+              "children": []
+            },
+            {
+              "id": 100518,
+              "name": "Volante motor",
+              "parent": 100515,
+              "count": 208,
+              "children": []
+            },
+            {
+              "id": 103120,
+              "name": "Árbol intermedio/de equilibrado",
+              "parent": 100515,
+              "count": 24,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100383,
+          "name": "Alimentación de aire",
+          "parent": 100002,
+          "count": 2431,
+          "children": [
+            {
+              "id": 100387,
+              "name": "Aleta de control",
+              "parent": 100383,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 100385,
+              "name": "Cable/varillaje de acelerador",
+              "parent": 100383,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100390,
+              "name": "Carga",
+              "parent": 100383,
+              "count": 1031,
+              "children": [
+                {
+                  "id": 100391,
+                  "name": "Compresor /piezas",
+                  "parent": 100390,
+                  "count": 810,
+                  "children": []
+                },
+                {
+                  "id": 100392,
+                  "name": "Junta del compresor",
+                  "parent": 100390,
+                  "count": 16,
+                  "children": []
+                },
+                {
+                  "id": 102076,
+                  "name": "Manguera de aire de sobrealimentación",
+                  "parent": 100390,
+                  "count": 187,
+                  "children": []
+                },
+                {
+                  "id": 100393,
+                  "name": "Refrigeración de aire de sobrealimentación",
+                  "parent": 100390,
+                  "count": 4,
+                  "children": []
+                },
+                {
+                  "id": 100394,
+                  "name": "Regulación del aire de sobrealimentación",
+                  "parent": 100390,
+                  "count": 20,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100386,
+              "name": "Colector/tubo de admisión",
+              "parent": 100383,
+              "count": 98,
+              "children": []
+            },
+            {
+              "id": 100384,
+              "name": "Filtro de aire/caja de filtro de aire",
+              "parent": 100383,
+              "count": 1195,
+              "children": []
+            },
+            {
+              "id": 102235,
+              "name": "Mangueras/tuberías",
+              "parent": 100383,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 100704,
+              "name": "Mariposa/sensor",
+              "parent": 100383,
+              "count": 87,
+              "children": [
+                {
+                  "id": 102339,
+                  "name": "Cuerpo de mariposa",
+                  "parent": 100704,
+                  "count": 79,
+                  "children": []
+                },
+                {
+                  "id": 100706,
+                  "name": "Sensor de mariposa",
+                  "parent": 100704,
+                  "count": 8,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 102872,
+              "name": "Precalentamiento de aire de admisión",
+              "parent": 100383,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100818,
+              "name": "Regulación/Control",
+              "parent": 100383,
+              "count": 14,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100514,
+          "name": "Bloque motor",
+          "parent": 100002,
+          "count": 378,
+          "children": [
+            {
+              "id": 100533,
+              "name": "Bloque motor",
+              "parent": 100514,
+              "count": 48,
+              "children": []
+            },
+            {
+              "id": 100534,
+              "name": "Juego de camisas de culata de cilindro",
+              "parent": 100514,
+              "count": 26,
+              "children": []
+            },
+            {
+              "id": 105862,
+              "name": "Ventilación",
+              "parent": 100514,
+              "count": 281,
+              "children": []
+            },
+            {
+              "id": 105860,
+              "name": "Árbol intermedio/de equilibrado",
+              "parent": 100514,
+              "count": 23,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 104377,
+          "name": "Cilindros / Pistones",
+          "parent": 100002,
+          "count": 26,
+          "children": []
+        },
+        {
+          "id": 103037,
+          "name": "Cubierta del motor",
+          "parent": 100002,
+          "count": 9,
+          "children": []
+        },
+        {
+          "id": 100373,
+          "name": "Culata de cilindro / Piezas de montaje",
+          "parent": 100002,
+          "count": 1312,
+          "children": [
+            {
+              "id": 102450,
+              "name": "Bomba de vacío",
+              "parent": 100373,
+              "count": 31,
+              "children": []
+            },
+            {
+              "id": 100380,
+              "name": "Culata de cilindro",
+              "parent": 100373,
+              "count": 19,
+              "children": []
+            },
+            {
+              "id": 100374,
+              "name": "Junta de culata de cilindro",
+              "parent": 100373,
+              "count": 143,
+              "children": []
+            },
+            {
+              "id": 100377,
+              "name": "Junta/guía/ajuste de válvulas",
+              "parent": 100373,
+              "count": 199,
+              "children": []
+            },
+            {
+              "id": 100376,
+              "name": "Junta/junta tórica del colector de admisión/escape",
+              "parent": 100373,
+              "count": 90,
+              "children": []
+            },
+            {
+              "id": 100375,
+              "name": "Junta/tapa de culata de cilindro",
+              "parent": 100373,
+              "count": 576,
+              "children": []
+            },
+            {
+              "id": 100788,
+              "name": "Juntas/tubos de llenado refrigerante",
+              "parent": 100373,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 102778,
+              "name": "Retenes para ejes",
+              "parent": 100373,
+              "count": 59,
+              "children": []
+            },
+            {
+              "id": 100379,
+              "name": "Tapa/junta de llenado de aceite",
+              "parent": 100373,
+              "count": 37,
+              "children": []
+            },
+            {
+              "id": 100378,
+              "name": "Tornillos de culata de cilindro",
+              "parent": 100373,
+              "count": 157,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100541,
+          "name": "Depuración de los gases de escape",
+          "parent": 100002,
+          "count": 681,
+          "children": [
+            {
+              "id": 100552,
+              "name": "Inyección de aire secundario",
+              "parent": 100541,
+              "count": 2,
+              "children": [
+                {
+                  "id": 100560,
+                  "name": "Bomba de aire secundario",
+                  "parent": 100552,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100542,
+              "name": "Recirculación de los gases de escape",
+              "parent": 100541,
+              "count": 345,
+              "children": [
+                {
+                  "id": 100545,
+                  "name": "Control de gases de escape EGR",
+                  "parent": 100542,
+                  "count": 11,
+                  "children": []
+                },
+                {
+                  "id": 100543,
+                  "name": "Convertidor de presión",
+                  "parent": 100542,
+                  "count": 42,
+                  "children": []
+                },
+                {
+                  "id": 103235,
+                  "name": "Juntas",
+                  "parent": 100542,
+                  "count": 23,
+                  "children": []
+                },
+                {
+                  "id": 102993,
+                  "name": "Módulo EGR",
+                  "parent": 100542,
+                  "count": 23,
+                  "children": []
+                },
+                {
+                  "id": 103237,
+                  "name": "Radiador",
+                  "parent": 100542,
+                  "count": 41,
+                  "children": []
+                },
+                {
+                  "id": 100551,
+                  "name": "Válvula EGR/tubo de admisión",
+                  "parent": 100542,
+                  "count": 228,
+                  "children": []
+                },
+                {
+                  "id": 100549,
+                  "name": "Válvulas/recirculación de los gases de escape",
+                  "parent": 100542,
+                  "count": 11,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100729,
+              "name": "Regulación lambda",
+              "parent": 100541,
+              "count": 334,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100003,
+          "name": "Distribución del motor",
+          "parent": 100002,
+          "count": 8302,
+          "children": [
+            {
+              "id": 100398,
+              "name": "Balancín/palanca oscilante",
+              "parent": 100003,
+              "count": 260,
+              "children": []
+            },
+            {
+              "id": 100403,
+              "name": "Cadena de distribución/tensión/guía",
+              "parent": 100003,
+              "count": 3106,
+              "children": [
+                {
+                  "id": 100411,
+                  "name": "Cadena de distribución",
+                  "parent": 100403,
+                  "count": 672,
+                  "children": []
+                },
+                {
+                  "id": 100413,
+                  "name": "Carril guía",
+                  "parent": 100403,
+                  "count": 873,
+                  "children": []
+                },
+                {
+                  "id": 101485,
+                  "name": "Guía de tensor",
+                  "parent": 100403,
+                  "count": 122,
+                  "children": []
+                },
+                {
+                  "id": 103278,
+                  "name": "Juego de cadena de distribución",
+                  "parent": 100403,
+                  "count": 994,
+                  "children": []
+                },
+                {
+                  "id": 100414,
+                  "name": "Tensor de cadena",
+                  "parent": 100403,
+                  "count": 445,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100396,
+              "name": "Correa dentada / guía / tensión",
+              "parent": 100003,
+              "count": 2974,
+              "children": [
+                {
+                  "id": 100875,
+                  "name": "Amortiguador de vibraciones",
+                  "parent": 100396,
+                  "count": 22,
+                  "children": []
+                },
+                {
+                  "id": 100409,
+                  "name": "Brazo tensor",
+                  "parent": 100396,
+                  "count": 6,
+                  "children": []
+                },
+                {
+                  "id": 100404,
+                  "name": "Correa dentada",
+                  "parent": 100396,
+                  "count": 651,
+                  "children": []
+                },
+                {
+                  "id": 102015,
+                  "name": "Cubierta correa distribución",
+                  "parent": 100396,
+                  "count": 4,
+                  "children": []
+                },
+                {
+                  "id": 100405,
+                  "name": "Juego de correa dentada",
+                  "parent": 100396,
+                  "count": 1231,
+                  "children": []
+                },
+                {
+                  "id": 102027,
+                  "name": "Juego de rodillos",
+                  "parent": 100396,
+                  "count": 20,
+                  "children": []
+                },
+                {
+                  "id": 100407,
+                  "name": "Rodillo inversor/guía",
+                  "parent": 100396,
+                  "count": 389,
+                  "children": []
+                },
+                {
+                  "id": 100406,
+                  "name": "Rodillo tensor",
+                  "parent": 100396,
+                  "count": 662,
+                  "children": []
+                },
+                {
+                  "id": 100410,
+                  "name": "Tensor de correa (unidad tensora)",
+                  "parent": 100396,
+                  "count": 37,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100401,
+              "name": "Cárter de distribución/junta",
+              "parent": 100003,
+              "count": 49,
+              "children": []
+            },
+            {
+              "id": 100399,
+              "name": "Empujadores/varillas/ tubo protector",
+              "parent": 100003,
+              "count": 213,
+              "children": []
+            },
+            {
+              "id": 100425,
+              "name": "Rueda dentada cilíndrica",
+              "parent": 100003,
+              "count": 467,
+              "children": []
+            },
+            {
+              "id": 101833,
+              "name": "Ruedas dentadas",
+              "parent": 100003,
+              "count": 468,
+              "children": []
+            },
+            {
+              "id": 100422,
+              "name": "Válvulas/ajuste",
+              "parent": 100003,
+              "count": 1220,
+              "children": [
+                {
+                  "id": 100424,
+                  "name": "Accionamiento de válvulas",
+                  "parent": 100422,
+                  "count": 964,
+                  "children": []
+                },
+                {
+                  "id": 100423,
+                  "name": "Válvulas/accesorios",
+                  "parent": 100422,
+                  "count": 292,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100397,
+              "name": "Árbol de levas",
+              "parent": 100003,
+              "count": 1020,
+              "children": []
+            },
+            {
+              "id": 100852,
+              "name": "Árbol intermedio",
+              "parent": 100003,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103129,
+          "name": "Herramientas",
+          "parent": 100002,
+          "count": 13,
+          "children": []
+        },
+        {
+          "id": 100223,
+          "name": "Juntas",
+          "parent": 100002,
+          "count": 1405,
+          "children": [
+            {
+              "id": 100683,
+              "name": "Junta de agua refrigerante",
+              "parent": 100223,
+              "count": 95,
+              "children": []
+            },
+            {
+              "id": 100229,
+              "name": "Junta de colector de admisión",
+              "parent": 100223,
+              "count": 45,
+              "children": []
+            },
+            {
+              "id": 100225,
+              "name": "Junta de culata de cilindro",
+              "parent": 100223,
+              "count": 143,
+              "children": []
+            },
+            {
+              "id": 100234,
+              "name": "Junta de cárter de aceite",
+              "parent": 100223,
+              "count": 118,
+              "children": []
+            },
+            {
+              "id": 100235,
+              "name": "Junta de cárter de distribución",
+              "parent": 100223,
+              "count": 42,
+              "children": []
+            },
+            {
+              "id": 100682,
+              "name": "Junta de sistema de combustible",
+              "parent": 100223,
+              "count": 20,
+              "children": []
+            },
+            {
+              "id": 100227,
+              "name": "Junta de tapa de cabeza de cilindros",
+              "parent": 100223,
+              "count": 417,
+              "children": []
+            },
+            {
+              "id": 100244,
+              "name": "Junta de turbocompresor",
+              "parent": 100223,
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": 100684,
+              "name": "Junta del circuito de aceite",
+              "parent": 100223,
+              "count": 178,
+              "children": []
+            },
+            {
+              "id": 100233,
+              "name": "Junta, bloque motor",
+              "parent": 100223,
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": 100231,
+              "name": "Junta/junta tórica del colector de escape",
+              "parent": 100223,
+              "count": 53,
+              "children": []
+            },
+            {
+              "id": 100228,
+              "name": "Retén de válvula",
+              "parent": 100223,
+              "count": 78,
+              "children": []
+            },
+            {
+              "id": 100789,
+              "name": "Retén para ejes/kit",
+              "parent": 100223,
+              "count": 256,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100245,
+          "name": "Lubricación",
+          "parent": 100002,
+          "count": 2430,
+          "children": [
+            {
+              "id": 101994,
+              "name": "Aceites",
+              "parent": 100245,
+              "count": 122,
+              "children": []
+            },
+            {
+              "id": 100476,
+              "name": "Bomba de aceite/piezas de montaje",
+              "parent": 100245,
+              "count": 710,
+              "children": [
+                {
+                  "id": 100492,
+                  "name": "Bomba de aceite",
+                  "parent": 100476,
+                  "count": 246,
+                  "children": []
+                },
+                {
+                  "id": 100885,
+                  "name": "Cadena de tracción",
+                  "parent": 100476,
+                  "count": 426,
+                  "children": []
+                },
+                {
+                  "id": 100493,
+                  "name": "Junta",
+                  "parent": 100476,
+                  "count": 31,
+                  "children": []
+                },
+                {
+                  "id": 100494,
+                  "name": "Tubo de aspiración",
+                  "parent": 100476,
+                  "count": 7,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 103072,
+              "name": "Boquilla de aceite",
+              "parent": 100245,
+              "count": 25,
+              "children": []
+            },
+            {
+              "id": 100475,
+              "name": "Cárter de aceite / piezas de montaje",
+              "parent": 100245,
+              "count": 443,
+              "children": [
+                {
+                  "id": 100489,
+                  "name": "Cárter de aceite",
+                  "parent": 100475,
+                  "count": 93,
+                  "children": []
+                },
+                {
+                  "id": 100490,
+                  "name": "Junta",
+                  "parent": 100475,
+                  "count": 118,
+                  "children": []
+                },
+                {
+                  "id": 100491,
+                  "name": "Tornillo de salida",
+                  "parent": 100475,
+                  "count": 284,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100472,
+              "name": "Cárter del filtro de aceite / Junta",
+              "parent": 100245,
+              "count": 171,
+              "children": []
+            },
+            {
+              "id": 100470,
+              "name": "Filtro de aceite",
+              "parent": 100245,
+              "count": 460,
+              "children": []
+            },
+            {
+              "id": 100478,
+              "name": "Interruptor/ Sensor/ Válvula de la presión del aceite",
+              "parent": 100245,
+              "count": 198,
+              "children": []
+            },
+            {
+              "id": 100474,
+              "name": "Radiador de aceite / Piezas de montaje",
+              "parent": 100245,
+              "count": 221,
+              "children": [
+                {
+                  "id": 100488,
+                  "name": "Junta",
+                  "parent": 100474,
+                  "count": 68,
+                  "children": []
+                },
+                {
+                  "id": 100483,
+                  "name": "Radiador de aceite",
+                  "parent": 100474,
+                  "count": 153,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100477,
+              "name": "Tamiz de aceite / Junta",
+              "parent": 100245,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100513,
+              "name": "Termostato de aceite",
+              "parent": 100245,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 100481,
+              "name": "Tuberías/mangueras para aceite",
+              "parent": 100245,
+              "count": 13,
+              "children": []
+            },
+            {
+              "id": 100479,
+              "name": "Varilla del nivel de aceite",
+              "parent": 100245,
+              "count": 63,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100754,
+          "name": "Sistema eléctrico del motor",
+          "parent": 100002,
+          "count": 1271,
+          "children": []
+        },
+        {
+          "id": 100535,
+          "name": "Suspensión del motor",
+          "parent": 100002,
+          "count": 2357,
+          "children": [
+            {
+              "id": 100539,
+              "name": "Amortiguador de suspensión del motor",
+              "parent": 100535,
+              "count": 20,
+              "children": []
+            },
+            {
+              "id": 100536,
+              "name": "Soporte del motor",
+              "parent": 100535,
+              "count": 22,
+              "children": []
+            },
+            {
+              "id": 100538,
+              "name": "Suspensión del motor",
+              "parent": 100535,
+              "count": 2332,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 104302,
+          "name": "Transmisión por correas",
+          "parent": 100002,
+          "count": 8685,
+          "children": [
+            {
+              "id": 104328,
+              "name": "Accesorios/piezas",
+              "parent": 104302,
+              "count": 54,
+              "children": []
+            },
+            {
+              "id": 104317,
+              "name": "Correa dentada /Juego",
+              "parent": 104302,
+              "count": 2974,
+              "children": [
+                {
+                  "id": 104324,
+                  "name": "Amortiguador de vibraciones",
+                  "parent": 104317,
+                  "count": 22,
+                  "children": []
+                },
+                {
+                  "id": 104322,
+                  "name": "Brazo tensor",
+                  "parent": 104317,
+                  "count": 6,
+                  "children": []
+                },
+                {
+                  "id": 104318,
+                  "name": "Correa dentada/Árbol de levas",
+                  "parent": 104317,
+                  "count": 651,
+                  "children": []
+                },
+                {
+                  "id": 104325,
+                  "name": "Cubierta correa distribución",
+                  "parent": 104317,
+                  "count": 4,
+                  "children": []
+                },
+                {
+                  "id": 104319,
+                  "name": "Juego de correa dentada",
+                  "parent": 104317,
+                  "count": 1231,
+                  "children": []
+                },
+                {
+                  "id": 104326,
+                  "name": "Juego de rodillos",
+                  "parent": 104317,
+                  "count": 20,
+                  "children": []
+                },
+                {
+                  "id": 104321,
+                  "name": "Rodillo inversor/guía",
+                  "parent": 104317,
+                  "count": 389,
+                  "children": []
+                },
+                {
+                  "id": 104320,
+                  "name": "Rodillo tensor",
+                  "parent": 104317,
+                  "count": 662,
+                  "children": []
+                },
+                {
+                  "id": 104323,
+                  "name": "Tensor de correa (unidad tensora)",
+                  "parent": 104317,
+                  "count": 37,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 104308,
+              "name": "Correa poli V/Juego",
+              "parent": 104302,
+              "count": 4520,
+              "children": [
+                {
+                  "id": 104315,
+                  "name": "Amortiguador de vibraciones",
+                  "parent": 104308,
+                  "count": 56,
+                  "children": []
+                },
+                {
+                  "id": 104313,
+                  "name": "Brazo tensor",
+                  "parent": 104308,
+                  "count": 34,
+                  "children": []
+                },
+                {
+                  "id": 104309,
+                  "name": "Correa poli V",
+                  "parent": 104308,
+                  "count": 1547,
+                  "children": []
+                },
+                {
+                  "id": 104310,
+                  "name": "Juego de correa poli V",
+                  "parent": 104308,
+                  "count": 850,
+                  "children": []
+                },
+                {
+                  "id": 104316,
+                  "name": "Juego de rodillos",
+                  "parent": 104308,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 104312,
+                  "name": "Rodillo inversor/guía",
+                  "parent": 104308,
+                  "count": 802,
+                  "children": []
+                },
+                {
+                  "id": 104311,
+                  "name": "Rodillo tensor",
+                  "parent": 104308,
+                  "count": 153,
+                  "children": []
+                },
+                {
+                  "id": 104314,
+                  "name": "Tensor de correa (unidad tensora)",
+                  "parent": 104308,
+                  "count": 1083,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 104303,
+              "name": "Correa trapezoidal / Juego",
+              "parent": 104302,
+              "count": 111,
+              "children": [
+                {
+                  "id": 104304,
+                  "name": "Banda en V",
+                  "parent": 104303,
+                  "count": 107,
+                  "children": []
+                },
+                {
+                  "id": 104307,
+                  "name": "Brazo tensor",
+                  "parent": 104303,
+                  "count": 2,
+                  "children": []
+                },
+                {
+                  "id": 104306,
+                  "name": "Polea de inversión",
+                  "parent": 104303,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 104331,
+              "name": "Manguito flexible de acoplamiento",
+              "parent": 104302,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 104329,
+              "name": "Polea",
+              "parent": 104302,
+              "count": 731,
+              "children": []
+            },
+            {
+              "id": 104330,
+              "name": "Rueda libre de alternador",
+              "parent": 104302,
+              "count": 437,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103397,
+          "name": "protección motor /empotramiento",
+          "parent": 100002,
+          "count": 12,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100019,
+      "name": "Piezas de servicio, inspección y mantenimiento",
+      "parent": null,
+      "count": 12732,
+      "children": [
+        {
+          "id": 100597,
+          "name": "Intervalo de inspección",
+          "parent": 100019,
+          "count": 5587,
+          "children": []
+        },
+        {
+          "id": 100598,
+          "name": "Trabajos adicionales",
+          "parent": 100019,
+          "count": 7145,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100254,
+      "name": "Preparación de combustible",
+      "parent": null,
+      "count": 2151,
+      "children": [
+        {
+          "id": 100790,
+          "name": "Depuración de los gases de escape",
+          "parent": 100254,
+          "count": 743,
+          "children": [
+            {
+              "id": 100792,
+              "name": "Entrada de aire complementario",
+              "parent": 100790,
+              "count": 2,
+              "children": [
+                {
+                  "id": 100825,
+                  "name": "Bomba de aire secundario",
+                  "parent": 100792,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100791,
+              "name": "Recirculación de los gases de escape",
+              "parent": 100790,
+              "count": 345,
+              "children": [
+                {
+                  "id": 100815,
+                  "name": "Control de gases de escape EGR",
+                  "parent": 100791,
+                  "count": 11,
+                  "children": []
+                },
+                {
+                  "id": 100812,
+                  "name": "Convertidor de presión",
+                  "parent": 100791,
+                  "count": 42,
+                  "children": []
+                },
+                {
+                  "id": 103239,
+                  "name": "Juntas",
+                  "parent": 100791,
+                  "count": 23,
+                  "children": []
+                },
+                {
+                  "id": 102992,
+                  "name": "Módulo EGR",
+                  "parent": 100791,
+                  "count": 23,
+                  "children": []
+                },
+                {
+                  "id": 103241,
+                  "name": "Radiador",
+                  "parent": 100791,
+                  "count": 41,
+                  "children": []
+                },
+                {
+                  "id": 100811,
+                  "name": "Válvula EGR/tubo de admisión",
+                  "parent": 100791,
+                  "count": 228,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100793,
+              "name": "Regulación lambda",
+              "parent": 100790,
+              "count": 334,
+              "children": []
+            },
+            {
+              "id": 103047,
+              "name": "Sensor/sonda",
+              "parent": 100790,
+              "count": 62,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 102793,
+          "name": "Preparación de mezcla",
+          "parent": 100254,
+          "count": 1781,
+          "children": [
+            {
+              "id": 102801,
+              "name": "Acelerador/potenciómetro",
+              "parent": 102793,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 102797,
+              "name": "Acumulador de presión",
+              "parent": 102793,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 102803,
+              "name": "Bomba de inyección de combustible/bomba de alta presión",
+              "parent": 102793,
+              "count": 71,
+              "children": []
+            },
+            {
+              "id": 102802,
+              "name": "Cable/varillaje de acelerador",
+              "parent": 102793,
+              "count": 15,
+              "children": []
+            },
+            {
+              "id": 102804,
+              "name": "Conductos, distribución combustible",
+              "parent": 102793,
+              "count": 23,
+              "children": []
+            },
+            {
+              "id": 102808,
+              "name": "Interruptor/relevador",
+              "parent": 102793,
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": 102799,
+              "name": "Inyector/Portainyector/Unidad bomba-inyector",
+              "parent": 102793,
+              "count": 94,
+              "children": []
+            },
+            {
+              "id": 102807,
+              "name": "Juego de reparación/completo",
+              "parent": 102793,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 102795,
+              "name": "Junta",
+              "parent": 102793,
+              "count": 64,
+              "children": []
+            },
+            {
+              "id": 102796,
+              "name": "Mariposa de gases/tubos/tubería de vacío",
+              "parent": 102793,
+              "count": 95,
+              "children": []
+            },
+            {
+              "id": 102806,
+              "name": "Medidor masa/volumen de aire",
+              "parent": 102793,
+              "count": 129,
+              "children": []
+            },
+            {
+              "id": 102800,
+              "name": "Piezas portainyector/inyector",
+              "parent": 102793,
+              "count": 77,
+              "children": []
+            },
+            {
+              "id": 102805,
+              "name": "Regulación del ralentí/calentamiento",
+              "parent": 102793,
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": 102809,
+              "name": "Sensor/sonda",
+              "parent": 102793,
+              "count": 1347,
+              "children": []
+            },
+            {
+              "id": 102798,
+              "name": "Unidad de inyección",
+              "parent": 102793,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 102794,
+              "name": "Válvula de corte de combustible",
+              "parent": 102793,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 102811,
+              "name": "Válvulas/Unidad de válvulas",
+              "parent": 102793,
+              "count": 16,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 102903,
+          "name": "Sistema de carburador",
+          "parent": 100254,
+          "count": 23,
+          "children": [
+            {
+              "id": 102910,
+              "name": "Accionamiento/Amortiguación/Cámaras",
+              "parent": 102903,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 102908,
+              "name": "Brida",
+              "parent": 102903,
+              "count": 14,
+              "children": []
+            },
+            {
+              "id": 102911,
+              "name": "Interruptor/relevador",
+              "parent": 102903,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 102906,
+              "name": "Piezas de carburador",
+              "parent": 102903,
+              "count": 5,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 100007,
+      "name": "Refrigeración",
+      "parent": null,
+      "count": 4961,
+      "children": [
+        {
+          "id": 102205,
+          "name": "Anticongelante",
+          "parent": 100007,
+          "count": 58,
+          "children": []
+        },
+        {
+          "id": 102447,
+          "name": "Aparato de control",
+          "parent": 100007,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 100088,
+          "name": "Bomba de agua / Junta",
+          "parent": 100007,
+          "count": 2052,
+          "children": [
+            {
+              "id": 100091,
+              "name": "Bomba de agua",
+              "parent": 100088,
+              "count": 1983,
+              "children": []
+            },
+            {
+              "id": 102984,
+              "name": "Buje",
+              "parent": 100088,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100089,
+              "name": "Junta",
+              "parent": 100088,
+              "count": 61,
+              "children": []
+            },
+            {
+              "id": 104956,
+              "name": "Módulo de gestión térmica",
+              "parent": 100088,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 102211,
+              "name": "Polea",
+              "parent": 100088,
+              "count": 7,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100334,
+          "name": "Interruptor/Sensor",
+          "parent": 100007,
+          "count": 251,
+          "children": []
+        },
+        {
+          "id": 100099,
+          "name": "Mangueras/tuberías/bridas",
+          "parent": 100007,
+          "count": 935,
+          "children": [
+            {
+              "id": 100840,
+              "name": "Bridas",
+              "parent": 100099,
+              "count": 138,
+              "children": []
+            },
+            {
+              "id": 100215,
+              "name": "Tuberías/mangueras para aceite",
+              "parent": 100099,
+              "count": 11,
+              "children": []
+            },
+            {
+              "id": 100100,
+              "name": "Tuberías/mangueras para agua refrigerante",
+              "parent": 100099,
+              "count": 785,
+              "children": []
+            },
+            {
+              "id": 706709,
+              "name": "Tubos de conexión",
+              "parent": 100099,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100102,
+          "name": "Radiador de agua/aceite",
+          "parent": 100007,
+          "count": 795,
+          "children": [
+            {
+              "id": 100112,
+              "name": "Depósito de compensación",
+              "parent": 100102,
+              "count": 418,
+              "children": []
+            },
+            {
+              "id": 100104,
+              "name": "Intercambiador de calor del interior",
+              "parent": 100102,
+              "count": 51,
+              "children": []
+            },
+            {
+              "id": 100105,
+              "name": "Piezas de fijación del radiador",
+              "parent": 100102,
+              "count": 70,
+              "children": []
+            },
+            {
+              "id": 100108,
+              "name": "Radiador de aceite",
+              "parent": 100102,
+              "count": 221,
+              "children": []
+            },
+            {
+              "id": 100103,
+              "name": "Radiador/piezas",
+              "parent": 100102,
+              "count": 35,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100338,
+          "name": "Refrigeración de aire",
+          "parent": 100007,
+          "count": 128,
+          "children": []
+        },
+        {
+          "id": 100344,
+          "name": "Relevador",
+          "parent": 100007,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100094,
+          "name": "Termostato / Junta",
+          "parent": 100007,
+          "count": 491,
+          "children": [
+            {
+              "id": 100096,
+              "name": "Junta",
+              "parent": 100094,
+              "count": 34,
+              "children": []
+            },
+            {
+              "id": 100095,
+              "name": "Termostato",
+              "parent": 100094,
+              "count": 457,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100337,
+          "name": "Ventilador",
+          "parent": 100007,
+          "count": 374,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 103099,
+      "name": "Ruedas/neumáticos",
+      "parent": null,
+      "count": 690,
+      "children": [
+        {
+          "id": 103102,
+          "name": "Accesorios",
+          "parent": 103099,
+          "count": 676,
+          "children": []
+        },
+        {
+          "id": 103101,
+          "name": "Llantas",
+          "parent": 103099,
+          "count": 14,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 103168,
+      "name": "Sistema de aire comprimido",
+      "parent": null,
+      "count": 535,
+      "children": [
+        {
+          "id": 103196,
+          "name": "Cabeza del clutch",
+          "parent": 103168,
+          "count": 18,
+          "children": []
+        },
+        {
+          "id": 103193,
+          "name": "Cilindro de freno/cilindro de trabajo",
+          "parent": 103168,
+          "count": 79,
+          "children": [
+            {
+              "id": 103194,
+              "name": "Cilindro de trabajo",
+              "parent": 103193,
+              "count": 10,
+              "children": []
+            },
+            {
+              "id": 103195,
+              "name": "Cilindros de freno de membrana",
+              "parent": 103193,
+              "count": 69,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103181,
+          "name": "Conexión de prueba",
+          "parent": 103168,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 103207,
+          "name": "Depósito de aire / accesorios",
+          "parent": 103168,
+          "count": 2,
+          "children": [
+            {
+              "id": 103208,
+              "name": "Válvula de drenaje",
+              "parent": 103207,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 706494,
+          "name": "Interruptor",
+          "parent": 103168,
+          "count": 15,
+          "children": []
+        },
+        {
+          "id": 103169,
+          "name": "Regulador de presión /accesorios",
+          "parent": 103168,
+          "count": 3,
+          "children": [
+            {
+              "id": 103170,
+              "name": "Regulador de presión",
+              "parent": 103169,
+              "count": 3,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103171,
+          "name": "Secador de aire/cartucho",
+          "parent": 103168,
+          "count": 35,
+          "children": []
+        },
+        {
+          "id": 706481,
+          "name": "Sensor",
+          "parent": 103168,
+          "count": 17,
+          "children": []
+        },
+        {
+          "id": 103183,
+          "name": "Silenciador (sistema de aire comprimido)",
+          "parent": 103168,
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": 103197,
+          "name": "Tuberías/ elementos de conexión",
+          "parent": 103168,
+          "count": 230,
+          "children": []
+        },
+        {
+          "id": 103192,
+          "name": "Válvula de cierre/Válvula de distribución",
+          "parent": 103168,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 103198,
+          "name": "Válvulas / Sistema de aire comprimido",
+          "parent": 103168,
+          "count": 127,
+          "children": [
+            {
+              "id": 103200,
+              "name": "Otras válvulas",
+              "parent": 103198,
+              "count": 101,
+              "children": []
+            },
+            {
+              "id": 103201,
+              "name": "Válvula de control del remolque",
+              "parent": 103198,
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": 103199,
+              "name": "Válvula protectora multicircuito",
+              "parent": 103198,
+              "count": 19,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 100685,
+      "name": "Sistema de cierre",
+      "parent": null,
+      "count": 511,
+      "children": [
+        {
+          "id": 100687,
+          "name": "Cerraduras, exterior",
+          "parent": 100685,
+          "count": 338,
+          "children": []
+        },
+        {
+          "id": 100688,
+          "name": "Cerraduras, interior",
+          "parent": 100685,
+          "count": 31,
+          "children": []
+        },
+        {
+          "id": 100686,
+          "name": "Cierre centralizado",
+          "parent": 100685,
+          "count": 18,
+          "children": []
+        },
+        {
+          "id": 100690,
+          "name": "Cilindro de cerradura / Juego",
+          "parent": 100685,
+          "count": 32,
+          "children": []
+        },
+        {
+          "id": 100689,
+          "name": "Juego de candado",
+          "parent": 100685,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100691,
+          "name": "Manija de puerta",
+          "parent": 100685,
+          "count": 88,
+          "children": []
+        },
+        {
+          "id": 100766,
+          "name": "Piezas",
+          "parent": 100685,
+          "count": 5,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100008,
+      "name": "Sistema de encendido/incandescencia",
+      "parent": null,
+      "count": 882,
+      "children": [
+        {
+          "id": 100247,
+          "name": "Aparato de control/Relevadores/sensores",
+          "parent": 100008,
+          "count": 47,
+          "children": []
+        },
+        {
+          "id": 100150,
+          "name": "Bobina/Unidad bobina de encendido",
+          "parent": 100008,
+          "count": 173,
+          "children": []
+        },
+        {
+          "id": 100151,
+          "name": "Bujía de encendido",
+          "parent": 100008,
+          "count": 41,
+          "children": []
+        },
+        {
+          "id": 100152,
+          "name": "Bujía de precalentamiento",
+          "parent": 100008,
+          "count": 218,
+          "children": []
+        },
+        {
+          "id": 100153,
+          "name": "Cable de encendido/partes de unión",
+          "parent": 100008,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100148,
+          "name": "Distribuidor de encendido/Piezas",
+          "parent": 100008,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 100249,
+          "name": "Generador/transmisor de impulsos",
+          "parent": 100008,
+          "count": 396,
+          "children": []
+        },
+        {
+          "id": 100246,
+          "name": "Módulo de encendido/bloque electrónico",
+          "parent": 100008,
+          "count": 3,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100004,
+      "name": "Sistema de escape",
+      "parent": null,
+      "count": 2412,
+      "children": [
+        {
+          "id": 102451,
+          "name": "Aleta de gases de escape",
+          "parent": 100004,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 100715,
+          "name": "Codo/colector",
+          "parent": 100004,
+          "count": 20,
+          "children": []
+        },
+        {
+          "id": 100872,
+          "name": "Compresor",
+          "parent": 100004,
+          "count": 1000,
+          "children": []
+        },
+        {
+          "id": 100318,
+          "name": "Filtro de partículas",
+          "parent": 100004,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 103019,
+          "name": "Inyección de urea",
+          "parent": 100004,
+          "count": 278,
+          "children": [
+            {
+              "id": 103023,
+              "name": "Filtro de urea",
+              "parent": 103019,
+              "count": 30,
+              "children": []
+            },
+            {
+              "id": 103021,
+              "name": "Inyector",
+              "parent": 103019,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 103401,
+              "name": "Mangueras/tuberías",
+              "parent": 103019,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 103020,
+              "name": "Módulo dosificador",
+              "parent": 103019,
+              "count": 33,
+              "children": []
+            },
+            {
+              "id": 103022,
+              "name": "Módulo transporte",
+              "parent": 103019,
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": 103062,
+              "name": "Sensor",
+              "parent": 103019,
+              "count": 167,
+              "children": []
+            },
+            {
+              "id": 103089,
+              "name": "Unidad de depósito",
+              "parent": 103019,
+              "count": 20,
+              "children": []
+            },
+            {
+              "id": 706472,
+              "name": "Urea",
+              "parent": 103019,
+              "count": 6,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100222,
+          "name": "Piezas de montaje",
+          "parent": 100004,
+          "count": 278,
+          "children": [
+            {
+              "id": 100316,
+              "name": "Juego de montaje",
+              "parent": 100222,
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": 100317,
+              "name": "Piezas de montaje",
+              "parent": 100222,
+              "count": 271,
+              "children": [
+                {
+                  "id": 100323,
+                  "name": "Abrazadera",
+                  "parent": 100317,
+                  "count": 14,
+                  "children": []
+                },
+                {
+                  "id": 100325,
+                  "name": "Amortiguador de goma",
+                  "parent": 100317,
+                  "count": 15,
+                  "children": []
+                },
+                {
+                  "id": 100324,
+                  "name": "Anillo de goma",
+                  "parent": 100317,
+                  "count": 5,
+                  "children": []
+                },
+                {
+                  "id": 100321,
+                  "name": "Junta",
+                  "parent": 100317,
+                  "count": 9,
+                  "children": []
+                },
+                {
+                  "id": 100716,
+                  "name": "Manguito de soldadura",
+                  "parent": 100317,
+                  "count": 14,
+                  "children": []
+                },
+                {
+                  "id": 100329,
+                  "name": "Pieza de agarre",
+                  "parent": 100317,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 100327,
+                  "name": "Soporte",
+                  "parent": 100317,
+                  "count": 172,
+                  "children": []
+                },
+                {
+                  "id": 102875,
+                  "name": "Tubos",
+                  "parent": 100317,
+                  "count": 16,
+                  "children": []
+                },
+                {
+                  "id": 100333,
+                  "name": "Tuercas/tornillos/arandelas",
+                  "parent": 100317,
+                  "count": 37,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 104273,
+          "name": "Regeneración del filtro de partículas",
+          "parent": 100004,
+          "count": 3,
+          "children": [
+            {
+              "id": 104364,
+              "name": "Mangueras/tuberías",
+              "parent": 104273,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 104275,
+              "name": "Unidad de inyección",
+              "parent": 104273,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103414,
+          "name": "Sensor/sonda",
+          "parent": 100004,
+          "count": 796,
+          "children": []
+        },
+        {
+          "id": 100314,
+          "name": "Silenciador",
+          "parent": 100004,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100048,
+          "name": "Sonda Lambda",
+          "parent": 100004,
+          "count": 334,
+          "children": []
+        },
+        {
+          "id": 100315,
+          "name": "Tubos",
+          "parent": 100004,
+          "count": 61,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100010,
+      "name": "Sistema eléctrico",
+      "parent": null,
+      "count": 5891,
+      "children": [
+        {
+          "id": 100041,
+          "name": "Alternador/piezas",
+          "parent": 100010,
+          "count": 812,
+          "children": [
+            {
+              "id": 100350,
+              "name": "Alternador",
+              "parent": 100041,
+              "count": 343,
+              "children": []
+            },
+            {
+              "id": 100352,
+              "name": "Piezas",
+              "parent": 100041,
+              "count": 457,
+              "children": []
+            },
+            {
+              "id": 100351,
+              "name": "Regulador",
+              "parent": 100041,
+              "count": 12,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100727,
+          "name": "Aparatos de control",
+          "parent": 100010,
+          "count": 96,
+          "children": []
+        },
+        {
+          "id": 100042,
+          "name": "Batería",
+          "parent": 100010,
+          "count": 5,
+          "children": []
+        },
+        {
+          "id": 100320,
+          "name": "Bocina de aire/eléctrica",
+          "parent": 100010,
+          "count": 20,
+          "children": []
+        },
+        {
+          "id": 102336,
+          "name": "Caja/portafusibles",
+          "parent": 100010,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100307,
+          "name": "Dispositivos de control/relevadores/interruptores de ilumina",
+          "parent": 100010,
+          "count": 504,
+          "children": [
+            {
+              "id": 100509,
+              "name": "Interruptor/regulador",
+              "parent": 100307,
+              "count": 499,
+              "children": []
+            },
+            {
+              "id": 100510,
+              "name": "Relevador",
+              "parent": 100307,
+              "count": 5,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100787,
+          "name": "Faros adicionales/Piezas",
+          "parent": 100010,
+          "count": 12,
+          "children": [
+            {
+              "id": 100277,
+              "name": "Faro antiniebla/piezas",
+              "parent": 100787,
+              "count": 7,
+              "children": [
+                {
+                  "id": 100447,
+                  "name": "Lámpara para faros antiniebla",
+                  "parent": 100277,
+                  "count": 7,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 102671,
+              "name": "Faro para curva, estático/piezas",
+              "parent": 100787,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 100280,
+              "name": "Faros de trabajo/componentes",
+              "parent": 100787,
+              "count": 2,
+              "children": [
+                {
+                  "id": 100445,
+                  "name": "Componentes de faros de trabajo",
+                  "parent": 100280,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 100143,
+          "name": "Faros principales/Pieza insertable",
+          "parent": 100010,
+          "count": 58,
+          "children": [
+            {
+              "id": 100427,
+              "name": "Foco de faro principal",
+              "parent": 100143,
+              "count": 8,
+              "children": []
+            },
+            {
+              "id": 100723,
+              "name": "Luz de xenón",
+              "parent": 100143,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100430,
+              "name": "Piezas de faro principal",
+              "parent": 100143,
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": 100279,
+              "name": "Regulación de alcance luminoso",
+              "parent": 100143,
+              "count": 44,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100884,
+          "name": "Generador de señal",
+          "parent": 100010,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 100322,
+          "name": "Instrumentos",
+          "parent": 100010,
+          "count": 611,
+          "children": [
+            {
+              "id": 100555,
+              "name": "Instrumentos indicadores",
+              "parent": 100322,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 100553,
+              "name": "Sensores/interruptores (transmisores)",
+              "parent": 100322,
+              "count": 595,
+              "children": []
+            },
+            {
+              "id": 100561,
+              "name": "Árbol de velocímetro",
+              "parent": 100322,
+              "count": 14,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 104741,
+          "name": "Interruptor multifunción /unidad de mando",
+          "parent": 100010,
+          "count": 68,
+          "children": []
+        },
+        {
+          "id": 100043,
+          "name": "Luces",
+          "parent": 100010,
+          "count": 204,
+          "children": [
+            {
+              "id": 100292,
+              "name": "Iluminación interior",
+              "parent": 100043,
+              "count": 6,
+              "children": [
+                {
+                  "id": 100505,
+                  "name": "Iluminación del interior",
+                  "parent": 100292,
+                  "count": 4,
+                  "children": []
+                },
+                {
+                  "id": 100508,
+                  "name": "Iluminación instrumentos/elementos de control",
+                  "parent": 100292,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100284,
+              "name": "Luces de freno/Piezas",
+              "parent": 100043,
+              "count": 5,
+              "children": [
+                {
+                  "id": 100496,
+                  "name": "Foco para luz de freno",
+                  "parent": 100284,
+                  "count": 5,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100147,
+              "name": "Luces de matrícula/piezas",
+              "parent": 100043,
+              "count": 4,
+              "children": [
+                {
+                  "id": 100499,
+                  "name": "Foco para luces de matrícula",
+                  "parent": 100147,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 100464,
+                  "name": "Luces de matrícula",
+                  "parent": 100147,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100290,
+              "name": "Luces de posición/estacionamiento/Gálibo/Piezas",
+              "parent": 100043,
+              "count": 53,
+              "children": [
+                {
+                  "id": 100503,
+                  "name": "Foco",
+                  "parent": 100290,
+                  "count": 3,
+                  "children": []
+                },
+                {
+                  "id": 100468,
+                  "name": "Luces de posición/estacionamiento",
+                  "parent": 100290,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 100753,
+                  "name": "Luces laterales",
+                  "parent": 100290,
+                  "count": 19,
+                  "children": []
+                },
+                {
+                  "id": 100469,
+                  "name": "Luces limitadoras",
+                  "parent": 100290,
+                  "count": 31,
+                  "children": []
+                },
+                {
+                  "id": 100495,
+                  "name": "Piezas",
+                  "parent": 100290,
+                  "count": 1,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100287,
+              "name": "Luces de reversa/piezas",
+              "parent": 100043,
+              "count": 3,
+              "children": [
+                {
+                  "id": 100501,
+                  "name": "Foco para luces de reversa",
+                  "parent": 100287,
+                  "count": 1,
+                  "children": []
+                },
+                {
+                  "id": 100486,
+                  "name": "Piezas de luces de reversa",
+                  "parent": 100287,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100145,
+              "name": "Luces intermitentes / Piezas",
+              "parent": 100043,
+              "count": 89,
+              "children": [
+                {
+                  "id": 100498,
+                  "name": "Foco para luces intermitentes",
+                  "parent": 100145,
+                  "count": 5,
+                  "children": []
+                },
+                {
+                  "id": 100463,
+                  "name": "Luces intermitentes",
+                  "parent": 100145,
+                  "count": 87,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100275,
+              "name": "Luces traseras /Piezas",
+              "parent": 100043,
+              "count": 63,
+              "children": [
+                {
+                  "id": 100454,
+                  "name": "Luces traseras",
+                  "parent": 100275,
+                  "count": 43,
+                  "children": []
+                },
+                {
+                  "id": 101495,
+                  "name": "Lámpara faro trasero",
+                  "parent": 100275,
+                  "count": 9,
+                  "children": []
+                },
+                {
+                  "id": 100456,
+                  "name": "Piezas de luces traseras",
+                  "parent": 100275,
+                  "count": 11,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100870,
+              "name": "Luz diurna",
+              "parent": 100043,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100285,
+              "name": "Luz traser antinieblas/-piezas individuales",
+              "parent": 100043,
+              "count": 2,
+              "children": [
+                {
+                  "id": 100500,
+                  "name": "Foco para luz trasera antiniebla",
+                  "parent": 100285,
+                  "count": 2,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 103066,
+          "name": "Piezas individuales/juego de cables",
+          "parent": 100010,
+          "count": 43,
+          "children": []
+        },
+        {
+          "id": 100295,
+          "name": "Reflectores/Reflectores laterales",
+          "parent": 100010,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100785,
+          "name": "Relevador",
+          "parent": 100010,
+          "count": 64,
+          "children": []
+        },
+        {
+          "id": 103428,
+          "name": "Relevador multifunción",
+          "parent": 100010,
+          "count": 9,
+          "children": []
+        },
+        {
+          "id": 102747,
+          "name": "Sensores",
+          "parent": 100010,
+          "count": 3645,
+          "children": []
+        },
+        {
+          "id": 100353,
+          "name": "Sistema de arranque",
+          "parent": 100010,
+          "count": 347,
+          "children": [
+            {
+              "id": 100359,
+              "name": "Marcha",
+              "parent": 100353,
+              "count": 302,
+              "children": []
+            },
+            {
+              "id": 100040,
+              "name": "Piezas",
+              "parent": 100353,
+              "count": 45,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100708,
+          "name": "Sistema eléctrico central",
+          "parent": 100010,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100511,
+          "name": "Unidad intermitente/relevador",
+          "parent": 100010,
+          "count": 18,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100339,
+      "name": "Sistemas de comunicación e información",
+      "parent": null,
+      "count": 4,
+      "children": [
+        {
+          "id": 100695,
+          "name": "Antenas",
+          "parent": 100339,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100693,
+          "name": "Instrumentos",
+          "parent": 100339,
+          "count": 2,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100335,
+      "name": "Sistemas de confort",
+      "parent": null,
+      "count": 457,
+      "children": [
+        {
+          "id": 104155,
+          "name": "Accionamiento de puertas traseras",
+          "parent": 100335,
+          "count": 39,
+          "children": []
+        },
+        {
+          "id": 706789,
+          "name": "Aparato de control",
+          "parent": 100335,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100625,
+          "name": "Bombas",
+          "parent": 100335,
+          "count": 6,
+          "children": []
+        },
+        {
+          "id": 100614,
+          "name": "Calefacción auxiliar",
+          "parent": 100335,
+          "count": 8,
+          "children": []
+        },
+        {
+          "id": 100617,
+          "name": "Cierre centralizado",
+          "parent": 100335,
+          "count": 18,
+          "children": []
+        },
+        {
+          "id": 100751,
+          "name": "Elevador para ventanas",
+          "parent": 100335,
+          "count": 340,
+          "children": []
+        },
+        {
+          "id": 104156,
+          "name": "Motor/Relevador/Interruptor",
+          "parent": 100335,
+          "count": 136,
+          "children": [
+            {
+              "id": 105586,
+              "name": "Ajuste de columna de dirección",
+              "parent": 104156,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 104169,
+              "name": "Apertura de tapa depósito",
+              "parent": 104156,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 104157,
+              "name": "Elevador para ventanas",
+              "parent": 104156,
+              "count": 79,
+              "children": []
+            },
+            {
+              "id": 104159,
+              "name": "Espejos",
+              "parent": 104156,
+              "count": 14,
+              "children": []
+            },
+            {
+              "id": 104160,
+              "name": "Medallón",
+              "parent": 104156,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 105582,
+              "name": "Puerta trasera",
+              "parent": 104156,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 104166,
+              "name": "Sistema de alarma",
+              "parent": 104156,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 104163,
+              "name": "Sistema de regulación de velocidad",
+              "parent": 104156,
+              "count": 18,
+              "children": []
+            },
+            {
+              "id": 104158,
+              "name": "Techo corredizo/levadizo",
+              "parent": 104156,
+              "count": 1,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100619,
+          "name": "Sistema de alarma",
+          "parent": 100335,
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": 100615,
+          "name": "Sistema de regulación de velocidad",
+          "parent": 100335,
+          "count": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100417,
+      "name": "Sistemas de seguridad",
+      "parent": null,
+      "count": 94,
+      "children": [
+        {
+          "id": 100419,
+          "name": "Sistema de alarma",
+          "parent": 100417,
+          "count": 4,
+          "children": []
+        },
+        {
+          "id": 706455,
+          "name": "Sistema de asistencia de manejo",
+          "parent": 100417,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 100762,
+          "name": "Sistema de bolsa de aire",
+          "parent": 100417,
+          "count": 88,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100011,
+      "name": "Suspensión / Amortiguación",
+      "parent": null,
+      "count": 8462,
+      "children": [
+        {
+          "id": 102201,
+          "name": "Aceites",
+          "parent": 100011,
+          "count": 15,
+          "children": []
+        },
+        {
+          "id": 100121,
+          "name": "Amortiguador",
+          "parent": 100011,
+          "count": 3256,
+          "children": []
+        },
+        {
+          "id": 100381,
+          "name": "Columna de suspensión/amortiguador/piezas de montaje",
+          "parent": 100011,
+          "count": 1464,
+          "children": [
+            {
+              "id": 100372,
+              "name": "Piezas de montaje",
+              "parent": 100381,
+              "count": 1464,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100370,
+          "name": "Juego de suspensión completo",
+          "parent": 100011,
+          "count": 80,
+          "children": []
+        },
+        {
+          "id": 100340,
+          "name": "Regulación de nivel/hidráulica de suspensión",
+          "parent": 100011,
+          "count": 35,
+          "children": []
+        },
+        {
+          "id": 100371,
+          "name": "Soporte de amortiguadores/columna de suspensión",
+          "parent": 100011,
+          "count": 1305,
+          "children": []
+        },
+        {
+          "id": 100113,
+          "name": "Suspensión",
+          "parent": 100011,
+          "count": 948,
+          "children": []
+        },
+        {
+          "id": 100810,
+          "name": "Suspensión de muelle",
+          "parent": 100011,
+          "count": 508,
+          "children": []
+        },
+        {
+          "id": 101884,
+          "name": "Suspensión neumática",
+          "parent": 100011,
+          "count": 1091,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100013,
+      "name": "Suspensión de eje/Guía de rueda/Ruedas",
+      "parent": null,
+      "count": 19204,
+      "children": [
+        {
+          "id": 101837,
+          "name": "Buscar artículo por gráfica",
+          "parent": 100013,
+          "count": 3452,
+          "children": []
+        },
+        {
+          "id": 100206,
+          "name": "Cubo/Cojinetes de rueda",
+          "parent": 100013,
+          "count": 1873,
+          "children": [
+            {
+              "id": 100579,
+              "name": "Balero de rueda",
+              "parent": 100206,
+              "count": 1253,
+              "children": []
+            },
+            {
+              "id": 100578,
+              "name": "Cubo de la rueda",
+              "parent": 100206,
+              "count": 771,
+              "children": []
+            },
+            {
+              "id": 100803,
+              "name": "Muñón de eje",
+              "parent": 100206,
+              "count": 112,
+              "children": []
+            },
+            {
+              "id": 100580,
+              "name": "Retén radial",
+              "parent": 100206,
+              "count": 97,
+              "children": []
+            },
+            {
+              "id": 102250,
+              "name": "Soporte, caja cojinete rueda",
+              "parent": 100206,
+              "count": 4,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100208,
+          "name": "Cárter de dirección",
+          "parent": 100013,
+          "count": 5527,
+          "children": [
+            {
+              "id": 100571,
+              "name": "Brazo oscilante (longitud transversal inclinado)",
+              "parent": 100208,
+              "count": 3725,
+              "children": []
+            },
+            {
+              "id": 100572,
+              "name": "Soporte/sujeción",
+              "parent": 100208,
+              "count": 1802,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100212,
+          "name": "Cárter de eje/cuerpo del eje/soporte del eje",
+          "parent": 100013,
+          "count": 565,
+          "children": [
+            {
+              "id": 100585,
+              "name": "Cuerpo del eje",
+              "parent": 100212,
+              "count": 33,
+              "children": []
+            },
+            {
+              "id": 100761,
+              "name": "Cárter del eje/Chasis",
+              "parent": 100212,
+              "count": 45,
+              "children": []
+            },
+            {
+              "id": 100586,
+              "name": "Soporte",
+              "parent": 100212,
+              "count": 504,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100210,
+          "name": "Estabilizador/ Piezas de sujeción",
+          "parent": 100013,
+          "count": 3649,
+          "children": [
+            {
+              "id": 100590,
+              "name": "Apoyo pendular",
+              "parent": 100210,
+              "count": 1863,
+              "children": []
+            },
+            {
+              "id": 100577,
+              "name": "Barra de acoplamiento",
+              "parent": 100210,
+              "count": 1981,
+              "children": []
+            },
+            {
+              "id": 100573,
+              "name": "Estabilizador",
+              "parent": 100210,
+              "count": 95,
+              "children": []
+            },
+            {
+              "id": 100596,
+              "name": "Piezas de sujeción",
+              "parent": 100210,
+              "count": 1573,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100735,
+          "name": "Fijación / Soporte columna de suspensión",
+          "parent": 100013,
+          "count": 1792,
+          "children": []
+        },
+        {
+          "id": 100213,
+          "name": "Rueda/Fijación de la rueda",
+          "parent": 100013,
+          "count": 679,
+          "children": []
+        },
+        {
+          "id": 100207,
+          "name": "Rótula de dirección/juego de reparación",
+          "parent": 100013,
+          "count": 736,
+          "children": [
+            {
+              "id": 100589,
+              "name": "Juego de reparación",
+              "parent": 100207,
+              "count": 179,
+              "children": []
+            },
+            {
+              "id": 102082,
+              "name": "Junta de muñón del eje",
+              "parent": 100207,
+              "count": 104,
+              "children": []
+            },
+            {
+              "id": 100588,
+              "name": "Pivote de dirección",
+              "parent": 100207,
+              "count": 274,
+              "children": []
+            },
+            {
+              "id": 100587,
+              "name": "Rótula de dirección",
+              "parent": 100207,
+              "count": 179,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100211,
+          "name": "Rótulas",
+          "parent": 100013,
+          "count": 848,
+          "children": [
+            {
+              "id": 100581,
+              "name": "Rótula de suspensión/carga",
+              "parent": 100211,
+              "count": 848,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100758,
+          "name": "Travesaños superior/inferior suspensión",
+          "parent": 100013,
+          "count": 1,
+          "children": []
+        },
+        {
+          "id": 100209,
+          "name": "Travesaños/Barras",
+          "parent": 100013,
+          "count": 176,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 103202,
+      "name": "Toma de fuerza",
+      "parent": null,
+      "count": 8,
+      "children": [
+        {
+          "id": 706530,
+          "name": "Transmisión por correas",
+          "parent": 103202,
+          "count": 8,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100014,
+      "name": "Tracción a las ruedas",
+      "parent": null,
+      "count": 1833,
+      "children": [
+        {
+          "id": 100074,
+          "name": "Cubrepolvo",
+          "parent": 100014,
+          "count": 889,
+          "children": []
+        },
+        {
+          "id": 100062,
+          "name": "Eje de transmisión",
+          "parent": 100014,
+          "count": 598,
+          "children": []
+        },
+        {
+          "id": 103398,
+          "name": "Engranaje planetario exterior",
+          "parent": 100014,
+          "count": 28,
+          "children": []
+        },
+        {
+          "id": 100066,
+          "name": "Piezas de fijación/ de accesorios",
+          "parent": 100014,
+          "count": 37,
+          "children": []
+        },
+        {
+          "id": 100071,
+          "name": "Rótula/juego",
+          "parent": 100014,
+          "count": 290,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100238,
+      "name": "Transmisión",
+      "parent": null,
+      "count": 2324,
+      "children": [
+        {
+          "id": 706233,
+          "name": "Aceites",
+          "parent": 100238,
+          "count": 96,
+          "children": []
+        },
+        {
+          "id": 100240,
+          "name": "Caja de velocidades automática",
+          "parent": 100238,
+          "count": 1149,
+          "children": [
+            {
+              "id": 103436,
+              "name": "Cable",
+              "parent": 100240,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 100776,
+              "name": "Control/Sistema hidráulico",
+              "parent": 100240,
+              "count": 374,
+              "children": []
+            },
+            {
+              "id": 101853,
+              "name": "Cárter de aceite / piezas de montaje",
+              "parent": 100240,
+              "count": 50,
+              "children": [
+                {
+                  "id": 101854,
+                  "name": "Cárter de aceite",
+                  "parent": 101853,
+                  "count": 15,
+                  "children": []
+                },
+                {
+                  "id": 101855,
+                  "name": "Junta",
+                  "parent": 101853,
+                  "count": 35,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 100775,
+              "name": "Cárter/ Piezas",
+              "parent": 100240,
+              "count": 137,
+              "children": []
+            },
+            {
+              "id": 100770,
+              "name": "Juntas",
+              "parent": 100240,
+              "count": 40,
+              "children": []
+            },
+            {
+              "id": 103475,
+              "name": "Kit de piezas para cambio de aceite",
+              "parent": 100240,
+              "count": 42,
+              "children": []
+            },
+            {
+              "id": 103109,
+              "name": "Radiador",
+              "parent": 100240,
+              "count": 37,
+              "children": []
+            },
+            {
+              "id": 102931,
+              "name": "Sensor",
+              "parent": 100240,
+              "count": 7,
+              "children": []
+            },
+            {
+              "id": 101810,
+              "name": "Sensor de nivel de combustible",
+              "parent": 100240,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 100773,
+              "name": "Soporte",
+              "parent": 100240,
+              "count": 489,
+              "children": []
+            },
+            {
+              "id": 105997,
+              "name": "Varilla del nivel de aceite",
+              "parent": 100240,
+              "count": 8,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103157,
+          "name": "Herramientas",
+          "parent": 100238,
+          "count": 2,
+          "children": []
+        },
+        {
+          "id": 706835,
+          "name": "Transmisión de embrague doble",
+          "parent": 100238,
+          "count": 2,
+          "children": [
+            {
+              "id": 706846,
+              "name": "Cárter/ Piezas",
+              "parent": 706835,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100239,
+          "name": "Transmisión manual",
+          "parent": 100238,
+          "count": 1542,
+          "children": [
+            {
+              "id": 101808,
+              "name": "Accionamiento de la transmisión",
+              "parent": 100239,
+              "count": 282,
+              "children": []
+            },
+            {
+              "id": 103103,
+              "name": "Control/Sistema hidráulico",
+              "parent": 100239,
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": 100774,
+              "name": "Cárter/ Piezas",
+              "parent": 100239,
+              "count": 512,
+              "children": []
+            },
+            {
+              "id": 100769,
+              "name": "Juntas",
+              "parent": 100239,
+              "count": 113,
+              "children": []
+            },
+            {
+              "id": 103110,
+              "name": "Radiador",
+              "parent": 100239,
+              "count": 9,
+              "children": []
+            },
+            {
+              "id": 706086,
+              "name": "Rodamientos",
+              "parent": 100239,
+              "count": 78,
+              "children": []
+            },
+            {
+              "id": 102930,
+              "name": "Sensor",
+              "parent": 100239,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 101809,
+              "name": "Sensor de nivel de combustible",
+              "parent": 100239,
+              "count": 26,
+              "children": []
+            },
+            {
+              "id": 100772,
+              "name": "Soporte",
+              "parent": 100239,
+              "count": 523,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 706584,
+          "name": "Transmisión manual automatizada (ASG)",
+          "parent": 100238,
+          "count": 3,
+          "children": [
+            {
+              "id": 706621,
+              "name": "Control/Sistema hidráulico",
+              "parent": 706584,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 706586,
+              "name": "Cárter/ Piezas",
+              "parent": 706584,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 706603,
+              "name": "Sensor de nivel de combustible",
+              "parent": 706584,
+              "count": 1,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 706209,
+      "name": "Transmisión híbrida/eléctrica",
+      "parent": null,
+      "count": 291,
+      "children": [
+        {
+          "id": 706219,
+          "name": "Batería de tracción",
+          "parent": 706209,
+          "count": 12,
+          "children": []
+        },
+        {
+          "id": 706682,
+          "name": "Motor eléctrico",
+          "parent": 706209,
+          "count": 35,
+          "children": []
+        },
+        {
+          "id": 706210,
+          "name": "Refrigeración",
+          "parent": 706209,
+          "count": 249,
+          "children": [
+            {
+              "id": 706706,
+              "name": "Bomba de agua para accionamiento eléctrico",
+              "parent": 706210,
+              "count": 93,
+              "children": []
+            },
+            {
+              "id": 706557,
+              "name": "Bomba de agua para batería de transmisión",
+              "parent": 706210,
+              "count": 12,
+              "children": []
+            },
+            {
+              "id": 706695,
+              "name": "Filtro para batería de transmisión",
+              "parent": 706210,
+              "count": 16,
+              "children": []
+            },
+            {
+              "id": 706747,
+              "name": "Mangueras/tuberías/bridas",
+              "parent": 706210,
+              "count": 126,
+              "children": []
+            },
+            {
+              "id": 706215,
+              "name": "Radiador para motor eléctrico",
+              "parent": 706210,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 706569,
+          "name": "Transmisión",
+          "parent": 706209,
+          "count": 7,
+          "children": [
+            {
+              "id": 706570,
+              "name": "Filtro",
+              "parent": 706569,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 706764,
+              "name": "Juntas",
+              "parent": 706569,
+              "count": 1,
+              "children": []
+            },
+            {
+              "id": 706762,
+              "name": "Sensor de nivel de combustible",
+              "parent": 706569,
+              "count": 3,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 100016,
+      "name": "Transmisión por correas",
+      "parent": null,
+      "count": 8686,
+      "children": [
+        {
+          "id": 101482,
+          "name": "Accesorios/piezas",
+          "parent": 100016,
+          "count": 54,
+          "children": []
+        },
+        {
+          "id": 100085,
+          "name": "Correa dentada /Juego",
+          "parent": 100016,
+          "count": 2974,
+          "children": [
+            {
+              "id": 100877,
+              "name": "Amortiguador de vibraciones",
+              "parent": 100085,
+              "count": 22,
+              "children": []
+            },
+            {
+              "id": 100459,
+              "name": "Brazo tensor",
+              "parent": 100085,
+              "count": 6,
+              "children": []
+            },
+            {
+              "id": 100452,
+              "name": "Correa dentada/Árbol de levas",
+              "parent": 100085,
+              "count": 651,
+              "children": []
+            },
+            {
+              "id": 102016,
+              "name": "Cubierta correa distribución",
+              "parent": 100085,
+              "count": 4,
+              "children": []
+            },
+            {
+              "id": 100453,
+              "name": "Juego de correa dentada",
+              "parent": 100085,
+              "count": 1231,
+              "children": []
+            },
+            {
+              "id": 102029,
+              "name": "Juego de rodillos",
+              "parent": 100085,
+              "count": 20,
+              "children": []
+            },
+            {
+              "id": 100457,
+              "name": "Rodillo inversor/guía",
+              "parent": 100085,
+              "count": 389,
+              "children": []
+            },
+            {
+              "id": 100455,
+              "name": "Rodillo tensor",
+              "parent": 100085,
+              "count": 662,
+              "children": []
+            },
+            {
+              "id": 100461,
+              "name": "Tensor de correa (unidad tensora)",
+              "parent": 100085,
+              "count": 37,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100082,
+          "name": "Correa poli V/Juego",
+          "parent": 100016,
+          "count": 4520,
+          "children": [
+            {
+              "id": 100876,
+              "name": "Amortiguador de vibraciones",
+              "parent": 100082,
+              "count": 56,
+              "children": []
+            },
+            {
+              "id": 100438,
+              "name": "Brazo tensor",
+              "parent": 100082,
+              "count": 34,
+              "children": []
+            },
+            {
+              "id": 100431,
+              "name": "Correa poli V",
+              "parent": 100082,
+              "count": 1547,
+              "children": []
+            },
+            {
+              "id": 100432,
+              "name": "Juego de correa poli V",
+              "parent": 100082,
+              "count": 850,
+              "children": []
+            },
+            {
+              "id": 102037,
+              "name": "Juego de rodillos",
+              "parent": 100082,
+              "count": 3,
+              "children": []
+            },
+            {
+              "id": 100435,
+              "name": "Rodillo inversor/guía",
+              "parent": 100082,
+              "count": 802,
+              "children": []
+            },
+            {
+              "id": 100434,
+              "name": "Rodillo tensor",
+              "parent": 100082,
+              "count": 153,
+              "children": []
+            },
+            {
+              "id": 100441,
+              "name": "Tensor de correa (unidad tensora)",
+              "parent": 100082,
+              "count": 1083,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 100080,
+          "name": "Correa trapezoidal / Juego",
+          "parent": 100016,
+          "count": 111,
+          "children": [
+            {
+              "id": 100450,
+              "name": "Banda en V",
+              "parent": 100080,
+              "count": 107,
+              "children": []
+            },
+            {
+              "id": 100887,
+              "name": "Brazo tensor",
+              "parent": 100080,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 100765,
+              "name": "Polea de inversión",
+              "parent": 100080,
+              "count": 2,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 102898,
+          "name": "Manguito flexible de acoplamiento",
+          "parent": 100016,
+          "count": 3,
+          "children": []
+        },
+        {
+          "id": 101971,
+          "name": "Polea",
+          "parent": 100016,
+          "count": 732,
+          "children": []
+        },
+        {
+          "id": 102239,
+          "name": "Rueda libre de alternador",
+          "parent": 100016,
+          "count": 437,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 100400,
+      "name": "Transmisión por ejes",
+      "parent": null,
+      "count": 1031,
+      "children": [
+        {
+          "id": 101996,
+          "name": "Aceites",
+          "parent": 100400,
+          "count": 63,
+          "children": []
+        },
+        {
+          "id": 100416,
+          "name": "Caja de transmisión",
+          "parent": 100400,
+          "count": 94,
+          "children": [
+            {
+              "id": 706910,
+              "name": "Cárter/ Piezas",
+              "parent": 100416,
+              "count": 2,
+              "children": []
+            },
+            {
+              "id": 706908,
+              "name": "Empaques",
+              "parent": 100416,
+              "count": 5,
+              "children": []
+            },
+            {
+              "id": 706919,
+              "name": "Soporte",
+              "parent": 100416,
+              "count": 87,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 103456,
+          "name": "Clutch tipo Haldex (tracción integral)",
+          "parent": 100400,
+          "count": 14,
+          "children": []
+        },
+        {
+          "id": 100415,
+          "name": "Diferencial",
+          "parent": 100400,
+          "count": 195,
+          "children": []
+        },
+        {
+          "id": 100768,
+          "name": "Interruptor/válvulas",
+          "parent": 100400,
+          "count": 9,
+          "children": []
+        },
+        {
+          "id": 100703,
+          "name": "Árbol de transmisión",
+          "parent": 100400,
+          "count": 663,
+          "children": [
+            {
+              "id": 100707,
+              "name": "Disco de rótula",
+              "parent": 100703,
+              "count": 297,
+              "children": []
+            },
+            {
+              "id": 100839,
+              "name": "Rodamiento/soporte",
+              "parent": 100703,
+              "count": 284,
+              "children": []
+            },
+            {
+              "id": 100805,
+              "name": "Árbol de transmisión",
+              "parent": 100703,
+              "count": 91,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
