@@ -23,6 +23,7 @@ import re
 import os
 import sys
 import unicodedata
+import hashlib
 
 csv.field_size_limit(10 ** 9)
 
@@ -41,6 +42,8 @@ ORDER = [
 ]
 # secciones a eliminar por completo del Body
 DROP_SECTIONS = {"Preguntas Frecuentes"}
+# título a mostrar para ciertas secciones (la clave interna se conserva para el match)
+TITLE_MAP = {"Antes de Comprar": "Asegura el ajuste perfecto"}
 
 MARCAS_AUTO = {
     "bmw", "mercedes", "mercedes-benz", "benz", "audi", "vw", "volkswagen",
@@ -305,147 +308,227 @@ NEW_ENVIO = (
     "</ul>"
 )
 ANTES_COMPRAR = (
-    "<p>Asegura el ajuste perfecto: una vez realizada tu compra, un asesor te "
-    "contactará brevemente para validar la compatibilidad con tu número de serie "
-    "(VIN) y garantizar que recibas exactamente lo que tu auto necesita.</p>"
+    "<p>Una vez realizada tu compra, un asesor te contactará brevemente para "
+    "validar la compatibilidad con tu número de serie (VIN) y garantizar que "
+    "recibas exactamente lo que tu auto necesita.</p>"
 )
 ENVIO_GENERICO = ("Tenemos stock disponible para entrega inmediata. Enviamos el "
                   "mismo dia de tu pago a Ciudad de Mexico y a todo el pais via "
                   "DHL o FedEx.")
 
 # ---------- productos complemento (sugerencia por tipo de pieza) ----------
-COMPLEMENTO_GENERICO = ("Para completar tu reparación, considera también las piezas "
-    "asociadas (juntas, sellos, tornillería) o la del lado opuesto del eje. Consulta "
-    "con nuestro asesor.")
-_ENFRIA = ("Para completar el servicio del sistema de enfriamiento, considera también "
-    "el anticongelante, las mangueras de refrigeración y la tapa del depósito. "
-    "Consulta con nuestro asesor.")
-_FRENO_B = ("Para un frenado óptimo, considera también los discos de freno, el sensor "
-    "de desgaste de balata y el líquido de frenos. Consulta con nuestro asesor.")
-_FRENO_D = ("Considera también las balatas, el sensor de desgaste y el líquido de "
-    "frenos. Consulta con nuestro asesor.")
-_SUSP = ("Considera también las rótulas, los bujes, las bieletas y los amortiguadores "
-    "de la suspensión. Consulta con nuestro asesor.")
-_ENC = ("Aprovecha para revisar también las bujías y las bobinas de encendido, además "
-    "de los sellos/pozos de bujía. Consulta con nuestro asesor.")
-_DIST = ("Considera también el tensor, las guías, las poleas y los sellos delanteros "
-    "del sistema de distribución. Consulta con nuestro asesor.")
-_JUNTAS = ("Considera también el kit de juntas de motor, los sellos/retenes y los "
-    "birlos de cabeza para el armado. Consulta con nuestro asesor.")
-_CARRO = ("Considera también los clips/grapas de montaje y el servicio de pintura "
-    "para igualar el color. Consulta con nuestro asesor.")
-_AC = ("Considera también el filtro deshidratador, la válvula de expansión y la carga "
-    "de gas del sistema de A/C. Consulta con nuestro asesor.")
+def _C(parts, reason):
+    """La sugerencia de complemento se guarda como (piezas, motivo); el envoltorio
+    (apertura/cierre) se arma al vuelo, variándolo por producto."""
+    return (parts, reason)
+
+
+# Variantes de apertura y cierre del párrafo de complemento (se elige por hash del
+# handle, para que no sea idéntico en todo el catálogo).
+_OPEN = [
+    "Para asegurar una reparación completa y evitar fallas recurrentes, te recomendamos revisar también ",
+    "Aprovecha la reparación para revisar también ",
+    "Para que el arreglo dure y no regrese la falla, conviene revisar también ",
+    "Te recomendamos atender al mismo tiempo ",
+]
+_CLOSE = [
+    " Consulta con nuestro asesor para confirmar disponibilidad y armar tu reparación completa.",
+    " Escríbenos y un asesor te ayuda a reunir todo en un solo pedido.",
+    " Pregúntale a nuestro asesor por la disponibilidad de estas piezas.",
+    " Consúltanos y te ayudamos a dejar la reparación completa.",
+]
+
+
+def build_complemento(tup, handle):
+    """Arma el párrafo final desde (piezas, motivo), con envoltorio variado."""
+    if not tup or not isinstance(tup, tuple):
+        return ""
+    parts, reason = tup
+    h = int(hashlib.md5((handle or "").encode("utf-8")).hexdigest(), 16)
+    apertura = _OPEN[h % len(_OPEN)]
+    cierre = _CLOSE[(h // len(_OPEN)) % len(_CLOSE)]
+    return apertura + parts + ". " + reason + cierre
+
+
+COMPLEMENTO_GENERICO = _C(
+    "las piezas asociadas (juntas, sellos y tornillería) o la del lado opuesto del eje",
+    "Suelen desgastarse al mismo ritmo y, si se reutilizan, pueden provocar que la falla "
+    "regrese poco después de la reparación.")
+_ENFRIA = _C(
+    "el anticongelante, las mangueras de refrigeración y la tapa del depósito",
+    "Trabajan en el mismo circuito de enfriamiento y, si están desgastados, pueden "
+    "provocar fugas o que el motor vuelva a sobrecalentar.")
+_FRENO_B = _C(
+    "los discos de freno, el sensor de desgaste de balata y el líquido de frenos",
+    "Trabajan junto con las balatas y, si están desgastados, pueden generar vibración, "
+    "ruido o un frenado deficiente.")
+_FRENO_D = _C(
+    "las balatas, el sensor de desgaste de balata y el líquido de frenos",
+    "Trabajan junto con el disco y, si están desgastados, pueden generar vibración, ruido "
+    "o un frenado deficiente.")
+_SUSP = _C(
+    "las rótulas, los bujes y las bieletas de la suspensión",
+    "Trabajan en conjunto y, si presentan holgura o desgaste, pueden provocar ruidos, "
+    "golpeteos al pasar baches y desgaste irregular del neumático.")
+_ENC = _C(
+    "las bujías y las bobinas de encendido, además de los sellos o pozos de bujía",
+    "Si alguno está desgastado o con fuga de aceite, puede provocar fallos de combustión, "
+    "ralentí irregular o el testigo de motor encendido.")
+_DIST = _C(
+    "el tensor, las guías, las poleas y los sellos del sistema de distribución",
+    "Trabajan junto con la cadena o banda y, si están desgastados, pueden generar ruido o "
+    "saltos de tiempo poco después del cambio.")
+_JUNTAS = _C(
+    "el kit de juntas de motor, los sellos o retenes y los birlos de cabeza",
+    "Si se reutilizan piezas viejas, pueden aparecer nuevas fugas de aceite o refrigerante "
+    "tras el armado.")
+_CARRO = _C(
+    "los clips o grapas de montaje y el servicio de pintura para igualar el color",
+    "Sin ellos, la pieza puede quedar floja o con un acabado que no coincide con tu "
+    "vehículo.")
+_AC = _C(
+    "el filtro deshidratador, la válvula de expansión y la carga de gas del A/C",
+    "Trabajan en el mismo circuito y, si no se atienden, el sistema puede volver a fallar "
+    "o no enfriar correctamente.")
 
 # (token a buscar en intro+titulo) -> sugerencia. Cadena vacia = sin complemento.
 COMPLEMENTOS_RAW = [
     ("deposito de anticongelante", _ENFRIA), ("deposito anticongelante", _ENFRIA),
-    ("bomba de agua", "Aprovecha el servicio para cambiar también el anticongelante, el termostato y la banda que la acciona. Consulta con nuestro asesor."),
-    ("bomba agua", "Aprovecha el servicio para cambiar también el anticongelante, el termostato y la banda que la acciona. Consulta con nuestro asesor."),
-    ("radiador", "Considera también el anticongelante, las mangueras del radiador, la tapa del radiador y el termostato. Consulta con nuestro asesor."),
-    ("termostato", "Aprovecha para cambiar también el anticongelante y revisar las mangueras de refrigeración y la tapa del depósito. Consulta con nuestro asesor."),
+    ("bomba de agua", _C("el anticongelante, el termostato y la banda que la acciona", "Trabajan en el mismo sistema de enfriamiento y, si están desgastados, pueden provocar fugas o sobrecalentamiento poco después del cambio.")),
+    ("bomba agua", _C("el anticongelante, el termostato y la banda que la acciona", "Trabajan en el mismo sistema de enfriamiento y, si están desgastados, pueden provocar fugas o sobrecalentamiento poco después del cambio.")),
+    ("radiador", _C("el anticongelante, las mangueras del radiador, la tapa del radiador y el termostato", "Trabajan en el mismo circuito de enfriamiento y, si están desgastados, pueden provocar fugas o que el motor vuelva a sobrecalentar.")),
+    ("termostato", _ENFRIA),
     ("manguera", _ENFRIA), ("tubo de agua", _ENFRIA), ("tubo agua", _ENFRIA),
     ("toma de agua", _ENFRIA), ("brida toma", _ENFRIA),
-    ("enfriador", "Considera también las juntas/empaques del enfriador y revisar el aceite o el anticongelante según el sistema. Consulta con nuestro asesor."),
-    ("motoventilador", "Considera también revisar el anticongelante, el radiador y el sensor de temperatura. Consulta con nuestro asesor."),
-    ("ventilador", "Considera también revisar el anticongelante, el radiador y el sensor de temperatura. Consulta con nuestro asesor."),
+    ("enfriador", _C("las juntas o empaques del enfriador y el aceite o anticongelante según el sistema", "Si se reutiliza un empaque viejo, puede aparecer una fuga nueva poco después de instalar el enfriador.")),
+    ("motoventilador", _C("el anticongelante, el radiador y el sensor de temperatura", "Trabajan en el sistema de enfriamiento y, si fallan, el motor puede volver a sobrecalentar en tráfico.")),
+    ("ventilador", _C("el anticongelante, el radiador y el sensor de temperatura", "Trabajan en el sistema de enfriamiento y, si fallan, el motor puede volver a sobrecalentar en tráfico.")),
     ("balata", _FRENO_B),
     ("disco de freno", _FRENO_D), ("disco freno", _FRENO_D),
-    ("sensor de desgaste", "Aprovecha para cambiar también las balatas y revisar los discos de freno. Consulta con nuestro asesor."),
-    ("caliper", "Considera también las balatas, los discos, las mangueras de freno y el líquido de frenos. Consulta con nuestro asesor."),
-    ("bomba maestra", "Considera también el líquido de frenos, la purga del sistema y revisar balatas y discos. Consulta con nuestro asesor."),
-    ("freno de mano", "Considera también revisar las balatas/zapatas traseras y el mecanismo del freno de mano. Consulta con nuestro asesor."),
+    ("sensor de desgaste", _C("las balatas y los discos de freno", "Este sensor se activa con el desgaste de las balatas; si no se cambian juntas, el testigo de freno puede encenderse de nuevo.")),
+    ("caliper", _C("las balatas, los discos, las mangueras de freno y el líquido de frenos", "Trabajan junto con el caliper y, si están desgastados, pueden generar fugas, vibración o un frenado deficiente.")),
+    ("bomba maestra", _C("el líquido de frenos, la purga del sistema y el estado de balatas y discos", "Trabajan en el mismo sistema hidráulico y, si no se atienden, el pedal puede seguir sintiéndose esponjoso.")),
+    ("freno de mano", _C("las balatas o zapatas traseras y el mecanismo del freno de mano", "Trabajan en conjunto y, si están desgastados, el freno de mano puede seguir sin sujetar bien.")),
     ("amortiguador de cofre", ""), ("amortiguador cofre", ""),
     ("amortiguador de cajuela", ""), ("amortiguador cajuela", ""),
-    ("amortiguador de aire", "Considera también el compresor de la suspensión neumática y las válvulas del sistema. Consulta con nuestro asesor."),
-    ("bolsa de aire", "Considera también el compresor de la suspensión neumática y las válvulas del sistema. Consulta con nuestro asesor."),
-    ("amortiguador", "Considera también las bases (cazoletas) de amortiguador, los bujes y las bieletas de la suspensión. Consulta con nuestro asesor."),
+    ("amortiguador de aire", _C("el compresor de la suspensión neumática y las válvulas del sistema", "Trabajan en el mismo sistema y, si el compresor está forzado, la nueva bolsa o amortiguador puede volver a fallar.")),
+    ("bolsa de aire", _C("el compresor de la suspensión neumática y las válvulas del sistema", "Trabajan en el mismo sistema y, si el compresor está forzado, la nueva bolsa o amortiguador puede volver a fallar.")),
+    ("amortiguador", _C("las bases o cazoletas de amortiguador, los bujes y las bieletas de la suspensión", "Trabajan en conjunto y, si presentan desgaste, pueden provocar ruidos y un manejo inestable aunque el amortiguador sea nuevo.")),
     ("brazo de suspension", _SUSP), ("horquilla", _SUSP), ("buje", _SUSP),
     ("rotula", _SUSP),
-    ("terminal de direccion", "Considera también las rótulas, la terminal del otro lado y la alineación posterior. Consulta con nuestro asesor."),
-    ("bieleta", "Considera también los bujes de la barra estabilizadora, las rótulas y la bieleta del otro lado. Consulta con nuestro asesor."),
-    ("tornillo estabilizador", "Considera también los bujes de la barra estabilizadora, las rótulas y la bieleta del otro lado. Consulta con nuestro asesor."),
-    ("barra estabilizadora", "Considera también los bujes y las bieletas de la barra estabilizadora. Consulta con nuestro asesor."),
-    ("balero", "Considera también la maza, el sensor ABS y la tornillería de eje. Consulta con nuestro asesor."),
-    ("soporte de motor", "Considera revisar también los demás soportes (de motor y de transmisión), que envejecen al mismo ritmo. Consulta con nuestro asesor."),
-    ("soporte motor", "Considera revisar también los demás soportes (de motor y de transmisión), que envejecen al mismo ritmo. Consulta con nuestro asesor."),
-    ("taco de motor", "Considera revisar también los demás soportes (de motor y de transmisión), que envejecen al mismo ritmo. Consulta con nuestro asesor."),
-    ("soporte de transmision", "Considera revisar también los soportes de motor y la tornillería, que envejecen al mismo ritmo. Consulta con nuestro asesor."),
-    ("soporte transmision", "Considera revisar también los soportes de motor y la tornillería, que envejecen al mismo ritmo. Consulta con nuestro asesor."),
-    ("flecha homocinetica", "Considera también los cubrepolvos (botas), la grasa y el balero de rueda. Consulta con nuestro asesor."),
-    ("cubre polvo", "Considera también la junta/rótula que protege y la grasa de relleno. Consulta con nuestro asesor."),
-    ("cubrepolvo", "Considera también la junta/rótula que protege y la grasa de relleno. Consulta con nuestro asesor."),
-    ("licuadora", "Considera también el líquido de dirección, las terminales y la alineación posterior. Consulta con nuestro asesor."),
-    ("bomba de direccion", "Considera también el líquido de dirección hidráulica y las mangueras de presión y retorno. Consulta con nuestro asesor."),
-    ("deposito direccion", "Considera también el líquido de dirección y revisar la bomba y las mangueras. Consulta con nuestro asesor."),
-    ("bujia", _ENC), ("bobina", "Considera también las bujías de encendido y revisar los conectores de la bobina. Consulta con nuestro asesor."),
-    ("cables de bujia", "Considera también las bujías de encendido y la tapa/rotor del distribuidor si aplica. Consulta con nuestro asesor."),
+    ("terminal de direccion", _C("las rótulas, la terminal del otro lado y la alineación posterior", "Trabajan en conjunto en la dirección y, si una está gastada, el volante puede seguir con holgura y desgastar los neumáticos.")),
+    ("bieleta", _C("los bujes de la barra estabilizadora, las rótulas y la bieleta del otro lado", "Trabajan en conjunto y, si una está floja, el golpeteo al pasar baches puede continuar.")),
+    ("tornillo estabilizador", _C("los bujes de la barra estabilizadora, las rótulas y la bieleta del otro lado", "Trabajan en conjunto y, si una está floja, el golpeteo al pasar baches puede continuar.")),
+    ("barra estabilizadora", _C("los bujes y las bieletas de la barra estabilizadora", "Trabajan en conjunto y, si están gastados, el balanceo y los ruidos en curva pueden continuar.")),
+    ("balero", _C("la maza de rueda, el sensor ABS y la tornillería de eje", "Trabajan en conjunto y, si la maza o el sensor están dañados, puede aparecer zumbido o el testigo ABS de nuevo.")),
+    ("soporte de motor", _C("los demás soportes de motor y de transmisión", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones y los golpes al acelerar pueden continuar.")),
+    ("soporte motor", _C("los demás soportes de motor y de transmisión", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones y los golpes al acelerar pueden continuar.")),
+    ("taco de motor", _C("los demás soportes de motor y de transmisión", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones y los golpes al acelerar pueden continuar.")),
+    ("soporte de transmision", _C("los soportes de motor y la tornillería", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones al cambiar de marcha pueden continuar.")),
+    ("soporte transmision", _C("los soportes de motor y la tornillería", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones al cambiar de marcha pueden continuar.")),
+    ("flecha homocinetica", _C("los cubrepolvos o botas, la grasa y el balero de rueda", "Trabajan en conjunto y, si el cubrepolvo se rompe, entra suciedad y la junta nueva puede dañarse pronto.")),
+    ("cubre polvo", _C("la junta o rótula que protege y la grasa de relleno", "Si la junta interior ya tiene desgaste, conviene cambiarla junto con el cubrepolvo para no repetir el trabajo.")),
+    ("cubrepolvo", _C("la junta o rótula que protege y la grasa de relleno", "Si la junta interior ya tiene desgaste, conviene cambiarla junto con el cubrepolvo para no repetir el trabajo.")),
+    ("licuadora", _C("el líquido de dirección, las terminales y la alineación posterior", "Trabajan en conjunto y, si no se atienden, la dirección puede seguir dura o con holgura.")),
+    ("bomba de direccion", _C("el líquido de dirección hidráulica y las mangueras de presión y retorno", "Trabajan en el mismo circuito y, si el líquido está contaminado, la bomba nueva puede dañarse pronto.")),
+    ("deposito direccion", _C("el líquido de dirección, la bomba y las mangueras", "Trabajan en el mismo circuito y, si el líquido está sucio, conviene cambiarlo al instalar el depósito.")),
+    ("bujia", _ENC),
+    ("bobina", _C("las bujías de encendido y los conectores de la bobina", "Trabajan en conjunto y, si las bujías están gastadas, los fallos de combustión pueden continuar.")),
+    ("cables de bujia", _C("las bujías de encendido y la tapa o rotor del distribuidor si aplica", "Trabajan en conjunto y, si las bujías están gastadas, los fallos de encendido pueden continuar.")),
     ("pozo de bujia", _ENC), ("tubo o pozo", _ENC),
-    ("filtro de aceite de la transmision", "Considera también el aceite ATF y la junta de la cuba. Consulta con nuestro asesor."),
-    ("filtro de aceite", "Aprovecha el servicio para cambiar también el aceite del motor y el filtro de aire. Consulta con nuestro asesor."),
-    ("filtro aceite", "Aprovecha el servicio para cambiar también el aceite del motor y el filtro de aire. Consulta con nuestro asesor."),
-    ("filtro de aire", "Considera también el filtro de cabina y, en el servicio, el aceite y su filtro. Consulta con nuestro asesor."),
-    ("filtro aire", "Considera también el filtro de cabina y, en el servicio, el aceite y su filtro. Consulta con nuestro asesor."),
-    ("filtro de cabina", "Considera también el filtro de aire del motor y la limpieza del sistema de A/C. Consulta con nuestro asesor."),
-    ("filtro cabina", "Considera también el filtro de aire del motor y la limpieza del sistema de A/C. Consulta con nuestro asesor."),
-    ("filtro de combustible", "Considera también la bomba de combustible y revisar los inyectores. Consulta con nuestro asesor."),
-    ("filtro de gasolina", "Considera también la bomba de combustible y revisar los inyectores. Consulta con nuestro asesor."),
+    ("filtro de aceite de la transmision", _C("el aceite ATF y la junta de la cuba", "Se cambian en el mismo servicio y, si se reutiliza la junta, puede aparecer una fuga nueva.")),
+    ("filtro de aceite", _C("el aceite del motor y el filtro de aire", "Se cambian en el mismo servicio para mantener el motor protegido y con buen rendimiento.")),
+    ("filtro aceite", _C("el aceite del motor y el filtro de aire", "Se cambian en el mismo servicio para mantener el motor protegido y con buen rendimiento.")),
+    ("filtro de aire", _C("el filtro de cabina y, en el servicio, el aceite del motor y su filtro", "Se cambian en el mismo mantenimiento y, descuidados, pueden afectar el rendimiento del motor.")),
+    ("filtro aire", _C("el filtro de cabina y, en el servicio, el aceite del motor y su filtro", "Se cambian en el mismo mantenimiento y, descuidados, pueden afectar el rendimiento del motor.")),
+    ("filtro de cabina", _C("el filtro de aire del motor y la limpieza del sistema de A/C", "Se atienden en el mismo servicio y, descuidados, pueden generar malos olores y menor flujo de aire en la cabina.")),
+    ("filtro cabina", _C("el filtro de aire del motor y la limpieza del sistema de A/C", "Se atienden en el mismo servicio y, descuidados, pueden generar malos olores y menor flujo de aire en la cabina.")),
+    ("filtro de combustible", _C("la bomba de combustible y el estado de los inyectores", "Trabajan en el mismo circuito y, si están sucios, las fallas de alimentación pueden continuar.")),
+    ("filtro de gasolina", _C("la bomba de combustible y el estado de los inyectores", "Trabajan en el mismo circuito y, si están sucios, las fallas de alimentación pueden continuar.")),
     ("cadena de tiempo", _DIST), ("vanos", _DIST), ("banda", _DIST),
     ("polea tensora", _DIST), ("tensor", _DIST), ("polea", _DIST),
-    ("arbol de levas", "Considera también los sellos/retenes, la junta de tapa de válvulas y los solenoides VVT/VANOS. Consulta con nuestro asesor."),
-    ("valvula solenoide vvt", "Considera también los sellos del árbol de levas y la junta de tapa de válvulas. Consulta con nuestro asesor."),
-    ("tapa de valvulas", "Considera también las juntas de bujía/pozo, las bobinas y los sellos del árbol de levas. Consulta con nuestro asesor."),
-    ("tapa de punterias", "Considera también las juntas de bujía/pozo, las bobinas y los sellos del árbol de levas. Consulta con nuestro asesor."),
-    ("tapa punterias", "Considera también las juntas de bujía/pozo, las bobinas y los sellos del árbol de levas. Consulta con nuestro asesor."),
-    ("colector de admision", "Considera también la limpieza del cuerpo de aceleración y las juntas relacionadas. Consulta con nuestro asesor."),
-    ("colector de escape", "Considera también los birlos/tuercas del colector y la junta del turbo si aplica. Consulta con nuestro asesor."),
+    ("arbol de levas", _C("los sellos o retenes, la junta de tapa de válvulas y los solenoides VVT/VANOS", "Trabajan en conjunto y, si se reutilizan sellos viejos, pueden aparecer fugas o códigos del sistema variable.")),
+    ("valvula solenoide vvt", _C("los sellos del árbol de levas y la junta de tapa de válvulas", "Trabajan en el mismo sistema y, si hay fugas de aceite, el código del sistema variable puede regresar.")),
+    ("tapa de valvulas", _C("las juntas de bujía o pozo, las bobinas y los sellos del árbol de levas", "Trabajan en la misma zona y, si hay fuga de aceite, puede dañar las bobinas y provocar fallos de encendido.")),
+    ("tapa de punterias", _C("las juntas de bujía o pozo, las bobinas y los sellos del árbol de levas", "Trabajan en la misma zona y, si hay fuga de aceite, puede dañar las bobinas y provocar fallos de encendido.")),
+    ("tapa punterias", _C("las juntas de bujía o pozo, las bobinas y los sellos del árbol de levas", "Trabajan en la misma zona y, si hay fuga de aceite, puede dañar las bobinas y provocar fallos de encendido.")),
+    ("colector de admision", _C("la limpieza del cuerpo de aceleración y las juntas relacionadas", "Trabajan en el mismo sistema de admisión y, si hay entradas de aire falso, el ralentí puede seguir irregular.")),
+    ("colector de escape", _C("los birlos o tuercas del colector y la junta del turbo si aplica", "Trabajan en la misma zona caliente y, si se reutilizan birlos vencidos, el soplido del escape puede regresar.")),
     ("junta de cabeza", _JUNTAS), ("kit de juntas", _JUNTAS), ("junta o empaque", _JUNTAS),
-    ("carter", "Aprovecha para cambiar también el aceite, el filtro de aceite y la junta del cárter. Consulta con nuestro asesor."),
-    ("bomba de aceite", "Considera también el aceite, el filtro de aceite y la junta/sello asociado. Consulta con nuestro asesor."),
-    ("turbo", "Considera también las mangueras de admisión, las juntas del turbo y un cambio de aceite limpio. Consulta con nuestro asesor."),
-    ("intercooler", "Considera también las mangueras de admisión y las abrazaderas. Consulta con nuestro asesor."),
-    ("cuerpo de aceleracion", "Considera también la limpieza del cuerpo de aceleración, la junta y las abrazaderas. Consulta con nuestro asesor."),
-    ("valvula pcv", "Considera también la junta/empaque y revisar las mangueras del sistema PCV. Consulta con nuestro asesor."),
-    ("separador de aceite", "Considera también la junta/empaque y revisar las mangueras del sistema PCV. Consulta con nuestro asesor."),
-    ("separador aceite", "Considera también la junta/empaque y revisar las mangueras del sistema PCV. Consulta con nuestro asesor."),
-    ("reten", "Considera también el aceite del componente y las juntas asociadas. Consulta con nuestro asesor."),
+    ("carter", _C("el aceite, el filtro de aceite y la junta del cárter", "Se atienden en el mismo trabajo y, si se reutiliza la junta, puede aparecer una fuga nueva.")),
+    ("bomba de aceite", _C("el aceite, el filtro de aceite y la junta o sello asociado", "Trabajan en el mismo sistema de lubricación y, descuidados, pueden comprometer la presión de aceite.")),
+    ("turbo", _C("las mangueras de admisión, las juntas del turbo y un cambio de aceite limpio", "Trabajan junto con el turbo y, si el aceite está sucio, el turbo nuevo puede dañarse pronto.")),
+    ("intercooler", _C("las mangueras de admisión y las abrazaderas", "Trabajan junto con el intercooler y, si están agrietadas, puede haber pérdida de presión y de potencia.")),
+    ("cuerpo de aceleracion", _C("la limpieza del cuerpo de aceleración, su junta y las abrazaderas", "Trabajan en el mismo sistema de admisión y, descuidados, el ralentí puede seguir irregular.")),
+    ("valvula pcv", _C("la junta o empaque y las mangueras del sistema PCV", "Trabajan en conjunto y, si una manguera está dura o rota, el consumo de aceite o el ralentí irregular pueden continuar.")),
+    ("separador de aceite", _C("la junta o empaque y las mangueras del sistema PCV", "Trabajan en conjunto y, si una manguera está dura o rota, el consumo de aceite o el ralentí irregular pueden continuar.")),
+    ("separador aceite", _C("la junta o empaque y las mangueras del sistema PCV", "Trabajan en conjunto y, si una manguera está dura o rota, el consumo de aceite o el ralentí irregular pueden continuar.")),
+    ("reten", _C("el aceite del componente y las juntas asociadas", "Se atienden en el mismo trabajo y, si se reutilizan piezas viejas, puede aparecer una fuga nueva.")),
     ("piston", _JUNTAS), ("biela", _JUNTAS), ("valvula del motor", _JUNTAS),
-    ("alternador", "Considera también la banda de accesorios y el tensor. Consulta con nuestro asesor."),
-    ("motor de arranque", "Considera también revisar la batería y los cables de arranque. Consulta con nuestro asesor."),
-    ("marcha", "Considera también revisar la batería y los cables de arranque. Consulta con nuestro asesor."),
-    ("sensor abs", "Considera también el balero/maza de rueda y la limpieza del anillo dentado (tone ring). Consulta con nuestro asesor."),
-    ("sensor de estacionamiento", "Considera también los demás sensores PDC del mismo grupo y la calibración posterior. Consulta con nuestro asesor."),
-    ("sensor estacionamiento", "Considera también los demás sensores PDC del mismo grupo y la calibración posterior. Consulta con nuestro asesor."),
-    ("balastra", "Considera también el foco de xenón (HID) y revisar el conector. Consulta con nuestro asesor."),
+    ("alternador", _C("la banda de accesorios y el tensor", "Trabajan en conjunto y, si la banda o el tensor están gastados, el chillido o la falta de carga pueden continuar.")),
+    ("motor de arranque", _C("la batería y los cables de arranque", "Trabajan en conjunto y, si la batería está débil, el arranque puede seguir fallando aunque la marcha sea nueva.")),
+    ("marcha", _C("la batería y los cables de arranque", "Trabajan en conjunto y, si la batería está débil, el arranque puede seguir fallando aunque la marcha sea nueva.")),
+    ("sensor abs", _C("el balero o maza de rueda, así como la limpieza del anillo dentado o tone ring", "Estos componentes trabajan directamente con el sensor ABS y, si presentan desgaste o suciedad, pueden provocar nuevamente testigos en el tablero o lecturas incorrectas.")),
+    ("sensor de estacionamiento", _C("los demás sensores PDC del mismo grupo y la calibración posterior", "Trabajan en conjunto y, si otro sensor está dañado, el sistema de estacionamiento puede seguir marcando error.")),
+    ("sensor estacionamiento", _C("los demás sensores PDC del mismo grupo y la calibración posterior", "Trabajan en conjunto y, si otro sensor está dañado, el sistema de estacionamiento puede seguir marcando error.")),
+    ("balastra", _C("el foco de xenón (HID) y el estado del conector", "Trabajan en conjunto y, si el foco está agotado, la luz puede seguir parpadeando o sin encender.")),
     ("compresor", _AC), ("condensador", _AC), ("evaporador", _AC),
-    ("resistencia", "Considera también el filtro de cabina y revisar el motor del soplador. Consulta con nuestro asesor."),
-    ("clutch", "Considera también el volante motor (o su rectificado), el cilindro/collarín y el balero piloto. Consulta con nuestro asesor."),
-    ("embrague", "Considera también el volante motor (o su rectificado), el cilindro/collarín y el balero piloto. Consulta con nuestro asesor."),
-    ("caja transfer", "Considera también el aceite de la transfer y revisar los baleros del eje. Consulta con nuestro asesor."),
-    ("cardan", "Considera también la otra junta/soporte del cardán y los baleros, que envejecen al mismo ritmo. Consulta con nuestro asesor."),
+    ("resistencia", _C("el filtro de cabina y el motor del soplador", "Trabajan en conjunto y, si el soplador está forzado, la resistencia nueva puede volver a quemarse.")),
+    ("clutch", _C("el volante motor (o su rectificado), el cilindro o collarín y el balero piloto", "Trabajan en conjunto y, si se reutilizan piezas gastadas, el embrague nuevo puede vibrar o durar menos.")),
+    ("embrague", _C("el volante motor (o su rectificado), el cilindro o collarín y el balero piloto", "Trabajan en conjunto y, si se reutilizan piezas gastadas, el embrague nuevo puede vibrar o durar menos.")),
+    ("caja transfer", _C("el aceite de la transfer y los baleros del eje", "Trabajan en conjunto y, si el aceite está degradado, la falla puede regresar pronto.")),
+    ("cardan", _C("la otra junta o soporte del cardán y los baleros", "Envejecen al mismo ritmo y, si se deja uno gastado, las vibraciones al acelerar pueden continuar.")),
     ("parrilla", _CARRO), ("rejilla", _CARRO), ("moldura", _CARRO),
     ("defensa", _CARRO), ("salpicadera", _CARRO), ("aleron", _CARRO),
-    ("faro", "Considera también las grapas/soportes del faro y, si aplica, el foco o la balastra. Consulta con nuestro asesor."),
-    ("calavera", "Considera también las grapas/soportes y los focos si aplica. Consulta con nuestro asesor."),
-    ("espejo", "Considera también el cristal del espejo y la tapa/carcasa si están dañados. Consulta con nuestro asesor."),
-    ("manija", "Considera también la chapa de cerradura y la pintura para igualar el color. Consulta con nuestro asesor."),
-    ("manilla", "Considera también la chapa de cerradura y la pintura para igualar el color. Consulta con nuestro asesor."),
-    ("chapa de cerradura", "Considera también el actuador/chapa de las otras puertas si presentan el mismo síntoma. Consulta con nuestro asesor."),
-    ("control maestro", "Considera también los switches individuales de las otras puertas. Consulta con nuestro asesor."),
-    ("sensor de oxigeno", "Considera también limpiar el sistema y revisar los sensores relacionados. Consulta con nuestro asesor."),
-    ("sensor maf", "Considera también el filtro de aire y limpiar el cuerpo de aceleración. Consulta con nuestro asesor."),
+    ("faro", _C("las grapas o soportes del faro y, si aplica, el foco o la balastra", "Trabajan en conjunto y, sin las grapas correctas, el faro puede quedar flojo o con holgura.")),
+    ("calavera", _C("las grapas o soportes y los focos si aplica", "Trabajan en conjunto y, sin las grapas correctas, la calavera puede quedar floja.")),
+    ("espejo", _C("el cristal del espejo y la tapa o carcasa si están dañados", "Trabajan en conjunto y, si una parte está dañada, conviene cambiarla al mismo tiempo para un acabado uniforme.")),
+    ("manija", _C("la chapa de cerradura y la pintura para igualar el color", "Trabajan en conjunto y, si la chapa está dañada, la puerta puede seguir sin abrir bien.")),
+    ("manilla", _C("la chapa de cerradura y la pintura para igualar el color", "Trabajan en conjunto y, si la chapa está dañada, la puerta puede seguir sin abrir bien.")),
+    ("chapa de cerradura", _C("el actuador o chapa de las otras puertas si presentan el mismo síntoma", "Suelen fallar al mismo tiempo y, si se deja una gastada, el cierre centralizado puede volver a fallar.")),
+    ("control maestro", _C("los switches individuales de las otras puertas", "Trabajan en conjunto y, si otro switch falla, algún vidrio puede seguir sin responder.")),
+    ("sensor de oxigeno", _C("la limpieza del sistema y los sensores relacionados", "Trabajan en conjunto en el control de emisiones y, si otro sensor falla, el check engine puede seguir encendido.")),
+    ("sensor maf", _C("el filtro de aire y la limpieza del cuerpo de aceleración", "Trabajan en el mismo sistema de admisión y, si el filtro está sucio, los tirones pueden continuar.")),
     ("cristal", _CARRO), ("puerta", _CARRO),
     ("llavero", ""), ("emblema", ""),
 ]
 COMPLEMENTOS = sorted(((norm(k), v) for k, v in COMPLEMENTOS_RAW),
                       key=lambda kv: -len(kv[0]))
 
+# Respaldo por Sub grupo (metafield) cuando el token no hace match. Evita el
+# complemento genérico en piezas que el título nombra de forma distinta.
+SUBGRUPO_COMP_RAW = {
+    "bombas de combustible": _C("el filtro de combustible y el estado de los inyectores", "Trabajan en el mismo circuito de alimentación y, si están sucios, las fallas pueden continuar."),
+    "filtros de gasolina": _C("la bomba de combustible y el estado de los inyectores", "Trabajan en el mismo circuito de alimentación y, si están sucios, las fallas pueden continuar."),
+    "inyectores": _C("el filtro de combustible y la limpieza del sistema de inyección", "Trabajan en el mismo circuito y, si el combustible llega sucio, el ralentí irregular puede continuar."),
+    "sensores de oxigeno": _C("la limpieza del sistema de escape y los sensores relacionados", "Trabajan en conjunto en el control de emisiones y, si otro falla, el check engine puede seguir encendido."),
+    "sensores de cigueñal": _C("el sensor de árbol de levas y el estado del cableado", "Trabajan juntos en el control del motor y, si fallan, el arranque o el ralentí pueden seguir irregulares."),
+    "sensor de temperatura": _C("el anticongelante, el termostato y el estado del cableado", "Trabajan en el sistema de enfriamiento y, si fallan, la lectura de temperatura o el ventilador pueden seguir con problemas."),
+    "sensor maf": _C("el filtro de aire y la limpieza del cuerpo de aceleración", "Trabajan en el mismo sistema de admisión y, si el filtro está sucio, los tirones pueden continuar."),
+    "sensor map": _C("la limpieza del cuerpo de aceleración y las mangueras de admisión", "Trabajan en el mismo sistema de admisión y, si hay fugas de aire, el ralentí puede seguir irregular."),
+    "sensor de posicion": _C("los sensores relacionados y el estado del cableado", "Trabajan en el control del motor y, si otro falla, los códigos pueden continuar."),
+    "sensores de aceite": _C("el aceite, el filtro de aceite y la junta del sensor", "Se atienden en el mismo servicio y, si se reutiliza la junta, puede aparecer una fuga."),
+    "cadenas de distribucion": _C("el tensor, las guías, las poleas y los sellos del sistema de distribución", "Trabajan junto con la cadena y, si están desgastados, pueden generar ruido o saltos de tiempo poco después del cambio."),
+    "punterias hidraulicas": _C("el aceite, el filtro de aceite y la junta de tapa de válvulas", "Las punterías dependen de la presión y limpieza del aceite; conviene un cambio fresco para que no sigan sonando."),
+    "bayonetas nivel de aceite": _C("el aceite, el filtro de aceite y el sello de la bayoneta", "Se atienden en el mismo servicio de aceite."),
+    "tapa de aceite": _C("la junta de la tapa y el nivel de aceite del motor", "Si la junta está dura, conviene cambiarla para evitar fugas."),
+    "tomas de agua": _ENFRIA,
+    "discos de freno": _FRENO_D,
+    "brazo de suspension": _SUSP,
+    "bolsas de aire para suspension": _C("el compresor de la suspensión neumática y las válvulas del sistema", "Trabajan en el mismo sistema y, si el compresor está forzado, la pieza nueva puede volver a fallar."),
+    "plumillas limpiaparabrisas": _C("las plumillas del otro lado y el líquido limpiaparabrisas", "Se cambian en par para una limpieza pareja del parabrisas."),
+}
+SUBGRUPO_COMP = {norm(k): v for k, v in SUBGRUPO_COMP_RAW.items()}
 
-def complemento_for(intro_text, title):
+
+def complemento_for(intro_text, title, subgrupo=""):
     hay = norm(intro_text) + " " + norm(title)
     for key, val in COMPLEMENTOS:  # mas largo primero
         if key in hay:
-            return val  # puede ser "" -> sin complemento
+            return val  # tupla (piezas, motivo) o "" -> sin complemento
+    sg = norm(subgrupo)
+    if sg in SUBGRUPO_COMP:
+        return SUBGRUPO_COMP[sg]
     return COMPLEMENTO_GENERICO
 
 
@@ -573,7 +656,7 @@ def drop_asesor(text):
     return " ".join(kept).strip()
 
 
-def limpiar_descripcion(content, title):
+def limpiar_descripcion(content, title, handle="", subgrupo=""):
     paras = re.findall(r"<p>(.*?)</p>", content, re.S)
     intro0 = paras[0] if paras else ""
     out = []
@@ -616,7 +699,7 @@ def limpiar_descripcion(content, title):
                 out.append("Marca: %s." % m.group(1).strip())
             continue
         out.append(s)
-    comp = complemento_for(intro0, title)
+    comp = build_complemento(complemento_for(intro0, title, subgrupo), handle)
     if comp:
         out.append(comp)
     return "".join("<p>%s</p>" % p for p in out if p)
@@ -638,7 +721,7 @@ def nueva_politica(content):
     return "".join("<p>%s</p>" % p for p in paras)
 
 
-def restructure(html, title):
+def restructure(html, title, handle="", subgrupo=""):
     if not html or not html.strip():
         return html
     preludio, sections = split_sections(html)
@@ -647,7 +730,7 @@ def restructure(html, title):
         if t in DROP_SECTIONS:
             continue
         if t == "Descripcion":
-            content = limpiar_descripcion(content, title)
+            content = limpiar_descripcion(content, title, handle, subgrupo)
         elif t == "Envio":
             content = nuevo_envio(content)
         elif t == "Antes de Comprar":
@@ -662,9 +745,9 @@ def restructure(html, title):
     new = preludio
     for t in ORDER:
         if t in by_title:
-            new += "<h2>%s</h2>%s" % (t, by_title[t])
+            new += "<h2>%s</h2>%s" % (TITLE_MAP.get(t, t), by_title[t])
     for t, content in extras:
-        new += "<h2>%s</h2>%s" % (t, content)
+        new += "<h2>%s</h2>%s" % (TITLE_MAP.get(t, t), content)
     return new.replace("Mercedes-Benz", "Mercedes Benz")
 
 
@@ -684,7 +767,9 @@ def run_sample(n=6):
             used.add(key)
             _, secs = split_sections(b)
             orig = next((c for tt, c in secs if tt == "Descripcion"), "")
-            nueva = limpiar_descripcion(orig, t)
+            nueva = limpiar_descripcion(
+                orig, t, row["Handle"],
+                row.get("Sub grupo (product.metafields.global.sub_group)", ""))
             print("=" * 80)
             print("PRODUCTO:", t)
             print("--- DESCRIPCION ANTES:")
@@ -714,7 +799,9 @@ def run_full():
             total += 1
             b = row["Body (HTML)"]
             if b and b.strip():
-                nb = restructure(b, row["Title"])
+                nb = restructure(
+                    b, row["Title"], row["Handle"],
+                    row.get("Sub grupo (product.metafields.global.sub_group)", ""))
                 if nb != b:
                     cambiados += 1
                 row["Body (HTML)"] = nb
