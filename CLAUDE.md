@@ -133,9 +133,23 @@ Regenerar: `python scripts/18_reescribir_descripciones_local.py --run`.
 
 **Reglas globales:**
 - El VIN siempre se pide como **"número de serie (VIN)"**.
-- **"Mercedes-Benz" → "Mercedes Benz"** (sin guion) SOLO en texto visible (Body, Title,
-  SEO Title/Description, Image Alt). **NO** en metafields de marca ni en Handles.
+- **"Mercedes-Benz" → "Mercedes Benz"** (sin guion) en **TODO el catálogo**, incluidos los
+  metafields de marca (`Marca del auto`, `Marca`, `Filtros - Marca`, `Características - Marca`).
+  Única excepción: los **Handles** (cambiarlos rompe el match de Shopify). ⚠️ Si la tienda
+  filtra por el valor exacto `mercedes-benz`, hay que actualizar ese filtro/colección a `mercedes benz`.
 - SEO Title/Description no se reescriben (solo se les quitó el guion de Mercedes).
+
+**Compatibilidades (relleno):** `scripts/19_compat_desde_bases.py` rellena la sección
+Compatibilidades de los productos que no la tenían, parseando la columna cruda
+`Compatibilidades` (formato MercadoLibre) de `bases finales mayo/` (match por `shopify_handle`).
+Cobertura resultante ≈ 90% (11,529 de 12,749). Los ~1,220 restantes no tienen datos en la
+fuente y quedan sin la sección (no se inventan); lista en `productos_sin_compatibilidades.csv`.
+
+**Pipeline para regenerar el catálogo canónico** (`catalogo_completo_final_reescrito.csv`):
+```bash
+python scripts/18_reescribir_descripciones_local.py --run   # -> catalogo_reescrito_intermedio.csv
+python scripts/19_compat_desde_bases.py --run               # -> catalogo_completo_final_reescrito.csv (canónico)
+```
 
 ## Script de generación: `generar_catalogo.py`
 

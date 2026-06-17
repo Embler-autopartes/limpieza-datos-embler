@@ -23,3 +23,6 @@ __pycache__/
 # CSVs intermedios por categoria (se regeneran con scripts/01_extraer_categorias.py
 # desde input/INPUT.xlsx). Los enriched/ y corrected/ si se versionan.
 /output/*.csv
+
+# Intermedio del pipeline de descripciones (se regenera con scripts/18)
+catalogo_reescrito_intermedio.csv

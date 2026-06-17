@@ -31,7 +31,9 @@ OUTDIR = os.path.join(BASE, "Procesamiento de Catálogo", "outputs", "2026-06-12
 INPUT = os.path.join(OUTDIR, "catalogo_completo_final.csv")
 NEWDIR = os.path.join(BASE, "Procesamiento de Catálogo", "outputs",
                       "2026-06-17-descripciones-reescritas")
-OUTPUT = os.path.join(NEWDIR, "catalogo_completo_final_reescrito.csv")
+# paso 1 (este script): salida intermedia. El paso 2 (scripts/19) le agrega
+# las Compatibilidades y produce el archivo canónico catalogo_completo_final_reescrito.csv
+OUTPUT = os.path.join(NEWDIR, "catalogo_reescrito_intermedio.csv")
 
 ORDER = [
     "Compatibilidades", "Antes de Comprar", "Envio",
@@ -702,8 +704,11 @@ def run_full():
         r = csv.DictReader(fin)
         w = csv.DictWriter(fout, fieldnames=r.fieldnames)
         w.writeheader()
-        # columnas de texto visible donde quitamos el guion de Mercedes-Benz
-        MERC_COLS = ["Title", "SEO Title", "SEO Description", "Image Alt Text"]
+        # Mercedes-Benz -> Mercedes Benz (sin guion) en TODAS las columnas
+        # excepto Handle (cambiar handles rompe el match con Shopify). El regex
+        # respeta el caso original: "Mercedes-Benz"->"Mercedes Benz",
+        # "mercedes-benz"->"mercedes benz" (metafields), etc.
+        MERC_RX = re.compile(r"(?i)(mercedes)-(benz)")
         total = cambiados = 0
         for row in r:
             total += 1
@@ -713,9 +718,12 @@ def run_full():
                 if nb != b:
                     cambiados += 1
                 row["Body (HTML)"] = nb
-            for c in MERC_COLS:
-                if row.get(c) and "Mercedes-Benz" in row[c]:
-                    row[c] = row[c].replace("Mercedes-Benz", "Mercedes Benz")
+            for c in r.fieldnames:
+                if c == "Handle":
+                    continue
+                v = row.get(c)
+                if v and "-" in v and "mercedes" in v.lower():
+                    row[c] = MERC_RX.sub(r"\1 \2", v)
             w.writerow(row)
     print("Filas totales:", total)
     print("Body reescritos:", cambiados)
