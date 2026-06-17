@@ -98,6 +98,45 @@ Shopify usa múltiples filas por producto para las imágenes extra:
 - **Fila principal**: todos los campos poblados + primera imagen
 - **Filas de continuación**: solo `Handle` + `Image Src` + `Image Position`, todo lo demás vacío
 
+## Estructura canónica del Body (HTML) — descripciones (vigente, junio 2026)
+
+**Esta es la estructura correcta y de referencia para la columna `Body (HTML)`.**
+La produce `scripts/18_reescribir_descripciones_local.py` (determinista, sin IA) desde
+`outputs/2026-06-12/catalogo_completo_final.csv`.
+Salida vigente: `outputs/2026-06-17-descripciones-reescritas/catalogo_completo_final_reescrito.csv`.
+Regenerar: `python scripts/18_reescribir_descripciones_local.py --run`.
+
+**Orden FIJO de secciones (`<h2>`):**
+1. **Compatibilidades**
+2. **Antes de Comprar**
+3. **Envío**
+4. **Política de Devolución**
+5. **Descripción**
+
+> La sección **Preguntas Frecuentes** se eliminó de todas las fichas.
+
+**Reglas por sección:**
+- **Descripción**: corta y útil — qué es la pieza + qué hace, número(s) de parte/OEM,
+  lado de instalación y condición de venta (nueva/individual/kit/primer). Termina con un
+  párrafo de **productos complemento** (piezas cercanas por tipo: p. ej. depósito de
+  anticongelante → anticongelante, mangueras, tapa). **NO** incluye: "Compatible con N…",
+  síntomas de falla ("falla típica…", "al cuartearse…"), marca propia (Frey/Embler) ni
+  logística. Marcas de fabricante externo (Bosch, Mahle, Senp…) se dejan como `Marca: X`.
+- **Antes de Comprar** (texto fijo): «Asegura el ajuste perfecto: una vez realizada tu
+  compra, un asesor te contactará brevemente para validar la compatibilidad con tu número
+  de serie (VIN)…». Los llaveros conservan su propio texto.
+- **Envío** (texto fijo): «Tenemos stock disponible para entrega inmediata:» + bullets
+  ⚡ Envío Exprés (30-60 min: CDMX, Edo. Méx., Querétaro y Puebla) y 📦 Envío Nacional
+  (mismo día: FedEx, DHL o Estafeta).
+- **Política de Devolución**: devoluciones 30 días, sin uso, en empaque original. El mensaje
+  "Asegura el ajuste perfecto" se MOVIÓ a Antes de Comprar (ya no va aquí).
+
+**Reglas globales:**
+- El VIN siempre se pide como **"número de serie (VIN)"**.
+- **"Mercedes-Benz" → "Mercedes Benz"** (sin guion) SOLO en texto visible (Body, Title,
+  SEO Title/Description, Image Alt). **NO** en metafields de marca ni en Handles.
+- SEO Title/Description no se reescriben (solo se les quitó el guion de Mercedes).
+
 ## Script de generación: `generar_catalogo.py`
 
 Consolida los 12 archivos `YA_*.csv` de `2026-05-09-USAR-shopify-import/` en un solo
