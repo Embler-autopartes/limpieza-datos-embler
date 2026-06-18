@@ -30,14 +30,14 @@ depende de esos strings a nivel programación. La homologación TecDoc se **agre
 
 ## 2. Qué YA está hecho
 
-- ✅ **Taxonomía TecDoc extraída** de la API → `base-pruebas/categorias_tecdoc.json` (17 sistemas / 811 nodos).
-- ✅ **Tabla de homologación** → `base-pruebas/homologacion.csv`: 310 subgrupos → nodo TecDoc, **100%**
+- ✅ **Taxonomía TecDoc extraída** de la API → `homologacion-tecdoc/categorias_tecdoc.json` (17 sistemas / 811 nodos).
+- ✅ **Tabla de homologación** → `homologacion-tecdoc/homologacion.csv`: 310 subgrupos → nodo TecDoc, **100%**
   (matcher determinista + ~86 overrides manuales decididos por Claude, auto-auditado).
 - ✅ **Metafield definitions creadas en Shopify** (Settings → Custom data → Products):
   - `tecdoc.sistema` (TecDoc Sistema) — single line text — **"Use as a condition in smart collections" ACTIVADO**.
   - `tecdoc.subgrupo` (TecDoc Subgrupo) — single line text.
   - `tecdoc.node_id` (TecDoc Node ID) — single line text.
-- ✅ **Archivos de import generados** (en `base-pruebas/`):
+- ✅ **Archivos de import generados** (en `homologacion-tecdoc/`):
   - `catalogo_tecdoc_metafields.csv` — 12,705 productos × (Handle + 3 metafields tecdoc.*). NO toca group/sub_group.
   - `collections_sistema.xlsx` — 81 Smart Collections nuevas (marca × sistema), regla `_brand` + `tecdoc.sistema`.
   - `menu_pase1.xlsx` — 286 items, Marca → Sistema → Subgrupo, títulos prefijados (REPLACE).
@@ -65,7 +65,7 @@ nativo del SO y el contenido vive en un iframe cerrado). El **usuario arrastra**
 ## 4. Cómo regenerar los archivos (si cambian los datos fuente)
 
 ```bash
-cd base-pruebas
+cd homologacion-tecdoc
 python3 extraer_categorias.py          # -> categorias_tecdoc.json (necesita API TecDoc activa)
 python3 homologar.py                   # -> homologacion.csv (310 subgrupos -> nodo TecDoc)
 python3 generar_metafields_tecdoc.py   # -> catalogo_tecdoc_metafields.csv
@@ -81,4 +81,4 @@ Caps del menú lean: `CAP_SIS=8`, `CAP_SUB=3` en `generar_import_tecdoc.py` y `p
 Motor 2920 · Suspensión/Amortiguación 1791 · Refrigeración 1644 · Suspensión de eje/Ruedas 1131 ·
 Carrocería 1018 · Kit de freno 982 · Filtro 417 · Encendido 388 · … (28 sistemas, 11,911 prod).
 
-Detalle completo: `base-pruebas/PLAN-HOMOLOGACION-TECDOC.md` y `homologacion.csv`.
+Detalle completo: `homologacion-tecdoc/PLAN-HOMOLOGACION-TECDOC.md` y `homologacion.csv`.

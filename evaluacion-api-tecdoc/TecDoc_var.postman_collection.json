@@ -1,0 +1,1131 @@
+{
+  "info": {
+    "_postman_id": "c78ea519-034a-4739-b5b5-778d1e57ef9f",
+    "name": "TecDoc_var",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17068848",
+    "_collection_link": "https://go.postman.co/collection/17068848-c78ea519-034a-4739-b5b5-778d1e57ef9f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getAmBrands",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getAmBrands\":{   \r\n    \"articleCountry\":'kr',\r\n\t\"lang\":'es',\r\n    \"provider\":{{ta_prov_id}}\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getManufacturers",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getManufacturers\":{   \r\n    \"country\":\"mx\",\r\n\t\"lang\":\"qd\",\r\n    \"linkingTargetType\": \"P\",\r\n    \"provider\":{{ta_prov_id}}\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAutoCompleteSuggestions2",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"getAutoCompleteSuggestions\": {\r\n        \"lang\": \"qd\",\r\n        \"provider\": {{ta_prov_id}},\r\n        \"searchQuery\": \"balata\"\r\n    }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticles 1",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getArticles\":{   \r\n    \"articleCountry\":'mx',\r\n    \"provider\":{{ta_prov_id}},\r\n    \"searchQuery\": '116 0025 20',\r\n    \"dataSupplierIds\":'6',\r\n    \"searchType\": '0', \r\n    \"lang\":'qd',\r\n    \"perPage\":'100',\r\n    \"page\":'1',\r\n    \"includeAll\":1\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticles 2",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"getArticles\": {\r\n\"articleCountry\": \"MX\",\r\n\"provider\": {{ta_prov_id}},\r\n\"searchQuery\": \"GDB1957\",\r\n\"lang\": \"qd\",\r\n\"includeAll\": true,\r\n\"searchType\": 10,\r\n\"searchMatchType\": \"exact\",\r\n\"dataSupplierIds\": \"101\",\r\n\"perPage\": 99\r\n    }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticles OE",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"getArticles\": {\r\n    \"articleCountry\":\"MX\",\r\n    \"provider\":{{ta_prov_id}},\r\n    \"searchQuery\":\"068117021B\",\r\n    \"searchType\":1, //0 = Article Number, 1 = OE Number\r\n    \"searchMatchType\": \"exact\",\r\n    \"genericArticleIds\": 3761, //\r\n    \"lang\":\"qd\",\r\n    \"perPage\":1000,\r\n    \"page\": 1,  \r\n    \"includeAll\":true,\r\n    //\"includeImages\": true,\r\n    \"articleStatusIds\":1    \r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticles facets",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"getArticles\": {\r\n    \"articleCountry\":\"MX\",\r\n    \"provider\":{{ta_prov_id}},\r\n    \"lang\":\"qd\",\r\n    \"perPage\":1000,\r\n    \"page\": 1,\r\n    \"includeGenericArticleFacets\":1,\r\n    //\"includeArticleStatusFacets\":1,\r\n    //\"includeDataSupplierFacets\":1,\r\n    //\"includeCriteriaFacets\":1,\r\n    \r\n  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticles imgs",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getArticles\": {\r\n    \"articleCountry\": \"MX\",\r\n    \"provider\": {{ta_prov_id}},\r\n    \"dataSupplierIds\": 7323,\r\n    \"lang\": \"qd\",\r\n    //\"includeLinkages\": true,\r\n    \"includeImages\": true,\r\n    \"perPage\":\"1000\",\r\n    \"page\":\"1\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLinkageTargets",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getLinkageTargets\":{   \r\n        \"provider\": {{ta_prov_id}},\r\n        \"linkageTargetCountry\":'mx',\r\n        \"lang\":'qd',\r\n        \"linkageTargetType\": 'P',\r\n        \"perPage\":1,\r\n        \"page\":1,\r\n        //\"includeAllFacets\": false\r\n        \"includeMfrFacets\": true,\r\n        //\"includeVehicleModelSeriesFacets\": true,\r\n        //\"includeHMDModelFacets\": false\r\n        //\"includeYearFacets\": true\r\n        //\"includeDescriptionFacets\": false\r\n        //\"includeLinkageTargetTypeFacets\": false\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLinkageTargets Ktype",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getLinkageTargets\":{           \r\n        \"provider\": {{ta_prov_id}}, \r\n        \"linkageTargetCountry\": \"mx\",\r\n        \"lang\": \"qd\",\r\n        \"linkageTargetIds\": {\r\n            \"type\": \"P\",\r\n            \"id\": \"33689\"\r\n        },\r\n        \"perPage\": 100,\r\n        \"page\": 1,\r\n        \"includeAllFacets\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLinkageTargets Mod Ser",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getLinkageTargets\":{  \r\n        \"provider\":{{ta_prov_id}}, \r\n        \"linkageTargetCountry\":\"mx\",\r\n        \"lang\":'qd',\r\n        \"linkageTargetType\":\"P\",\r\n        \"mfrIds\": 120, //80 - NISSAN, 138 - CHEVROLET, 36 - FORD, 8231 - CHIREY, 120 - VOLVO\r\n        \"perPage\":100,\r\n        \"page\":1,\r\n        \"includeVehicleModelSeriesFacets\": true\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getVehicleIdsByKTypeNumber",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getVehicleIdsByKTypeNumber\": {\r\n    \"countriesCarSelection\": \"MEX\",\r\n    \"countryGroupFlag\": true,\r\n    \"lang\": \"qd\",\r\n    \"provider\": {{ta_prov_id}}\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getManufacturers",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getManufacturers\":{ \r\n    \"country\": 'mx',\r\n    \"lang\": 'qd',\r\n    \"linkingTargetType\": 'p',\r\n    \"provider\": {{ta_prov_id}}\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getModelSeries",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getModelSeries\":{ \r\n    \"country\": \"mx\",\r\n    \"lang\": \"qd\",\r\n    \"linkingTargetType\": \"P\",\r\n    \"manuId\": 120,  //Volvo    \r\n    \"provider\": {{ta_prov_id}}\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getVehicleIdsByCriteria",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getVehicleIdsByCriteria\":{ \r\n    \"carType\": \"P\",\r\n    \"countriesCarSelection\": \"mx\", \r\n    \"lang\": \"qd\",    \r\n    \"manuId\": 111,\r\n    \"modId\": 4981,\r\n    \"provider\": {{ta_prov_id}}\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLinkageTargets",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getLinkageTargets\": {\r\n    \"provider\": {{ta_prov_id}},\r\n    \"linkageTargetCountry\": \"cr\",\r\n    \"lang\": \"qd\",  \r\n    \"includeMfrFacets\": true,   \r\n    \"perPage\": 100,\r\n    \"page\": 1\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getArticleLinkedAllLinkingTargetManufacturer2 2 - Apps",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "header",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"getArticleLinkedAllLinkingTargetManufacturer2\": {\r\n    \"articleCountry\": \"mx\",\r\n    \"articleId\": 19038106,\r\n    \"country\": \"mx\",\r\n    \"linkingTargetType\": \"P\",\r\n    \"provider\": {{ta_prov_id}}\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAutoCompleteSuggestions",
+      "protocolProfileBehavior": {
+        "followRedirects": true,
+        "disabledSystemHeaders": {}
+      },
+      "request": {
+        "auth": {
+          "type": "apikey",
+          "apikey": [
+            {
+              "key": "value",
+              "value": "{{ta_api_k}}",
+              "type": "string"
+            },
+            {
+              "key": "key",
+              "value": "X-Api-Key",
+              "type": "string"
+            },
+            {
+              "key": "in",
+              "value": "query",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept-Language",
+            "value": "es-ES,es;q=0.9"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t  \"getAutoCompleteSuggestions\":{\r\n\t    \"provider\": {{ta_prov_id}},\r\n\t    \"lang\": \"qd\",\r\n\t    \"searchQuery\": \"correa\"\r\n\t  }\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint",
+          "protocol": "https",
+          "host": [
+            "webservice",
+            "tecalliance",
+            "services"
+          ],
+          "path": [
+            "pegasus-3-0",
+            "services",
+            "TecdocToCatDLB.jsonEndpoint"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-Api-Key",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "2BeBXg6GwnLm1aGYJisTcEhdTeAAbChFauyYK59QhjDL93scE7v1",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

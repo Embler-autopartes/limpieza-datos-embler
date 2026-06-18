@@ -2,6 +2,9 @@
 
 > Resultado de la investigación y pruebas en vivo del **2026-06-10**.
 > Objetivo: determinar si con la API DEMO podemos construir el **buscador de partes por vehículo** (marca → modelo → año → piezas).
+> **Actualización 2026-06-11**: segunda ronda de pruebas (ver §2.bis) descartó que el
+> bloqueo fuera por requests mal construidos. Sí había parámetros faltantes en las
+> pruebas originales, pero al corregirlos TODOS los datos de vehículos siguen vacíos.
 
 ---
 
@@ -86,6 +89,80 @@ el bueno para nosotros es **DLB**.
 | `getVehicleIdsByCriteria` | vacío |
 | `getArticles` con `linkageTargetId` | **`"The requested linkage target is not enabled for this account"`** ← prueba irrefutable |
 | `getArticleLinkedAllLinkingTarget4` | `articleLinkages: ""` (vacío) |
+
+---
+
+## 2.bis Verificación 2026-06-11 — ¿acceso o request mal construido?
+
+Se repitieron las pruebas corrigiendo cada error de validación hasta que el API
+aceptara los requests (script: `test_modulo_vehiculos.py`). Hallazgos:
+
+### Sí había errores de construcción en las pruebas originales
+
+| Error original | Corrección |
+|---|---|
+| `getVehicleIdsByCriteria` sin `countriesCarSelection` | Es obligatorio: `"countriesCarSelection": "mx"` + `carType` + `modelDescription` |
+| `getVehicleIdsByKTypeNumber` con `kTypeNumber` | El parámetro se llama **`typeNumber`** (+ `carType` obligatorio) |
+| `getArticleLinkedAllLinkingTarget4` con `legacyArticleId` de la raíz | El id correcto vive en **`article.genericArticles[].legacyArticleId`** (en la raíz no existe) |
+| `getVehicleByIds3` sin `articleCountry` | Es obligatorio |
+
+### Pero al corregirlos, el resultado es el mismo: SIN datos de vehículos
+
+Con requests 100% válidos (status 200, sin errores de parámetro):
+
+| Request bien formado | Resultado |
+|---|---|
+| `getModelSeries` (BMW, `country`+`countriesCarSelection`+`linkingTargetType`, lang `qd` y `qa`) | `data: ""` |
+| `getLinkageTargets` (`linkageTargetCountry: "mx"`, tipos P y V, con/sin facets y `mfrIds`) | `total: 0` |
+| `getVehicleIdsByCriteria` (VW Golf / BMW Serie 3 / Nissan Tsuru, params completos) | `data: ""` |
+| `getVehicleIdsByKTypeNumber` (`typeNumber: 9465` Golf IV, params completos) | `data: ""` |
+| `getArticleLinkedAllLinkingTarget4` (legacyArticleId correcto `868644834`, tipos P y V) | `articleLinkages: ""` |
+| `getArticles` con `includeLinkages` (50 artículos SACHS) | **0/50** con `totalLinkages > 0` |
+| `getArticles` + `linkageTargetId: 28523` | `"The requested linkage target is not enabled for this account"` |
+
+**Detalle revelador**: el `genericArticle` del artículo SACHS declara
+`linkageTargetTypes: ["V","O"]` (en la BD completa de TecDoc SÍ tiene vehículos
+vinculados), pero su linkage regresa vacío en esta cuenta → los datos existen en
+TecDoc, no están provisionados en la DEMO.
+
+**Distinción clave en los mensajes del servidor**: los errores de request mal
+construido dicen `Field 'X' must be not null` / `wrong country code` (validación);
+el de vehículos dice `not enabled for this account` (entitlement). Son capas distintas.
+
+### Restricción de país confirmada
+
+La cuenta solo acepta `mx`. El `am, mex` de `acceso-api.md` es engañoso:
+- `mex` → `400 wrong country code` (no es ISO-2)
+- `am` → `400 country code 'AM' is not allowed` (código válido pero NO habilitado para esta cuenta)
+- `de` → igual que `am`
+
+### Veredicto final (corregido 2026-06-11 PM, tras respuesta de Ricardo/TecAlliance)
+
+**Descartado que sea problema de construcción del request** — la colección de Postman
+del proveedor (`TecDoc_var.postman_collection.json`) usa exactamente los mismos nombres
+de parámetro que nuestras pruebas.
+
+**PERO el diagnóstico se refina**: el request de ejemplo de Ricardo (getLinkageTargets
+SIN `linkageTargetType`) **SÍ regresa datos**: 105,667 vehículos. La cuenta sí tiene
+módulo de vehículos, solo que provisionado únicamente con **vehículos comerciales**:
+
+| `linkageTargetType` | Total en cuenta 25099 |
+|---|---|
+| `K` (CV Body / camiones) | **98,476** — IVECO 64k, SCANIA 11.5k, MB Trucks 4.8k, DONGFENG, MAN... |
+| `A` (ejes) | **7,191** |
+| `P`, `V`, `O`, `L`, `C`, `T`, `M`, `B`, `H` | **0** |
+
+Nuestras pruebas filtraban por `P`/`V` (autos de pasajeros = lo que vende Embler),
+por eso todo regresaba vacío. Además:
+- `getArticles` + `linkageTargetId: 7782` (Nissan TLO, tipo `K` real de la cuenta) →
+  `totalMatchingArticles: 0` — los artículos de las 5 marcas demo tampoco tienen
+  linkages provisionados (`totalLinkages: 0` en todos).
+- Marcas europeas de pasajeros (BMW, AUDI, VW, PORSCHE, MINI) **no existen** en los
+  datos K; solo MERCEDES-BENZ camiones.
+
+**Lo que hay que pedir a TecAlliance**: datos de **Passenger Car (tipo P/V)** para
+país `mx` + los **article linkages** de las marcas activas. Sin eso, el buscador por
+vehículo de Embler (autopartes europeas de pasajeros) no es demostrable con la DEMO.
 
 ---
 
@@ -216,3 +293,6 @@ avanzar hasta resolver eso con el proveedor.
 | `WS Pegasus principales metodos.pdf` | **Doc oficial de métodos del API (31 págs) — la referencia clave** |
 | `Web Services metodos y end points - TecDoc.pdf` | Endpoints y enlaces |
 | `tecdoc_client.py` | Cliente Python consolidado con las pruebas (config que funciona) |
+| `test_modulo_vehiculos.py` | Prueba definitiva 2026-06-11: requests bien formados vs datos no provisionados |
+| `EXTRAPOLACION-EUROPEAS-TECDOC.md` | **Conclusión final**: qué validó la DEMO y cómo extrapola a marcas europeas + checklist de aceptación |
+| `TecDoc_var.postman_collection.json` | Colección Postman del proveedor (Ricardo, 2026-06-11) |

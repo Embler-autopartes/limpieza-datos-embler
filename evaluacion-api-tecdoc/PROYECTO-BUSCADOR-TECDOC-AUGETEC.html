@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Embler — Integración TecDoc (TecAlliance): contexto, pruebas y alcance solicitado</title>
+</head>
+<body>
+
+<h1>Embler — Integración TecDoc (TecAlliance)</h1>
+<p><b>Documento para:</b> Equipo Augetec<br>
+<b>De:</b> Javier García — Embler / Improvitz<br>
+<b>Fecha:</b> 11 de junio de 2026<br>
+<b>Propósito:</b> Compartir el contexto del proyecto, los resultados de las pruebas realizadas sobre la API de TecDoc, la arquitectura deseada y las ideas de funcionalidad, para que Augetec nos proponga un plan y scope de trabajo.</p>
+
+<hr>
+
+<h2>1. Contexto del negocio</h2>
+<ul>
+<li><b>Embler</b> vende autopartes para autos europeos (BMW, Mercedes-Benz, Audi, VW, Porsche, Mini, etc.) en México.</li>
+<li>La tienda en línea corre sobre <b>Shopify</b>, con un catálogo de ~12,700 productos ya publicado.</li>
+<li>El ERP de la operación es <b>Odoo</b> (en implementación/operación con Augetec).</li>
+<li>Contratamos/evaluamos <b>TecDoc (TecAlliance)</b>, el catálogo estándar mundial de autopartes, que aporta dos cosas:
+  <ul>
+  <li><b>Datos de artículos</b>: números OEM, especificaciones técnicas, códigos de barras, categorías estandarizadas, imágenes — todo disponible en español.</li>
+  <li><b>Datos de vehículos y compatibilidades</b> (vínculo pieza ↔ vehículo): la base para un <b>buscador por vehículo</b> (marca → modelo → motorización → piezas que le quedan).</li>
+  </ul>
+</li>
+</ul>
+
+<h2>2. Objetivo principal del proyecto</h2>
+<p>Que el cliente final pueda encontrar la pieza correcta para su auto. Dos modos de búsqueda:</p>
+<ol>
+<li><b>Buscador por vehículo:</b> el cliente selecciona Marca → Modelo/Serie → Año/Motorización y ve únicamente las piezas compatibles. Es el modo principal y el estándar en e-commerce de autopartes.</li>
+<li><b>Buscador por número de parte / OEM:</b> el cliente (mecánico o conocedor) pega un número de parte original o de cualquier marca y encuentra el equivalente disponible en Embler.</li>
+</ol>
+<p>Adicionalmente, usar TecDoc para <b>enriquecer el catálogo</b>: completar números OEM faltantes, especificaciones técnicas, compatibilidades y categorización estandarizada de los productos existentes.</p>
+
+<h2>3. Arquitectura deseada: Odoo como dueño de los datos</h2>
+<p>La definición de arquitectura que queremos respetar:</p>
+<ul>
+<li><b>Odoo es el master de datos.</b> Dueño del catálogo, precios, inventario y de toda integración con terceros.</li>
+<li><b>La integración con TecDoc/TecAlliance se hace únicamente hacia Odoo.</b> Odoo consume la API de TecDoc, almacena/cruza lo necesario, y es quien transfiere la información a Shopify.</li>
+<li><b>Shopify no se integra directo con TecDoc para datos de catálogo</b> — recibe todo vía Odoo (productos, metafields, compatibilidades).</li>
+</ul>
+<p><b>Punto abierto a discusión (queremos su recomendación):</b> para el <b>buscador por vehículo en la tienda</b>, ¿conviene que el front de Shopify consulte la API de TecDoc en tiempo real (vía un middleware/proxy), o que las compatibilidades se sincronicen como datos a Shopify (metafields/tablas) vía Odoo? Consideraciones que vemos:</p>
+<ul>
+<li>Tiempo real: datos siempre actualizados, menos volumen a sincronizar, pero agrega dependencia, latencia y consumo de licencia por request en el front.</li>
+<li>Sincronizado vía Odoo: consistente con la arquitectura "Odoo dueño de todo", funciona aunque TecDoc no responda, pero implica modelar/almacenar el árbol vehículo→pieza y mantenerlo actualizado.</li>
+<li>Quizá un híbrido: catálogo y compatibilidades sincronizados vía Odoo + autocompletado/búsqueda por OEM en tiempo real.</li>
+</ul>
+<p>Esperamos que el plan de trabajo de Augetec incluya esta decisión de arquitectura con su justificación.</p>
+
+<h2>4. La API de TecDoc: lo que ya está validado (pruebas en vivo, junio 2026)</h2>
+
+<h3>4.1 Conexión</h3>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><td><b>Endpoint (JSON)</b></td><td>https://webservice.tecalliance.services/pegasus-3-0/services/TecdocToCatDLB.jsonEndpoint</td></tr>
+<tr><td><b>Método HTTP</b></td><td>POST</td></tr>
+<tr><td><b>Autenticación</b></td><td>Header <code>X-Api-Key</code> (no funciona con Authorization ni con la key en el body)</td></tr>
+<tr><td><b>Provider ID (DEMO)</b></td><td>25099</td></tr>
+<tr><td><b>País</b></td><td><code>mx</code> (ISO 2 letras; la cuenta solo acepta este país)</td></tr>
+<tr><td><b>Idioma</b></td><td><code>qd</code> → contenido en español</td></tr>
+<tr><td><b>Credenciales</b></td><td>API key DEMO compartida por TecAlliance (vigencia 30 días desde el 10-jun-2026); se las compartimos por canal aparte junto con la colección Postman del proveedor</td></tr>
+</table>
+
+<p><b>Formato del request:</b></p>
+<pre>{
+  "&lt;nombreMetodo&gt;": {
+    "provider": 25099,
+    "lang": "qd",
+    ... parámetros del método ...
+  }
+}</pre>
+
+<h3>4.2 Qué quedó comprobado en vivo</h3>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Capacidad</th><th>Método</th><th>Resultado</th></tr>
+<tr><td>Catálogo de artículos</td><td>getArticles</td><td>106,642 artículos de las 5 marcas DEMO (ATE, SACHS, LEMFÖRDER, FEBI BILSTEIN, Schaeffler INA) con números OEM, especificaciones, GTIN, imágenes — en español</td></tr>
+<tr><td>Búsqueda por nº de parte, OE, texto libre</td><td>getArticles (searchType 0–4, 99)</td><td>Funciona</td></tr>
+<tr><td>Marcas de vehículo</td><td>getManufacturers</td><td>147 marcas con sus IDs (AUDI=5, BMW=16, MERCEDES-BENZ=74, VW=121…)</td></tr>
+<tr><td>Listado de vehículos</td><td>getLinkageTargets</td><td>105,667 vehículos en la DEMO (ver nota 4.3)</td></tr>
+<tr><td>Filtros y facets (agregaciones)</td><td>getLinkageTargets / getArticles</td><td>Filtro por marca, facets de fabricante, paginación — funcionan</td></tr>
+<tr><td>Árbol de categorías/sistemas</td><td>getShortCuts2</td><td>En español (Motor, Frenos, Suspensión…)</td></tr>
+<tr><td>Autocompletado de búsqueda</td><td>getAutoCompleteSuggestions</td><td>Funciona</td></tr>
+</table>
+
+<h3>4.3 Limitación de la cuenta DEMO (importante para no perder tiempo)</h3>
+<p>La DEMO viene cargada <b>solo con vehículos comerciales</b>: tipo K = camiones (98,476: IVECO, SCANIA, MB Trucks…) y tipo A = ejes (7,191). Los autos de pasajeros (tipos P/V — lo que vende Embler) están en <b>cero</b>, y los vínculos pieza↔vehículo de las marcas DEMO tampoco están cargados (<code>totalLinkages: 0</code>).</p>
+<p><b>Esto no es un defecto de la API</b>: la estructura, métodos y formato de respuesta son idénticos para todos los tipos de vehículo (lo verificamos con los datos de camiones y ejes, que sí traen modelo-serie, años y atributos técnicos en español). Al contratar el plan con datos Passenger Car para México, los mismos requests regresarán los BMW/Mercedes/Audi. <b>No vamos a pedir más datos a la DEMO</b>; la usamos para validar que la API funciona y conocer la estructura — objetivo cumplido.</p>
+
+<h3>4.4 El flujo del buscador por vehículo (ya mapeado contra la API)</h3>
+<pre>1. getManufacturers                  → marcas de auto (mfrId)
+2. getLinkageTargets (mfrIds +
+   includeVehicleModelSeriesFacets)  → modelos/series con años
+3. getLinkageTargets (mfrIds +
+   vehicleModelSeriesIds)            → motorizaciones (linkageTargetId)
+4. getArticles (linkageTargetId +
+   linkageTargetType)                → piezas compatibles con ese vehículo</pre>
+
+<h3>4.5 Detalles técnicos aprendidos (ahorran tiempo de implementación)</h3>
+<ul>
+<li>Auth solo por header <code>X-Api-Key</code>.</li>
+<li>País por cuenta: solo <code>mx</code>; <code>mex</code>/<code>am</code>/<code>de</code> devuelven 400.</li>
+<li>No confundir <code>linkingTargetType</code> (métodos de catálogo de vehículos) con <code>linkageTargetId/linkageTargetType</code> (filtro por vehículo en getArticles).</li>
+<li><code>countriesCarSelection</code> es obligatorio en getVehicleIdsByCriteria y getVehicleIdsByKTypeNumber; en este último el parámetro es <code>typeNumber</code> (no kTypeNumber).</li>
+<li>El <code>legacyArticleId</code> vive en <code>article.genericArticles[].legacyArticleId</code>.</li>
+<li>En getLinkageTargets, omitir <code>linkageTargetType</code> regresa todo; un tipo sin datos regresa 0 (útil para diagnosticar qué trae una cuenta).</li>
+<li>Mensajes del servidor: "Field X must be not null" = error de request; "not enabled for this account" = dato/módulo no provisionado. Capas distintas.</li>
+<li>El endpoint correcto es DLB; existe un DLW con otro formato que no aplica para catálogo.</li>
+<li>Paginación hasta 10,000 registros por request (<code>perPage</code>/<code>page</code>); <code>perPage: 0</code> regresa solo conteos y facets.</li>
+</ul>
+
+<h3>4.6 Checklist de aceptación para el día 1 del plan de pago</h3>
+<p>Cuando se active la cuenta de producción, validar en este orden (tenemos los requests listos):</p>
+<ol>
+<li><code>getLinkageTargets</code> tipo V para mx → debe regresar total &gt; 0.</li>
+<li><code>getLinkageTargets</code> con mfrIds=16 (BMW) + facets de series → deben aparecer E46/E90/F30…</li>
+<li>Detalle de un vehículo → debe traer ficha de motorización (kW/HP, combustible, años).</li>
+<li><b>El crítico:</b> <code>getArticles</code> con <code>linkageTargetId</code> de ese vehículo → debe regresar artículos &gt; 0 de las marcas contratadas. Este es el único paso del flujo que la DEMO no pudo demostrar de punta a punta (por los linkages en cero) y debe validarse antes de dar por buena la cuenta de producción.</li>
+</ol>
+
+<h2>5. Ideas de funcionalidad para el buscador (visión de producto)</h2>
+<ul>
+<li><b>Selector de vehículo persistente en la tienda</b> ("Mi auto"): el cliente elige una vez Marca → Modelo → Año/Motor y toda la navegación/colecciones se filtra a piezas compatibles. Que se recuerde entre sesiones.</li>
+<li><b>Búsqueda por número de parte / OEM</b> con equivalencias: pegar cualquier número (original o de otra marca) y llegar al producto Embler equivalente.</li>
+<li><b>Autocompletado</b> en la barra de búsqueda (TecDoc ya lo ofrece vía getAutoCompleteSuggestions).</li>
+<li><b>Tabla de compatibilidades en la ficha de producto</b>: "Aplica para: BMW Serie 3 (E90) 320i 2005–2011, …" generada desde TecDoc en lugar de capturarla a mano.</li>
+<li><b>Validación de compra</b>: aviso "verificaste que es compatible con tu vehículo" antes del checkout para reducir devoluciones.</li>
+<li><b>Enriquecimiento del catálogo existente en Odoo</b>: cruzar nuestros ~12,700 productos contra TecDoc por número de parte para completar OEMs faltantes (~230 productos), especificaciones, y compatibilidades (~985 productos sin datos de año).</li>
+<li>A futuro: filtro por VIN o por placa (TecAlliance tiene servicios para esto; fuera de alcance inicial).</li>
+</ul>
+
+<h2>6. Lo que pedimos a Augetec</h2>
+<ol>
+<li><b>Propuesta de arquitectura</b> respetando la premisa "Odoo es el master": cómo se integra TecDoc a Odoo, qué se almacena vs. qué se consulta en vivo, y cómo fluye a Shopify. Incluir su recomendación sobre el punto abierto de la sección 3 (buscador en tiempo real vs. sincronizado vs. híbrido).</li>
+<li><b>Scope de trabajo y plan</b> por fases, con estimación de esfuerzo. Sugerimos como posible faseo: (a) integración TecDoc→Odoo + enriquecimiento del catálogo; (b) sincronización Odoo→Shopify de los datos enriquecidos; (c) buscador por vehículo en la tienda; (d) búsqueda por OEM y autocompletado.</li>
+<li><b>Requerimientos hacia TecAlliance</b>: qué módulos/datos debe incluir el contrato de producción (datos Passenger Car para MX, article linkages de las marcas que se contraten, límites de requests) para que la solución propuesta funcione. Esto nos sirve para cerrar la negociación comercial con ellos.</li>
+<li><b>Supuestos y dependencias</b> de nuestro lado (accesos a Odoo, Shopify, definiciones de catálogo, etc.).</li>
+</ol>
+
+<h2>7. Material disponible que les compartimos</h2>
+<ul>
+<li>Colección Postman oficial del proveedor (TecDoc_var.postman_collection.json).</li>
+<li>Documentación oficial de TecAlliance: "WS Pegasus principales métodos" (PDF, 31 págs.) y "Web Services métodos y endpoints" (PDF).</li>
+<li>Bitácora completa de nuestras pruebas y documento de extrapolación con el checklist de aceptación.</li>
+<li>Cliente Python de referencia con la configuración que funciona y script de diagnóstico re-ejecutable.</li>
+<li>Credenciales DEMO vigentes (30 días desde el 10-jun-2026) — por canal aparte.</li>
+<li>Contacto comercial/técnico en TecAlliance: Ricardo (responde dudas de la API y de la cuenta).</li>
+</ul>
+
+<p>Quedamos atentos a sus comentarios y a una sesión de trabajo para revisar dudas.</p>
+<p>Saludos,<br>Javier García</p>
+
+</body>
+</html>

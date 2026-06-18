@@ -85,7 +85,7 @@ for disp, bval, bh in BRANDS:
         sis_coll_handle[(bval,s)] = ch
         title = f"{disp} {s}"
         # fila 1: brand rule + metadata
-        s1.append([ch,"MERGE",title,"TRUE","all","Metafield: global._brand","Equals",bval])
+        s1.append([ch,"MERGE",title,"TRUE","all conditions","Metafield: global._brand","Equals",bval])
         # fila 2: sistema rule
         s1.append([ch,"","","","","Metafield: tecdoc.sistema","Equals",s])
         created += 1
@@ -112,4 +112,4 @@ wb2.save(HERE/"menu_pase1.xlsx")
 
 print(f"collections_sistema.xlsx: {created} collections nuevas (marca x sistema)")
 print(f"menu_pase1.xlsx: {items} items de menu")
-print("Listos en base-pruebas/. Pase 2 (rename a labels cortos) se genera tras importar el pase 1.")
+print("Listos en homologacion-tecdoc/. Pase 2 (rename a labels cortos) se genera tras importar el pase 1.")

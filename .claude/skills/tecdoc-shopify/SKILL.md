@@ -15,7 +15,7 @@ description: |
   "actualiza los productos con matrixify", "importa las collections de sistema", "rehaz el menú
   tecdoc", "agrega el metafield X a los productos", "modifica el sitio con matrixify",
   "reclasifica estos productos al sistema Y", "crea una collection por sistema", o cualquier
-  referencia a la estructura TecDoc / los archivos en `base-pruebas/` de homologación.
+  referencia a la estructura TecDoc / los archivos en `homologacion-tecdoc/` de homologación.
 ---
 
 # Modificar Shopify de Embler con estructura TecDoc (vía Matrixify)
@@ -29,9 +29,9 @@ inicial y para cualquier cambio futuro.
 1. **Lee `MIGRACION-TECDOC.md`** (en esta carpeta de skill) — estado de la migración, qué está
    hecho, qué falta, runbook de imports.
 2. **Lee los datos fuente** según necesites:
-   - `base-pruebas/homologacion.csv` — 310 subgrupos MX → (sistema, subgrupo, node_id) TecDoc. La fuente de verdad del mapeo.
-   - `base-pruebas/categorias_tecdoc.json` — árbol TecDoc completo (17 sistemas / 811 nodos, con IDs).
-   - `base-pruebas/PLAN-HOMOLOGACION-TECDOC.md` — el plan completo y decisiones.
+   - `homologacion-tecdoc/homologacion.csv` — 310 subgrupos MX → (sistema, subgrupo, node_id) TecDoc. La fuente de verdad del mapeo.
+   - `homologacion-tecdoc/categorias_tecdoc.json` — árbol TecDoc completo (17 sistemas / 811 nodos, con IDs).
+   - `homologacion-tecdoc/PLAN-HOMOLOGACION-TECDOC.md` — el plan completo y decisiones.
 3. Pregunta al usuario si el cambio es: continuar la migración, o un cambio nuevo (productos / collections / menú).
 
 ## 1. La estructura TecDoc (cómo está organizado el catálogo)
@@ -73,7 +73,8 @@ columnas de group/sub_group si no se quieren tocar. Ver `generar_metafields_tecd
 ### B) Smart Collections — crear/modificar
 Hoja "Smart Collections". Columnas: `Handle, Command, Title, Published, Must Match,
 Rule: Product Column, Rule: Relation, Rule: Condition`. **Multi-regla = repetir el Handle por fila**
-(1ª fila lleva Title/Command/Must Match=all; filas siguientes solo Handle + columnas Rule).
+(1ª fila lleva Title/Command/Must Match=`all conditions`; filas siguientes solo Handle + columnas Rule).
+⚠️ Matrixify NO acepta `all` en "Must Match" — usa exactamente `all conditions` (o `any condition`), si no falla todo el import.
 Para reglas sobre un metafield: `Rule: Product Column = "Metafield: tecdoc.sistema"`, `Relation = Equals`,
 `Condition = <valor>`. **Requisito:** la metafield definition debe existir y tener
 **"Use as a condition in smart collections" ACTIVADO** (si no, la regla no funciona). Ver `generar_import_tecdoc.py`.
@@ -112,12 +113,12 @@ archivo si los datos fuente cambiaron (sección 4 de ese doc). Verifica cada imp
 | Archivo | Rol |
 |---|---|
 | `.claude/skills/tecdoc-shopify/MIGRACION-TECDOC.md` | Estado y runbook de la migración |
-| `base-pruebas/homologacion.csv` | Mapeo 310 subgrupos → nodo TecDoc (fuente de verdad) |
-| `base-pruebas/categorias_tecdoc.json` | Árbol TecDoc (17 sistemas / 811 nodos) |
-| `base-pruebas/homologar.py` | Genera la homologación (incluye overrides manuales) |
-| `base-pruebas/generar_metafields_tecdoc.py` | Genera CSV de metafields de productos |
-| `base-pruebas/generar_import_tecdoc.py` | Genera collections de sistema + menú pase 1 |
-| `base-pruebas/PLAN-HOMOLOGACION-TECDOC.md` | Plan y decisiones completas |
+| `homologacion-tecdoc/homologacion.csv` | Mapeo 310 subgrupos → nodo TecDoc (fuente de verdad) |
+| `homologacion-tecdoc/categorias_tecdoc.json` | Árbol TecDoc (17 sistemas / 811 nodos) |
+| `homologacion-tecdoc/homologar.py` | Genera la homologación (incluye overrides manuales) |
+| `homologacion-tecdoc/generar_metafields_tecdoc.py` | Genera CSV de metafields de productos |
+| `homologacion-tecdoc/generar_import_tecdoc.py` | Genera collections de sistema + menú pase 1 |
+| `homologacion-tecdoc/PLAN-HOMOLOGACION-TECDOC.md` | Plan y decisiones completas |
 
 ## Skills relacionados
 - `cambiar-menu` — mecánica detallada del menú en 2 pasos (úsala para el pase 1/2).

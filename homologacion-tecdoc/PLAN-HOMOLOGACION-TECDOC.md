@@ -11,7 +11,7 @@
 ### Taxonomía TecDoc (estándar de los armadores) — extraída de la API
 - **17 sistemas** de nivel superior (`getShortCuts2`)
 - **34 grupos raíz** + **811 nodos** totales en el árbol de assembly groups
-- Guardado en `base-pruebas/categorias_tecdoc.json` (árbol completo con IDs y conteos)
+- Guardado en `homologacion-tecdoc/categorias_tecdoc.json` (árbol completo con IDs y conteos)
 - Naming formal, español de España: `Kit de freno`, `Suspensión / Amortiguación`,
   `Suspensión de eje/Guía de rueda/Ruedas`, `Transmisión por correas`, `Sistema de encendido/incandescencia`
 
